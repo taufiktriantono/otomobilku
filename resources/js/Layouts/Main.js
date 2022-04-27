@@ -106,7 +106,7 @@ export default function Layout(props) {
                                         >
                                           <a className='block' href={route('show:product', {slug: product.slug})}>
                                             <div className='flex'>
-                                              <img className='w-10 h-10 object-cover mr-4' src={`http://otomobilku.test/storage/${product?.images.length > 0 ? product?.images[0].path : ''}`} />
+                                              <img className='w-10 h-10 object-cover mr-4' src={`http://otomobilku.id/storage/${product?.images.length > 0 ? product?.images[0].path : ''}`} />
                                               <span className='block truncate font-normal'>{product.name}</span>
                                             </div>
                                           </a>

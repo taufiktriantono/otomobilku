@@ -191,7 +191,7 @@ export default function ListProduct(props) {
                                     <tr key={product.id} className="bg-white border-b">
                                         <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
                                             <img
-                                                src={product?.images.length > 0 ? `http://admin.otomobilku.test/storage/${product?.images[0].path}` : 'https://apollo-singapore.akamaized.net/v1/files/5lkbvosxkfc61-ID/image;s=780x0;q=60'}
+                                                src={product?.images.length > 0 ? `http://admin.otomobilku.id/storage/${product?.images[0].path}` : 'https://apollo-singapore.akamaized.net/v1/files/5lkbvosxkfc61-ID/image;s=780x0;q=60'}
                                                 className="w-20 h-10 object-center object-cover "
                                             />
                                         </th>

@@ -52,8 +52,8 @@ export default function DetailProduct(props) {
           <meta property='og:description' content={product?.description} />
           <meta property='og:type' content={'product'} />
           <meta property='og:site_name' content='Otomobilku' />
-          <meta property='og:url' content={`http://otomobilku.test/mobil-bekas/${product?.slug}`} />
-          <meta property='og:image' content={`http://otomobilku.test/storage/${product?.images[0].path}`} />
+          <meta property='og:url' content={`http://otomobilku.id/mobil-bekas/${product?.slug}`} />
+          <meta property='og:image' content={`http://otomobilku.id/storage/${product?.images[0].path}`} />
 
           <meta property='product:price:amount' content={product?.price} />
           <meta property='product:price:currency' content={'IDR'} />
@@ -63,7 +63,7 @@ export default function DetailProduct(props) {
           <meta property='twitter:creator' content={'@otomobilku.com'} />
           <meta property='twitter:title' content={`${product?.models.brand.name} ${product?.models.name} ${product?.build_year}`} />
           <meta property='twitter:description' content={product?.description} />
-          <meta property='twitter:image' content={`http://otomobilku.test/storage/${product?.images[0].path}`} />
+          <meta property='twitter:image' content={`http://otomobilku.id/storage/${product?.images[0].path}`} />
           <meta property='twitter:data1' content={product?.price} />
           <meta property='twitter:label1' content={'Harga'} />
 
@@ -100,7 +100,7 @@ export default function DetailProduct(props) {
                         })
                       }
                       <li className="text-sm">
-                        <a href={`http://otomobilku.test/mobil-bekas/${product.slug}`} aria-current="page" className="font-medium text-gray-500 hover:text-gray-600">
+                        <a href={`http://otomobilku.id/mobil-bekas/${product.slug}`} aria-current="page" className="font-medium text-gray-500 hover:text-gray-600">
                           {product.name}
                         </a>
                       </li>
@@ -121,7 +121,7 @@ export default function DetailProduct(props) {
                   <div className="max-w-2xl mx-auto py-4 px-4 sm:px-6 lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-3 lg:grid-rows-[auto,auto,1fr] lg:gap-x-8">
                     <div className="lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8">
                       <img
-                        src={`http://otomobilku.test/storage/${selectedImage?.path}`}
+                        src={`http://otomobilku.id/storage/${selectedImage?.path}`}
                         className="w-full object-center object-cover rounded-md"
                       />
                     </div>
@@ -131,13 +131,13 @@ export default function DetailProduct(props) {
                         <div className='grid grid-cols-2 gap-10 p-4 border-b'>
                           <div className='text-left'>
                             <div className='flex'>
-                              <img className='w-8 h-8' src='http://admin.otomobilku.test/storage/images/gasoline-pump.png' />
+                              <img className='w-8 h-8' src='http://admid/storage/images/gasoline-pump.png' />
                               <div className='ml-2 text-center'>{product.fuel.fuel_name}</div>
                             </div>
                           </div>
                           <div className='text-right'>
                             <div className='flex justify-end'>
-                              <img className='w-8 h-8' src='http://admin.otomobilku.test/storage/images/gear.png' />
+                              <img className='w-8 h-8' src='http://admin.otomobilku.id/storage/images/gear.png' />
                               <div className='ml-2'>{product.transmission.transmission_name}</div>
                             </div>
                           </div>
@@ -145,7 +145,7 @@ export default function DetailProduct(props) {
                         <div className='my-2'>
                           <div className='grid grid-cols-2 gap-10 p-4 border-b'>
                             <div className='text-left'>
-                              <img className='w-8 h-8' src='http://admin.otomobilku.test/storage/images/racing.png' />
+                              <img className='w-8 h-8' src='http://admin.otomobilku.id/storage/images/racing.png' />
                             </div>
                             <div className='text-right'>
                               {product.distance} Kilometer
@@ -180,7 +180,7 @@ export default function DetailProduct(props) {
                               <img
                                 key={i}
                                 onClick={() => onClickImage(i)}
-                                src={`http://otomobilku.test/storage/${img.path}`}
+                                src={`http://otomobilku.id/storage/${img.path}`}
                                 className="w-52 object-center object-cover mx-2 rounded-md"
                               />
                             )

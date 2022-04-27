@@ -10633,7 +10633,7 @@ function ListProduct(props) {
       title: "Situs Jual Beli Mobil Online"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
       id: "top",
-      className: "grid grid-cols-3 gap-4 sm:grid-cols-1",
+      className: "grid grid-cols-3 gap-4",
       children: isLoading ? loading() : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment, {
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
           className: "mr-6",
@@ -10927,7 +10927,7 @@ function ListProduct(props) {
                 className: "w-full flex justify-center",
                 children: loading()
               }) : null, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-                className: "mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8",
+                className: "mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:gap-x-8",
                 children: !loadProduct ? products.data.map(function (product) {
                   var _product$district, _product$district2;
 
