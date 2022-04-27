@@ -47,7 +47,7 @@ export default function ListProduct(props) {
 
   const [value, setValue] = useState({
     page: 1,
-    limit: 12
+    limit: 20
   })
 
   params.delete('page')
