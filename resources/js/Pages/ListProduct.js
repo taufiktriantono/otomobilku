@@ -387,7 +387,7 @@ export default function ListProduct(props) {
   return (
     <Layout q={keyword}>
         <Head title='Situs Jual Beli Mobil Online' />
-        <div id='top' className='grid grid-cols-3 gap-4'>
+        <div id='top' className='grid grid-cols-4 gap-4'>
           {
             isLoading ? loading() :
             (
@@ -557,7 +557,7 @@ export default function ListProduct(props) {
                     </div>
                   </div>
                 </div>
-                <div className='w-full px-8 sm:px-0 md:col-span-2'>
+                <div className='w-full px-8 sm:px-0 md:col-span-3'>
 
                   {/* Urutkan */}
                   <div className='flex justify-between'>

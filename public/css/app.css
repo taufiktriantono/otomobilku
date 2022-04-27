@@ -637,9 +637,6 @@ select {
 .left-0 {
   left: 0px;
 }
-.left-1\/2 {
-  left: 50%;
-}
 .z-0 {
   z-index: 0;
 }
@@ -669,10 +666,6 @@ select {
 .mx-2 {
   margin-left: 0.5rem;
   margin-right: 0.5rem;
-}
-.-my-2 {
-  margin-top: -0.5rem;
-  margin-bottom: -0.5rem;
 }
 .ml-3 {
   margin-left: 0.75rem;
@@ -746,15 +739,6 @@ select {
 .mb-2 {
   margin-bottom: 0.5rem;
 }
-.-ml-4 {
-  margin-left: -1rem;
-}
-.mt-5 {
-  margin-top: 1.25rem;
-}
-.ml-8 {
-  margin-left: 2rem;
-}
 .block {
   display: block;
 }
@@ -769,9 +753,6 @@ select {
 }
 .table {
   display: table;
-}
-.flow-root {
-  display: flow-root;
 }
 .grid {
   display: grid;
@@ -890,9 +871,6 @@ select {
 .w-64 {
   width: 16rem;
 }
-.w-screen {
-  width: 100vw;
-}
 .max-w-xl {
   max-width: 36rem;
 }
@@ -904,9 +882,6 @@ select {
 }
 .max-w-2xl {
   max-width: 42rem;
-}
-.max-w-md {
-  max-width: 28rem;
 }
 .flex-1 {
   flex: 1 1 0%;
@@ -932,18 +907,6 @@ select {
 }
 .translate-x-0 {
   --tw-translate-x: 0px;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-.translate-y-1 {
-  --tw-translate-y: 0.25rem;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-.translate-y-0 {
-  --tw-translate-y: 0px;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-.-translate-x-1\/2 {
-  --tw-translate-x: -50%;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 .rotate-180 {
@@ -1039,9 +1002,6 @@ select {
 .gap-10 {
   gap: 2.5rem;
 }
-.gap-6 {
-  gap: 1.5rem;
-}
 .gap-y-8 {
   row-gap: 2rem;
 }
@@ -1088,16 +1048,6 @@ select {
   --tw-space-x-reverse: 0;
   margin-right: calc(-1px * var(--tw-space-x-reverse));
   margin-left: calc(-1px * calc(1 - var(--tw-space-x-reverse)));
-}
-.space-x-10 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-x-reverse: 0;
-  margin-right: calc(2.5rem * var(--tw-space-x-reverse));
-  margin-left: calc(2.5rem * calc(1 - var(--tw-space-x-reverse)));
-}
-.space-y-4 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-y-reverse: 0;
-  margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
-  margin-bottom: calc(1rem * var(--tw-space-y-reverse));
 }
 .divide-y-2 > :not([hidden]) ~ :not([hidden]) {
   --tw-divide-y-reverse: 0;
@@ -1323,10 +1273,6 @@ select {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
 }
-.py-5 {
-  padding-top: 1.25rem;
-  padding-bottom: 1.25rem;
-}
 .pt-8 {
   padding-top: 2rem;
 }
@@ -1453,9 +1399,6 @@ select {
 }
 .tracking-tight {
   letter-spacing: -0.025em;
-}
-.tracking-wide {
-  letter-spacing: 0.025em;
 }
 .text-gray-500 {
   --tw-text-opacity: 1;
@@ -1742,9 +1685,6 @@ input[type=number] {
 .focus\:ring-opacity-50:focus {
   --tw-ring-opacity: 0.5;
 }
-.focus\:ring-offset-2:focus {
-  --tw-ring-offset-width: 2px;
-}
 .focus-visible\:ring-2:focus-visible {
   --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
   --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
@@ -1784,10 +1724,6 @@ input[type=number] {
 .group:hover .group-hover\:text-gray-900 {
   --tw-text-opacity: 1;
   color: rgb(17 24 39 / var(--tw-text-opacity));
-}
-.group:hover .group-hover\:text-gray-500 {
-  --tw-text-opacity: 1;
-  color: rgb(107 114 128 / var(--tw-text-opacity));
 }
 .group:hover .group-hover\:opacity-75 {
   opacity: 0.75;
@@ -1911,32 +1847,12 @@ input[type=number] {
     justify-content: space-between;
   }
 
-  .sm\:gap-8 {
-    gap: 2rem;
-  }
-
-  .sm\:space-y-0 > :not([hidden]) ~ :not([hidden]) {
-    --tw-space-y-reverse: 0;
-    margin-top: calc(0px * calc(1 - var(--tw-space-y-reverse)));
-    margin-bottom: calc(0px * var(--tw-space-y-reverse));
-  }
-
-  .sm\:space-x-10 > :not([hidden]) ~ :not([hidden]) {
-    --tw-space-x-reverse: 0;
-    margin-right: calc(2.5rem * var(--tw-space-x-reverse));
-    margin-left: calc(2.5rem * calc(1 - var(--tw-space-x-reverse)));
-  }
-
   .sm\:rounded-lg {
     border-radius: 0.5rem;
   }
 
   .sm\:p-4 {
     padding: 1rem;
-  }
-
-  .sm\:p-8 {
-    padding: 2rem;
   }
 
   .sm\:px-6 {
@@ -1947,16 +1863,6 @@ input[type=number] {
   .sm\:px-0 {
     padding-left: 0px;
     padding-right: 0px;
-  }
-
-  .sm\:px-8 {
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
-
-  .sm\:py-8 {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
   }
 
   .sm\:pt-0 {
@@ -1987,36 +1893,20 @@ input[type=number] {
     grid-column: span 2 / span 2;
   }
 
-  .md\:flex {
-    display: flex;
+  .md\:col-span-3 {
+    grid-column: span 3 / span 3;
   }
 
   .md\:hidden {
     display: none;
   }
 
-  .md\:h-10 {
-    height: 2.5rem;
-  }
-
-  .md\:flex-1 {
-    flex: 1 1 0%;
-  }
-
   .md\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .md\:grid-cols-3 {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
   .md\:justify-start {
     justify-content: flex-start;
-  }
-
-  .md\:justify-between {
-    justify-content: space-between;
   }
 
   .md\:space-x-10 > :not([hidden]) ~ :not([hidden]) {
@@ -2035,10 +1925,6 @@ input[type=number] {
 }
 @media (min-width: 1024px) {
 
-  .lg\:left-1\/2 {
-    left: 50%;
-  }
-
   .lg\:col-span-2 {
     grid-column: span 2 / span 2;
   }
@@ -2053,10 +1939,6 @@ input[type=number] {
 
   .lg\:mt-0 {
     margin-top: 0px;
-  }
-
-  .lg\:ml-0 {
-    margin-left: 0px;
   }
 
   .lg\:grid {
@@ -2089,11 +1971,6 @@ input[type=number] {
 
   .lg\:flex-1 {
     flex: 1 1 0%;
-  }
-
-  .lg\:-translate-x-1\/2 {
-    --tw-translate-x: -50%;
-    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
   }
 
   .lg\:grid-cols-3 {

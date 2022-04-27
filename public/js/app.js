@@ -4275,7 +4275,7 @@ function ApplicationLogo(_ref) {
   var className = _ref.className;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
     className: "w-32",
-    src: 'http://otomobilku.test/storage/images/otomobilku_fix.png'
+    src: 'http://otomobilku.id/storage/images/otomobilku_fix.png'
   });
 }
 
@@ -5119,7 +5119,7 @@ function Layout(props) {
                               className: "flex",
                               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
                                 className: "w-10 h-10 object-cover mr-4",
-                                src: "http://otomobilku.test/storage/".concat((product === null || product === void 0 ? void 0 : product.images.length) > 0 ? product === null || product === void 0 ? void 0 : product.images[0].path : '')
+                                src: "http://otomobilku.id/storage/".concat((product === null || product === void 0 ? void 0 : product.images.length) > 0 ? product === null || product === void 0 ? void 0 : product.images[0].path : '')
                               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
                                 className: "block truncate font-normal",
                                 children: product.name
@@ -6188,7 +6188,7 @@ function ListProduct(props) {
                               d: "M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
                             })
                           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("img", {
-                            src: 'http://admin.otomobilku.test/storage/' + file.path
+                            src: 'http://admin.otomobilku.id/storage/' + file.path
                           })]
                         }, file.path);
                       }) : null
@@ -7346,7 +7346,7 @@ function DetailProduct(props) {
                             d: "M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
                           })
                         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("img", {
-                          src: 'http://admin.otomobilku.test/storage/' + file.path
+                          src: 'http://admin.otomobilku.id/storage/' + file.path
                         })]
                       }, file.path);
                     }) : null
@@ -8412,7 +8412,7 @@ function EditProduct(props) {
                               d: "M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
                             })
                           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("img", {
-                            src: 'http://admin.otomobilku.test/storage/' + file.path
+                            src: 'http://admin.otomobilku.id/storage/' + file.path
                           })]
                         }, file.path);
                       }) : null
@@ -8840,7 +8840,7 @@ function ListProduct(props) {
                 scope: "row",
                 className: "px-6 py-4 font-medium text-gray-900 whitespace-nowrap",
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("img", {
-                  src: (product === null || product === void 0 ? void 0 : product.images.length) > 0 ? "http://admin.otomobilku.test/storage/".concat(product === null || product === void 0 ? void 0 : product.images[0].path) : 'https://apollo-singapore.akamaized.net/v1/files/5lkbvosxkfc61-ID/image;s=780x0;q=60',
+                  src: (product === null || product === void 0 ? void 0 : product.images.length) > 0 ? "http://admin.otomobilku.id/storage/".concat(product === null || product === void 0 ? void 0 : product.images[0].path) : 'https://apollo-singapore.akamaized.net/v1/files/5lkbvosxkfc61-ID/image;s=780x0;q=60',
                   className: "w-20 h-10 object-center object-cover "
                 })
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("td", {
@@ -9733,10 +9733,10 @@ function DetailProduct(props) {
         content: "Otomobilku"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("meta", {
         property: "og:url",
-        content: "http://otomobilku.test/mobil-bekas/".concat(product === null || product === void 0 ? void 0 : product.slug)
+        content: "http://otomobilku.id/mobil-bekas/".concat(product === null || product === void 0 ? void 0 : product.slug)
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("meta", {
         property: "og:image",
-        content: "http://otomobilku.test/storage/".concat(product === null || product === void 0 ? void 0 : product.images[0].path)
+        content: "http://otomobilku.id/storage/".concat(product === null || product === void 0 ? void 0 : product.images[0].path)
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("meta", {
         property: "product:price:amount",
         content: product === null || product === void 0 ? void 0 : product.price
@@ -9760,7 +9760,7 @@ function DetailProduct(props) {
         content: product === null || product === void 0 ? void 0 : product.description
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("meta", {
         property: "twitter:image",
-        content: "http://otomobilku.test/storage/".concat(product === null || product === void 0 ? void 0 : product.images[0].path)
+        content: "http://otomobilku.id/storage/".concat(product === null || product === void 0 ? void 0 : product.images[0].path)
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("meta", {
         property: "twitter:data1",
         content: product === null || product === void 0 ? void 0 : product.price
@@ -9803,7 +9803,7 @@ function DetailProduct(props) {
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("li", {
                 className: "text-sm",
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("a", {
-                  href: "http://otomobilku.test/mobil-bekas/".concat(product.slug),
+                  href: "http://otomobilku.id/mobil-bekas/".concat(product.slug),
                   "aria-current": "page",
                   className: "font-medium text-gray-500 hover:text-gray-600",
                   children: product.name
@@ -9833,7 +9833,7 @@ function DetailProduct(props) {
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
               className: "lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8",
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("img", {
-                src: "http://otomobilku.test/storage/".concat(selectedImage === null || selectedImage === void 0 ? void 0 : selectedImage.path),
+                src: "http://otomobilku.id/storage/".concat(selectedImage === null || selectedImage === void 0 ? void 0 : selectedImage.path),
                 className: "w-full object-center object-cover rounded-md"
               })
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
@@ -9846,7 +9846,7 @@ function DetailProduct(props) {
                     className: "flex",
                     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("img", {
                       className: "w-8 h-8",
-                      src: "http://admin.otomobilku.test/storage/images/gasoline-pump.png"
+                      src: "http://admid/storage/images/gasoline-pump.png"
                     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
                       className: "ml-2 text-center",
                       children: product.fuel.fuel_name
@@ -9858,7 +9858,7 @@ function DetailProduct(props) {
                     className: "flex justify-end",
                     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("img", {
                       className: "w-8 h-8",
-                      src: "http://admin.otomobilku.test/storage/images/gear.png"
+                      src: "http://admin.otomobilku.id/storage/images/gear.png"
                     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
                       className: "ml-2",
                       children: product.transmission.transmission_name
@@ -9873,7 +9873,7 @@ function DetailProduct(props) {
                     className: "text-left",
                     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("img", {
                       className: "w-8 h-8",
-                      src: "http://admin.otomobilku.test/storage/images/racing.png"
+                      src: "http://admin.otomobilku.id/storage/images/racing.png"
                     })
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
                     className: "text-right",
@@ -9935,7 +9935,7 @@ function DetailProduct(props) {
                     onClick: function onClick() {
                       return onClickImage(i);
                     },
-                    src: "http://otomobilku.test/storage/".concat(img.path),
+                    src: "http://otomobilku.id/storage/".concat(img.path),
                     className: "w-52 object-center object-cover mx-2 rounded-md"
                   }, i);
                 })
@@ -9993,14 +9993,68 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 var params = new URLSearchParams();
 function Home(props) {
+  var _product, _product2, _product3, _product4, _product5, _product6, _product7, _product8, _product9, _product10, _product11, _product12, _product13, _product14;
+
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Layouts_Main__WEBPACK_IMPORTED_MODULE_0__["default"], {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__.Head, {
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("meta", {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__.Head, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("meta", {
         property: "title",
         content: "Situs Jual Beli Mobil Online"
-      })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("meta", {
+        property: "description",
+        content: (_product = product) === null || _product === void 0 ? void 0 : _product.description
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("meta", {
+        property: "og:title",
+        content: "".concat((_product2 = product) === null || _product2 === void 0 ? void 0 : _product2.models.brand.name, " ").concat((_product3 = product) === null || _product3 === void 0 ? void 0 : _product3.models.name, " ").concat((_product4 = product) === null || _product4 === void 0 ? void 0 : _product4.build_year)
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("meta", {
+        property: "og:description",
+        content: (_product5 = product) === null || _product5 === void 0 ? void 0 : _product5.description
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("meta", {
+        property: "og:type",
+        content: 'product'
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("meta", {
+        property: "og:site_name",
+        content: "Otomobilku"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("meta", {
+        property: "og:url",
+        content: "http://otomobilku.id/mobil-bekas/".concat((_product6 = product) === null || _product6 === void 0 ? void 0 : _product6.slug)
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("meta", {
+        property: "og:image",
+        content: "http://otomobilku.id/storage/".concat((_product7 = product) === null || _product7 === void 0 ? void 0 : _product7.images[0].path)
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("meta", {
+        property: "product:price:amount",
+        content: (_product8 = product) === null || _product8 === void 0 ? void 0 : _product8.price
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("meta", {
+        property: "product:price:currency",
+        content: 'IDR'
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("meta", {
+        property: "twitter:card",
+        content: 'product'
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("meta", {
+        property: "twitter:site",
+        content: '@otomobilku.com'
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("meta", {
+        property: "twitter:creator",
+        content: '@otomobilku.com'
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("meta", {
+        property: "twitter:title",
+        content: "".concat((_product9 = product) === null || _product9 === void 0 ? void 0 : _product9.models.brand.name, " ").concat((_product10 = product) === null || _product10 === void 0 ? void 0 : _product10.models.name, " ").concat((_product11 = product) === null || _product11 === void 0 ? void 0 : _product11.build_year)
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("meta", {
+        property: "twitter:description",
+        content: (_product12 = product) === null || _product12 === void 0 ? void 0 : _product12.description
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("meta", {
+        property: "twitter:image",
+        content: "http://otomobilku.id/storage/".concat((_product13 = product) === null || _product13 === void 0 ? void 0 : _product13.images[0].path)
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("meta", {
+        property: "twitter:data1",
+        content: (_product14 = product) === null || _product14 === void 0 ? void 0 : _product14.price
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("meta", {
+        property: "twitter:label1",
+        content: 'Harga'
+      })]
     })
   });
 }
@@ -10633,7 +10687,7 @@ function ListProduct(props) {
       title: "Situs Jual Beli Mobil Online"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
       id: "top",
-      className: "grid grid-cols-3 gap-4",
+      className: "grid grid-cols-4 gap-4",
       children: isLoading ? loading() : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment, {
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
           className: "mr-6",
@@ -10895,7 +10949,7 @@ function ListProduct(props) {
             })]
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-          className: "w-full px-8 sm:px-0 md:col-span-2",
+          className: "w-full px-8 sm:px-0 md:col-span-3",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
             className: "flex justify-between",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
@@ -10927,7 +10981,7 @@ function ListProduct(props) {
                 className: "w-full flex justify-center",
                 children: loading()
               }) : null, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-                className: "mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:gap-x-8",
+                className: "mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8",
                 children: !loadProduct ? products.data.map(function (product) {
                   var _product$district, _product$district2;
 
@@ -10936,7 +10990,7 @@ function ListProduct(props) {
                     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
                       className: "w-full h-60 bg-gray-200 aspect-w-1 aspect-h-1 overflow-hidden group-hover:opacity-75 lg:h-60 lg:aspect-none",
                       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("img", {
-                        src: (product === null || product === void 0 ? void 0 : product.images.length) > 0 ? "http://otomobilku.test/storage/".concat(product === null || product === void 0 ? void 0 : product.images[0].path) : 'https://apollo-singapore.akamaized.net/v1/files/5lkbvosxkfc61-ID/image;s=780x0;q=60',
+                        src: (product === null || product === void 0 ? void 0 : product.images.length) > 0 ? "http://otomobilku.id/storage/".concat(product === null || product === void 0 ? void 0 : product.images[0].path) : '',
                         className: "w-full h-full object-center object-cover lg:w-full lg:h-full"
                       })
                     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
