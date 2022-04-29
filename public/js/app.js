@@ -9601,7 +9601,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/utils */ "./resources/js/utils.js");
 /* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var react_slideshow_image__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-slideshow-image */ "./node_modules/react-slideshow-image/dist/react-slideshow-image.min.js");
+/* harmony import */ var react_slideshow_image__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_slideshow_image__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var react_slideshow_image_dist_styles_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-slideshow-image/dist/styles.css */ "./node_modules/react-slideshow-image/dist/styles.css");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -9619,6 +9622,8 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
 
 
 
@@ -9694,18 +9699,18 @@ function DetailProduct(props) {
   }, [fetchProduct]);
 
   var loading = function loading() {
-    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
       className: "flex justify-center",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("svg", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("svg", {
         role: "status",
         className: "mr-2 w-10 h-10 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600",
         viewBox: "0 0 100 101",
         fill: "none",
         xmlns: "http://www.w3.org/2000/svg",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("path", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("path", {
           d: "M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z",
           fill: "currentColor"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("path", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("path", {
           d: "M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z",
           fill: "currentFill"
         })]
@@ -9713,80 +9718,80 @@ function DetailProduct(props) {
     });
   };
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_Layouts_Main__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_4__.Head, {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_Layouts_Main__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_4__.Head, {
       title: product ? "".concat(product === null || product === void 0 ? void 0 : product.models.brand.name, " ").concat(product === null || product === void 0 ? void 0 : product.models.name, " ").concat(product === null || product === void 0 ? void 0 : product.build_year) : 'Detail Product',
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("meta", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("meta", {
         property: "description",
         content: product === null || product === void 0 ? void 0 : product.description
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("meta", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("meta", {
         property: "og:title",
         content: "".concat(product === null || product === void 0 ? void 0 : product.models.brand.name, " ").concat(product === null || product === void 0 ? void 0 : product.models.name, " ").concat(product === null || product === void 0 ? void 0 : product.build_year)
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("meta", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("meta", {
         property: "og:description",
         content: product === null || product === void 0 ? void 0 : product.description
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("meta", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("meta", {
         property: "og:type",
         content: 'product'
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("meta", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("meta", {
         property: "og:site_name",
         content: "Otomobilku"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("meta", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("meta", {
         property: "og:url",
         content: "http://otomobilku.id/mobil-bekas/".concat(product === null || product === void 0 ? void 0 : product.slug)
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("meta", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("meta", {
         property: "og:image",
         content: "http://otomobilku.id/storage/".concat(product === null || product === void 0 ? void 0 : product.images[0].path)
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("meta", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("meta", {
         property: "product:price:amount",
         content: product === null || product === void 0 ? void 0 : product.price
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("meta", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("meta", {
         property: "product:price:currency",
         content: 'IDR'
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("meta", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("meta", {
         property: "twitter:card",
         content: 'product'
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("meta", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("meta", {
         property: "twitter:site",
         content: '@otomobilku.com'
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("meta", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("meta", {
         property: "twitter:creator",
         content: '@otomobilku.com'
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("meta", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("meta", {
         property: "twitter:title",
         content: "".concat(product === null || product === void 0 ? void 0 : product.models.brand.name, " ").concat(product === null || product === void 0 ? void 0 : product.models.name, " ").concat(product === null || product === void 0 ? void 0 : product.build_year)
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("meta", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("meta", {
         property: "twitter:description",
         content: product === null || product === void 0 ? void 0 : product.description
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("meta", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("meta", {
         property: "twitter:image",
         content: "http://otomobilku.id/storage/".concat(product === null || product === void 0 ? void 0 : product.images[0].path)
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("meta", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("meta", {
         property: "twitter:data1",
         content: product === null || product === void 0 ? void 0 : product.price
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("meta", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("meta", {
         property: "twitter:label1",
         content: 'Harga'
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
       className: "bg-white",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
         className: "pt-2",
-        children: isLoading ? loading() : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment, {
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("nav", {
+        children: isLoading ? loading() : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.Fragment, {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("nav", {
             "aria-label": "Breadcrumb",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("ol", {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("ol", {
               role: "list",
               className: "max-w-2xl mx-auto px-4 flex items-center space-x-2 sm:px-6 lg:max-w-7xl lg:px-8",
               children: [breadcrumb.map(function (breadcrumb) {
-                return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("li", {
-                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+                return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("li", {
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
                     className: "flex items-center",
-                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("a", {
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("a", {
                       href: '/',
                       className: "mr-2 text-sm font-medium text-gray-900",
                       children: breadcrumb.name
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("svg", {
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("svg", {
                       width: 16,
                       height: 20,
                       viewBox: "0 0 16 20",
@@ -9794,15 +9799,15 @@ function DetailProduct(props) {
                       xmlns: "http://www.w3.org/2000/svg",
                       "aria-hidden": "true",
                       className: "w-4 h-5 text-gray-300",
-                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("path", {
+                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("path", {
                         d: "M5.697 4.34L8.98 16.532h1.327L7.025 4.341H5.697z"
                       })
                     })]
                   })
                 }, breadcrumb);
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("li", {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("li", {
                 className: "text-sm",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("a", {
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("a", {
                   href: "http://otomobilku.id/mobil-bekas/".concat(product.slug),
                   "aria-current": "page",
                   className: "font-medium text-gray-500 hover:text-gray-600",
@@ -9810,150 +9815,159 @@ function DetailProduct(props) {
                 })
               })]
             })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
             className: "max-w-2xl mx-auto py-4 px-4 sm:px-6 lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-3 lg:grid-rows-[auto,auto,1fr] lg:gap-x-8",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-              className: "lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h1", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+              className: "lg:col-span-2  lg:border-gray-200 lg:pr-8",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("h1", {
                 className: "text-2xl font-extrabold tracking-tight text-gray-900 sm:text-3xl",
                 children: product.name
               })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
               className: "mt-4 lg:mt-0 lg:row-span-3",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("p", {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("p", {
                 className: "text-3xl text-gray-900 text-right",
                 children: formatRupiah(product.price)
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("p", {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("p", {
                 className: "text-sm text-right",
                 children: ["Tanggal Posting: ", (0,_utils__WEBPACK_IMPORTED_MODULE_3__.formatDate)(product.created_at)]
               })]
             })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
             className: "max-w-2xl mx-auto py-4 px-4 sm:px-6 lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-3 lg:grid-rows-[auto,auto,1fr] lg:gap-x-8",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-              className: "lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("img", {
-                src: "http://otomobilku.id/storage/".concat(selectedImage === null || selectedImage === void 0 ? void 0 : selectedImage.path),
-                className: "w-full object-center object-cover rounded-md"
-              })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+              className: "bg-black p-4 rounded-md lg:col-span-2  lg:border-gray-200 lg:pr-8",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+                className: "w-full",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_slideshow_image__WEBPACK_IMPORTED_MODULE_5__.Slide, {
+                  children: product.images.map(function (img, i) {
+                    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+                      className: "each-slide flex justify-center",
+                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("img", {
+                        src: "http://otomobilku.test/storage/".concat(selectedImage === null || selectedImage === void 0 ? void 0 : selectedImage.path),
+                        className: "object-center object-fill rounded-md",
+                        style: {
+                          maxHeight: "350px"
+                        }
+                      })
+                    }, i);
+                  })
+                })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+                className: "lg:col-span-2 lg:pr-8 mt-4",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+                  className: "flex w-full overflow-y-auto",
+                  children: product.images.map(function (img, i) {
+                    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("img", {
+                      src: "http://otomobilku.test/storage/".concat(img.path),
+                      className: "w-52 object-center object-cover mr-3 rounded-md cursor-pointer"
+                    }, i);
+                  })
+                })
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
               className: "font-bold",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
                 className: "grid grid-cols-2 gap-10 p-4 border-b",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
                   className: "text-left",
-                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
                     className: "flex",
-                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("img", {
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("img", {
                       className: "w-8 h-8",
-                      src: "http://admid/storage/images/gasoline-pump.png"
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+                      src: "http://otomobilku.id/storage/images/gasoline-pump.png"
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
                       className: "ml-2 text-center",
                       children: product.fuel.fuel_name
                     })]
                   })
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
                   className: "text-right",
-                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
                     className: "flex justify-end",
-                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("img", {
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("img", {
                       className: "w-8 h-8",
-                      src: "http://admin.otomobilku.id/storage/images/gear.png"
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+                      src: "http://otomobilku.id/storage/images/gear.png"
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
                       className: "ml-2",
                       children: product.transmission.transmission_name
                     })]
                   })
                 })]
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
                 className: "my-2",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
                   className: "grid grid-cols-2 gap-10 p-4 border-b",
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
                     className: "text-left",
-                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("img", {
+                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("img", {
                       className: "w-8 h-8",
-                      src: "http://admin.otomobilku.id/storage/images/racing.png"
+                      src: "http://otomobilku.id/storage/images/racing.png"
                     })
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
                     className: "text-right",
                     children: [product.distance, " Kilometer"]
                   })]
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
                   className: "grid grid-cols-2 gap-10 p-4 border-b",
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
                     className: "text-left",
-                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("svg", {
+                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("svg", {
                       xmlns: "http://www.w3.org/2000/svg",
                       className: "h-8 w-8",
                       fill: "none",
                       viewBox: "0 0 24 24",
                       stroke: "currentColor",
                       strokeWidth: 2,
-                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("path", {
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("path", {
                         strokeLinecap: "round",
                         strokeLinejoin: "round",
                         d: "M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("path", {
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("path", {
                         strokeLinecap: "round",
                         strokeLinejoin: "round",
                         d: "M15 11a3 3 0 11-6 0 3 3 0 016 0z"
                       })]
                     })
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
                     className: "text-right",
                     children: [product.district.district_name, ", ", product.district.city.city_name]
                   })]
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-                  className: "h-48"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
                   className: "w-full bg-emerald-600 rounded",
-                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("a", {
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("a", {
                     className: "flex justify-center py-2",
                     href: "https://wa.me/".concat(cs_phone, "?text=http://ottomobilku.test/items/").concat(product.slug, "%0ASaya%20tertarik%20dengan%20mobil%20ini"),
                     target: '_blank',
-                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("svg", {
+                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("svg", {
                       className: "h-8 w-auto",
                       fill: "#ffffff",
                       xmlns: "http://www.w3.org/2000/svg",
                       viewBox: "0 0 24 24",
                       width: "24px",
                       height: "24px",
-                      children: ["    ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("path", {
+                      children: ["    ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("path", {
                         d: "M 12.011719 2 C 6.5057187 2 2.0234844 6.478375 2.0214844 11.984375 C 2.0204844 13.744375 2.4814687 15.462563 3.3554688 16.976562 L 2 22 L 7.2324219 20.763672 C 8.6914219 21.559672 10.333859 21.977516 12.005859 21.978516 L 12.009766 21.978516 C 17.514766 21.978516 21.995047 17.499141 21.998047 11.994141 C 22.000047 9.3251406 20.962172 6.8157344 19.076172 4.9277344 C 17.190172 3.0407344 14.683719 2.001 12.011719 2 z M 12.009766 4 C 14.145766 4.001 16.153109 4.8337969 17.662109 6.3417969 C 19.171109 7.8517969 20.000047 9.8581875 19.998047 11.992188 C 19.996047 16.396187 16.413812 19.978516 12.007812 19.978516 C 10.674812 19.977516 9.3544062 19.642812 8.1914062 19.007812 L 7.5175781 18.640625 L 6.7734375 18.816406 L 4.8046875 19.28125 L 5.2851562 17.496094 L 5.5019531 16.695312 L 5.0878906 15.976562 C 4.3898906 14.768562 4.0204844 13.387375 4.0214844 11.984375 C 4.0234844 7.582375 7.6067656 4 12.009766 4 z M 8.4765625 7.375 C 8.3095625 7.375 8.0395469 7.4375 7.8105469 7.6875 C 7.5815469 7.9365 6.9355469 8.5395781 6.9355469 9.7675781 C 6.9355469 10.995578 7.8300781 12.182609 7.9550781 12.349609 C 8.0790781 12.515609 9.68175 15.115234 12.21875 16.115234 C 14.32675 16.946234 14.754891 16.782234 15.212891 16.740234 C 15.670891 16.699234 16.690438 16.137687 16.898438 15.554688 C 17.106437 14.971687 17.106922 14.470187 17.044922 14.367188 C 16.982922 14.263188 16.816406 14.201172 16.566406 14.076172 C 16.317406 13.951172 15.090328 13.348625 14.861328 13.265625 C 14.632328 13.182625 14.464828 13.140625 14.298828 13.390625 C 14.132828 13.640625 13.655766 14.201187 13.509766 14.367188 C 13.363766 14.534188 13.21875 14.556641 12.96875 14.431641 C 12.71875 14.305641 11.914938 14.041406 10.960938 13.191406 C 10.218937 12.530406 9.7182656 11.714844 9.5722656 11.464844 C 9.4272656 11.215844 9.5585938 11.079078 9.6835938 10.955078 C 9.7955938 10.843078 9.9316406 10.663578 10.056641 10.517578 C 10.180641 10.371578 10.223641 10.267562 10.306641 10.101562 C 10.389641 9.9355625 10.347156 9.7890625 10.285156 9.6640625 C 10.223156 9.5390625 9.737625 8.3065 9.515625 7.8125 C 9.328625 7.3975 9.131125 7.3878594 8.953125 7.3808594 C 8.808125 7.3748594 8.6425625 7.375 8.4765625 7.375 z"
                       })]
                     })
                   })
                 })]
               })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-              className: "lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8 mt-4",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-                className: "flex w-full overflow-y-auto",
-                children: product.images.map(function (img, i) {
-                  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("img", {
-                    onClick: function onClick() {
-                      return onClickImage(i);
-                    },
-                    src: "http://otomobilku.id/storage/".concat(img.path),
-                    className: "w-52 object-center object-cover mx-2 rounded-md"
-                  }, i);
-                })
-              })
             })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
             className: "max-w-2xl mx-auto pb-4 px-4 sm:px-6 lg:max-w-7xl lg:pt-4 lg:pb-24 lg:px-8 lg:grid lg:grid-cols-3 lg:grid-rows-[auto,auto,1fr] lg:gap-x-8",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-              className: "lg:pt-6 lg:pb-16 lg:col-start-1 lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h3", {
-                  className: "font-bold",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+              className: "lg:pt-4 lg:pb-16 lg:col-start-1 lg:col-span-2 lg:border-gray-200 lg:pr-8",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("h3", {
+                  className: "font-bold text-lg",
                   children: "Description"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
                   className: "space-y-6 mt-6",
-                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("p", {
-                    className: "text-base text-gray-900",
-                    children: product.description
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("textarea", {
+                    className: "w-full h-96 border-none text-base text-gray-900",
+                    value: product.description,
+                    disabled: true
                   })
                 })]
               })
@@ -10159,7 +10173,7 @@ function ListProduct(props) {
 
   var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)({
     page: 1,
-    limit: 12
+    limit: 20
   }),
       _useState8 = _slicedToArray(_useState7, 2),
       value = _useState8[0],
@@ -10986,81 +11000,88 @@ function ListProduct(props) {
                   var _product$district, _product$district2;
 
                   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-                    className: "group",
+                    className: "group relative",
                     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-                      className: "w-full h-60 bg-gray-200 aspect-w-1 aspect-h-1 overflow-hidden group-hover:opacity-75 lg:h-60 lg:aspect-none",
+                      className: "w-full bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:aspect-none",
+                      style: {
+                        height: "160px"
+                      },
                       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("img", {
                         src: (product === null || product === void 0 ? void 0 : product.images.length) > 0 ? "http://otomobilku.id/storage/".concat(product === null || product === void 0 ? void 0 : product.images[0].path) : '',
                         className: "w-full h-full object-center object-cover lg:w-full lg:h-full"
                       })
                     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-                      className: "px-2 my-2 flex justify-between",
+                      className: "mt-4 flex justify-between",
                       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
                         className: "w-full",
-                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-                          className: "flex justify-between",
-                          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h3", {
-                            className: "text-lg text-black-600 font-bold",
-                            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("a", {
-                              href: '#',
-                              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
-                                "aria-hidden": "true",
-                                className: "inset-0"
-                              }), formatRupiah(product.price)]
-                            })
+                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h3", {
+                          className: "text-lg text-black-600 font-bold",
+                          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("a", {
+                            href: route('show:product', {
+                              slug: product.slug
+                            }),
+                            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
+                              "aria-hidden": "true",
+                              className: "absolute inset-0"
+                            }), formatRupiah(product.price)]
                           })
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("p", {
+                          className: "h-10 mt-1 text-md font-bold text-gray-700 text-ellipsis",
+                          children: product.name
                         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("p", {
-                          className: "mt-1 text-sm text-black-700",
-                          children: [product !== null && product !== void 0 && product.build_year ? product === null || product === void 0 ? void 0 : product.build_year : '-', " - ", product === null || product === void 0 ? void 0 : product.distance, " km"]
-                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("p", {
-                          className: "h-10 mt-1 text-md font-bold text-gray-700",
-                          children: [product.name, " (", product.build_year, ")"]
+                          className: "mt-1 text-md font-bold text-gray-700",
+                          children: ["Tahun ", product.build_year]
                         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
                           className: "flex justify-between mt-1",
-                          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("p", {
+                          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
                             className: "mt-1 text-sm font-bold text-gray-700",
                             children: product !== null && product !== void 0 && (_product$district = product.district) !== null && _product$district !== void 0 && _product$district.district_name ? product === null || product === void 0 ? void 0 : (_product$district2 = product.district) === null || _product$district2 === void 0 ? void 0 : _product$district2.district_name : '-'
-                          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("p", {
+                          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
                             className: "mt-1 text-xs font-bold text-gray-700",
                             children: formatDate(product.updated_at)
                           })]
                         })]
                       })
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-                      className: "flex justify-center",
-                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-                        className: "w-full bg-emerald-600 mr-1 rounded",
-                        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("a", {
-                          className: "flex justify-center py-2",
-                          href: "https://wa.me/".concat(cs_phone, "?text=http://ottomobilku.test/items/").concat(product.slug, "%0ASaya%20tertarik%20dengan%20mobil%20ini"),
-                          target: '_blank',
-                          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("svg", {
-                            className: "h-8 w-auto",
-                            fill: "#ffffff",
-                            xmlns: "http://www.w3.org/2000/svg",
-                            viewBox: "0 0 24 24",
-                            width: "24px",
-                            height: "24px",
-                            children: ["    ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("path", {
-                              d: "M 12.011719 2 C 6.5057187 2 2.0234844 6.478375 2.0214844 11.984375 C 2.0204844 13.744375 2.4814687 15.462563 3.3554688 16.976562 L 2 22 L 7.2324219 20.763672 C 8.6914219 21.559672 10.333859 21.977516 12.005859 21.978516 L 12.009766 21.978516 C 17.514766 21.978516 21.995047 17.499141 21.998047 11.994141 C 22.000047 9.3251406 20.962172 6.8157344 19.076172 4.9277344 C 17.190172 3.0407344 14.683719 2.001 12.011719 2 z M 12.009766 4 C 14.145766 4.001 16.153109 4.8337969 17.662109 6.3417969 C 19.171109 7.8517969 20.000047 9.8581875 19.998047 11.992188 C 19.996047 16.396187 16.413812 19.978516 12.007812 19.978516 C 10.674812 19.977516 9.3544062 19.642812 8.1914062 19.007812 L 7.5175781 18.640625 L 6.7734375 18.816406 L 4.8046875 19.28125 L 5.2851562 17.496094 L 5.5019531 16.695312 L 5.0878906 15.976562 C 4.3898906 14.768562 4.0204844 13.387375 4.0214844 11.984375 C 4.0234844 7.582375 7.6067656 4 12.009766 4 z M 8.4765625 7.375 C 8.3095625 7.375 8.0395469 7.4375 7.8105469 7.6875 C 7.5815469 7.9365 6.9355469 8.5395781 6.9355469 9.7675781 C 6.9355469 10.995578 7.8300781 12.182609 7.9550781 12.349609 C 8.0790781 12.515609 9.68175 15.115234 12.21875 16.115234 C 14.32675 16.946234 14.754891 16.782234 15.212891 16.740234 C 15.670891 16.699234 16.690438 16.137687 16.898438 15.554688 C 17.106437 14.971687 17.106922 14.470187 17.044922 14.367188 C 16.982922 14.263188 16.816406 14.201172 16.566406 14.076172 C 16.317406 13.951172 15.090328 13.348625 14.861328 13.265625 C 14.632328 13.182625 14.464828 13.140625 14.298828 13.390625 C 14.132828 13.640625 13.655766 14.201187 13.509766 14.367188 C 13.363766 14.534188 13.21875 14.556641 12.96875 14.431641 C 12.71875 14.305641 11.914938 14.041406 10.960938 13.191406 C 10.218937 12.530406 9.7182656 11.714844 9.5722656 11.464844 C 9.4272656 11.215844 9.5585938 11.079078 9.6835938 10.955078 C 9.7955938 10.843078 9.9316406 10.663578 10.056641 10.517578 C 10.180641 10.371578 10.223641 10.267562 10.306641 10.101562 C 10.389641 9.9355625 10.347156 9.7890625 10.285156 9.6640625 C 10.223156 9.5390625 9.737625 8.3065 9.515625 7.8125 C 9.328625 7.3975 9.131125 7.3878594 8.953125 7.3808594 C 8.808125 7.3748594 8.6425625 7.375 8.4765625 7.375 z"
-                            })]
-                          })
-                        })
-                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-                        className: "w-full flex justify-center bg-emerald-600 ml-1 rounded",
-                        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", {
-                          className: "w-full",
-                          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("a", {
-                            className: "w-full text-white font-bold",
-                            href: route('show:product', {
-                              slug: product.slug
-                            }),
-                            children: "Detail"
-                          })
-                        })
-                      })]
                     })]
-                  }, product.slug);
+                  }, product.id) // <div key={product.slug} className="group relative">
+                  //   <div className="w-full h-60 bg-gray-200 aspect-w-1 aspect-h-1 overflow-hidden group-hover:opacity-75 lg:h-60 lg:aspect-none">
+                  //     <img
+                  //       src={product?.images.length > 0 ? `http://otomobilku.id/storage/${product?.images[0].path}` : ''}
+                  //       className="w-full h-full object-center object-cover lg:w-full lg:h-full"
+                  //     />
+                  //   </div>
+                  //   <div className="px-2 my-2 flex justify-between">
+                  //     <div className='w-full'>
+                  //       <div className='flex justify-between'>
+                  //         <h3 className="text-lg text-black-600 font-bold">
+                  //           <a href={'#'}>
+                  //             <span aria-hidden="true" className="inset-0" />
+                  //             {formatRupiah(product.price)}
+                  //           </a>
+                  //         </h3>
+                  //       </div>
+                  //       <p className="mt-1 text-sm text-black-700">{product?.build_year ? product?.build_year : '-'} - {product?.distance} km</p>
+                  //       <p className="h-10 mt-1 text-md font-bold text-gray-700">{product.name} ({product.build_year})</p>
+                  //       <div className='flex justify-between mt-1'>
+                  //         <p className="mt-1 text-sm font-bold text-gray-700">{product?.district?.district_name ? product?.district?.district_name : '-'}</p>
+                  //         <p className="mt-1 text-xs font-bold text-gray-700">{formatDate(product.updated_at)}</p>
+                  //       </div>
+                  //     </div>
+                  //   </div>
+                  //   <div className='flex justify-center'>
+                  //     <div className='w-full bg-emerald-600 mr-1 rounded'>
+                  //       <a className='flex justify-center py-2' href={`https://wa.me/${cs_phone}?text=http://ottomobilku.test/items/${product.slug}%0ASaya%20tertarik%20dengan%20mobil%20ini`} target={'_blank'}>
+                  //         <svg className='h-8 w-auto' fill="#ffffff" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24" width="24px" height="24px">    <path d="M 12.011719 2 C 6.5057187 2 2.0234844 6.478375 2.0214844 11.984375 C 2.0204844 13.744375 2.4814687 15.462563 3.3554688 16.976562 L 2 22 L 7.2324219 20.763672 C 8.6914219 21.559672 10.333859 21.977516 12.005859 21.978516 L 12.009766 21.978516 C 17.514766 21.978516 21.995047 17.499141 21.998047 11.994141 C 22.000047 9.3251406 20.962172 6.8157344 19.076172 4.9277344 C 17.190172 3.0407344 14.683719 2.001 12.011719 2 z M 12.009766 4 C 14.145766 4.001 16.153109 4.8337969 17.662109 6.3417969 C 19.171109 7.8517969 20.000047 9.8581875 19.998047 11.992188 C 19.996047 16.396187 16.413812 19.978516 12.007812 19.978516 C 10.674812 19.977516 9.3544062 19.642812 8.1914062 19.007812 L 7.5175781 18.640625 L 6.7734375 18.816406 L 4.8046875 19.28125 L 5.2851562 17.496094 L 5.5019531 16.695312 L 5.0878906 15.976562 C 4.3898906 14.768562 4.0204844 13.387375 4.0214844 11.984375 C 4.0234844 7.582375 7.6067656 4 12.009766 4 z M 8.4765625 7.375 C 8.3095625 7.375 8.0395469 7.4375 7.8105469 7.6875 C 7.5815469 7.9365 6.9355469 8.5395781 6.9355469 9.7675781 C 6.9355469 10.995578 7.8300781 12.182609 7.9550781 12.349609 C 8.0790781 12.515609 9.68175 15.115234 12.21875 16.115234 C 14.32675 16.946234 14.754891 16.782234 15.212891 16.740234 C 15.670891 16.699234 16.690438 16.137687 16.898438 15.554688 C 17.106437 14.971687 17.106922 14.470187 17.044922 14.367188 C 16.982922 14.263188 16.816406 14.201172 16.566406 14.076172 C 16.317406 13.951172 15.090328 13.348625 14.861328 13.265625 C 14.632328 13.182625 14.464828 13.140625 14.298828 13.390625 C 14.132828 13.640625 13.655766 14.201187 13.509766 14.367188 C 13.363766 14.534188 13.21875 14.556641 12.96875 14.431641 C 12.71875 14.305641 11.914938 14.041406 10.960938 13.191406 C 10.218937 12.530406 9.7182656 11.714844 9.5722656 11.464844 C 9.4272656 11.215844 9.5585938 11.079078 9.6835938 10.955078 C 9.7955938 10.843078 9.9316406 10.663578 10.056641 10.517578 C 10.180641 10.371578 10.223641 10.267562 10.306641 10.101562 C 10.389641 9.9355625 10.347156 9.7890625 10.285156 9.6640625 C 10.223156 9.5390625 9.737625 8.3065 9.515625 7.8125 C 9.328625 7.3975 9.131125 7.3878594 8.953125 7.3808594 C 8.808125 7.3748594 8.6425625 7.375 8.4765625 7.375 z"/></svg>
+                  //       </a>
+                  //     </div>
+                  //     <div className='w-full flex justify-center bg-emerald-600 ml-1 rounded'>
+                  //       <button className='w-full'>
+                  //         <a className='w-full text-white font-bold' href={route('show:product', {slug: product.slug})}>Detail</a>
+                  //       </button>
+                  //     </div>
+                  //   </div>
+                  // </div>
+                  ;
                 }) : null
               })]
             })
@@ -11083,9 +11104,10 @@ function ListProduct(props) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
-/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
-/* harmony import */ var _inertiajs_progress__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @inertiajs/progress */ "./node_modules/@inertiajs/progress/dist/index.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var _inertiajs_progress__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @inertiajs/progress */ "./node_modules/@inertiajs/progress/dist/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 var _window$document$getE;
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
@@ -11101,8 +11123,9 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 
 
+
 var appName = ((_window$document$getE = window.document.getElementsByTagName('title')[0]) === null || _window$document$getE === void 0 ? void 0 : _window$document$getE.innerText) || 'Laravel';
-(0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__.createInertiaApp)({
+(0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__.createInertiaApp)({
   title: function title(_title) {
     return "".concat(_title, " - ").concat(appName);
   },
@@ -11113,10 +11136,15 @@ var appName = ((_window$document$getE = window.document.getElementsByTagName('ti
     var el = _ref.el,
         App = _ref.App,
         props = _ref.props;
-    return (0,react_dom__WEBPACK_IMPORTED_MODULE_1__.render)( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(App, _objectSpread({}, props)), el);
+    return (0,react_dom__WEBPACK_IMPORTED_MODULE_1__.render)( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(App, _objectSpread({}, props)), el);
   }
 });
-_inertiajs_progress__WEBPACK_IMPORTED_MODULE_3__.InertiaProgress.init({
+_inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__.Inertia.on('navigate', function (event) {
+  gtag('event', 'page_view', {
+    'page_location': event.detail.page.url
+  });
+});
+_inertiajs_progress__WEBPACK_IMPORTED_MODULE_4__.InertiaProgress.init({
   color: '#4B5563'
 });
 
@@ -11176,6 +11204,106 @@ var formatDate = function formatDate(value) {
 };
 
 
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./node_modules/react-slideshow-image/dist/styles.css":
+/*!**********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./node_modules/react-slideshow-image/dist/styles.css ***!
+  \**********************************************************************************************************************************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, ".react-slideshow-container{display:flex;align-items:center}.react-slideshow-container .nav{z-index:10}.react-slideshow-container .default-nav{height:30px;background:rgba(255,255,255,0.6);width:30px;border:0;text-align:center;cursor:pointer;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center}.react-slideshow-container .default-nav:hover,.react-slideshow-container .default-nav:focus{background:#fff;color:#666;outline:0}.react-slideshow-container .default-nav.disabled:hover{cursor:not-allowed}.react-slideshow-container .default-nav:first-of-type{margin-right:-30px;border-right:0;border-top:0}.react-slideshow-container .default-nav:last-of-type{margin-left:-30px}.react-slideshow-container+ul.indicators{display:flex;flex-wrap:wrap;justify-content:center;margin-top:20px}.react-slideshow-container+ul.indicators li{display:inline-block;position:relative;width:7px;height:7px;padding:5px;margin:0}.react-slideshow-container+ul.indicators .each-slideshow-indicator{border:0;opacity:.25;cursor:pointer;background:transparent;color:transparent}.react-slideshow-container+ul.indicators .each-slideshow-indicator:before{position:absolute;top:0;left:0;width:7px;height:7px;border-radius:50%;content:'';background:#000;text-align:center}.react-slideshow-container+ul.indicators .each-slideshow-indicator:hover,.react-slideshow-container+ul.indicators .each-slideshow-indicator.active,.react-slideshow-container+ul.indicators .each-slideshow-indicator:focus{opacity:.75;outline:0}.react-slideshow-fade-wrapper{width:100%;overflow:hidden}.react-slideshow-fade-wrapper .react-slideshow-fade-images-wrap{display:flex;flex-wrap:wrap}.react-slideshow-fade-wrapper .react-slideshow-fade-images-wrap>div{position:relative;opacity:0}.react-slideshow-wrapper.slide{width:100%;overflow:hidden}.react-slideshow-wrapper .images-wrap{display:flex;flex-wrap:wrap}.react-slideshow-zoom-wrapper{width:100%;overflow:hidden}.react-slideshow-zoom-wrapper .zoom-wrapper{display:flex;flex-wrap:wrap;overflow:hidden}.react-slideshow-zoom-wrapper .zoom-wrapper>div{position:relative;display:flex}\n", ""]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/runtime/api.js":
+/*!*****************************************************!*\
+  !*** ./node_modules/css-loader/dist/runtime/api.js ***!
+  \*****************************************************/
+/***/ ((module) => {
+
+"use strict";
+
+
+/*
+  MIT License http://www.opensource.org/licenses/mit-license.php
+  Author Tobias Koppers @sokra
+*/
+// css base code, injected by the css-loader
+// eslint-disable-next-line func-names
+module.exports = function (cssWithMappingToString) {
+  var list = []; // return the list of modules as css string
+
+  list.toString = function toString() {
+    return this.map(function (item) {
+      var content = cssWithMappingToString(item);
+
+      if (item[2]) {
+        return "@media ".concat(item[2], " {").concat(content, "}");
+      }
+
+      return content;
+    }).join("");
+  }; // import a list of modules into the list
+  // eslint-disable-next-line func-names
+
+
+  list.i = function (modules, mediaQuery, dedupe) {
+    if (typeof modules === "string") {
+      // eslint-disable-next-line no-param-reassign
+      modules = [[null, modules, ""]];
+    }
+
+    var alreadyImportedModules = {};
+
+    if (dedupe) {
+      for (var i = 0; i < this.length; i++) {
+        // eslint-disable-next-line prefer-destructuring
+        var id = this[i][0];
+
+        if (id != null) {
+          alreadyImportedModules[id] = true;
+        }
+      }
+    }
+
+    for (var _i = 0; _i < modules.length; _i++) {
+      var item = [].concat(modules[_i]);
+
+      if (dedupe && alreadyImportedModules[item[0]]) {
+        // eslint-disable-next-line no-continue
+        continue;
+      }
+
+      if (mediaQuery) {
+        if (!item[2]) {
+          item[2] = mediaQuery;
+        } else {
+          item[2] = "".concat(mediaQuery, " and ").concat(item[2]);
+        }
+      }
+
+      list.push(item);
+    }
+  };
+
+  return list;
+};
 
 /***/ }),
 
@@ -58385,6 +58513,18 @@ if (false) {} else {
 
 /***/ }),
 
+/***/ "./node_modules/react-slideshow-image/dist/react-slideshow-image.min.js":
+/*!******************************************************************************!*\
+  !*** ./node_modules/react-slideshow-image/dist/react-slideshow-image.min.js ***!
+  \******************************************************************************/
+/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+
+/* provided dependency */ var process = __webpack_require__(/*! process/browser.js */ "./node_modules/process/browser.js");
+!function(t,e){ true?module.exports=e(__webpack_require__(/*! react */ "./node_modules/react/index.js")):0}(this,(t=>(()=>{"use strict";var e={787:e=>{e.exports=t}},i={};function n(t){var r=i[t];if(void 0!==r)return r.exports;var o=i[t]={exports:{}};return e[t](o,o.exports,n),o.exports}n.n=t=>{var e=t&&t.__esModule?()=>t.default:()=>t;return n.d(e,{a:e}),e},n.d=(t,e)=>{for(var i in e)n.o(e,i)&&!n.o(t,i)&&Object.defineProperty(t,i,{enumerable:!0,get:e[i]})},n.g=function(){if("object"==typeof globalThis)return globalThis;try{return this||new Function("return this")()}catch(t){if("object"==typeof window)return window}}(),n.o=(t,e)=>Object.prototype.hasOwnProperty.call(t,e),n.r=t=>{"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(t,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(t,"__esModule",{value:!0})};var r={};return(()=>{n.r(r),n.d(r,{Fade:()=>mt,Slide:()=>ht,Zoom:()=>Tt});var t,e=n(787),i=n.n(e),o={Linear:{None:function(t){return t}},Quadratic:{In:function(t){return t*t},Out:function(t){return t*(2-t)},InOut:function(t){return(t*=2)<1?.5*t*t:-.5*(--t*(t-2)-1)}},Cubic:{In:function(t){return t*t*t},Out:function(t){return--t*t*t+1},InOut:function(t){return(t*=2)<1?.5*t*t*t:.5*((t-=2)*t*t+2)}},Quartic:{In:function(t){return t*t*t*t},Out:function(t){return 1- --t*t*t*t},InOut:function(t){return(t*=2)<1?.5*t*t*t*t:-.5*((t-=2)*t*t*t-2)}},Quintic:{In:function(t){return t*t*t*t*t},Out:function(t){return--t*t*t*t*t+1},InOut:function(t){return(t*=2)<1?.5*t*t*t*t*t:.5*((t-=2)*t*t*t*t+2)}},Sinusoidal:{In:function(t){return 1-Math.cos(t*Math.PI/2)},Out:function(t){return Math.sin(t*Math.PI/2)},InOut:function(t){return.5*(1-Math.cos(Math.PI*t))}},Exponential:{In:function(t){return 0===t?0:Math.pow(1024,t-1)},Out:function(t){return 1===t?1:1-Math.pow(2,-10*t)},InOut:function(t){return 0===t?0:1===t?1:(t*=2)<1?.5*Math.pow(1024,t-1):.5*(2-Math.pow(2,-10*(t-1)))}},Circular:{In:function(t){return 1-Math.sqrt(1-t*t)},Out:function(t){return Math.sqrt(1- --t*t)},InOut:function(t){return(t*=2)<1?-.5*(Math.sqrt(1-t*t)-1):.5*(Math.sqrt(1-(t-=2)*t)+1)}},Elastic:{In:function(t){return 0===t?0:1===t?1:-Math.pow(2,10*(t-1))*Math.sin(5*(t-1.1)*Math.PI)},Out:function(t){return 0===t?0:1===t?1:Math.pow(2,-10*t)*Math.sin(5*(t-.1)*Math.PI)+1},InOut:function(t){return 0===t?0:1===t?1:(t*=2)<1?-.5*Math.pow(2,10*(t-1))*Math.sin(5*(t-1.1)*Math.PI):.5*Math.pow(2,-10*(t-1))*Math.sin(5*(t-1.1)*Math.PI)+1}},Back:{In:function(t){var e=1.70158;return t*t*((e+1)*t-e)},Out:function(t){var e=1.70158;return--t*t*((e+1)*t+e)+1},InOut:function(t){var e=2.5949095;return(t*=2)<1?t*t*((e+1)*t-e)*.5:.5*((t-=2)*t*((e+1)*t+e)+2)}},Bounce:{In:function(t){return 1-o.Bounce.Out(1-t)},Out:function(t){return t<1/2.75?7.5625*t*t:t<2/2.75?7.5625*(t-=1.5/2.75)*t+.75:t<2.5/2.75?7.5625*(t-=2.25/2.75)*t+.9375:7.5625*(t-=2.625/2.75)*t+.984375},InOut:function(t){return t<.5?.5*o.Bounce.In(2*t):.5*o.Bounce.Out(2*t-1)+.5}}},s="undefined"==typeof self&&"undefined"!=typeof process&&process.hrtime?function(){var t=process.hrtime();return 1e3*t[0]+t[1]/1e6}:"undefined"!=typeof self&&void 0!==self.performance&&void 0!==self.performance.now?self.performance.now.bind(self.performance):void 0!==Date.now?Date.now:function(){return(new Date).getTime()},a=function(){function t(){this._tweens={},this._tweensAddedDuringUpdate={}}return t.prototype.getAll=function(){var t=this;return Object.keys(this._tweens).map((function(e){return t._tweens[e]}))},t.prototype.removeAll=function(){this._tweens={}},t.prototype.add=function(t){this._tweens[t.getId()]=t,this._tweensAddedDuringUpdate[t.getId()]=t},t.prototype.remove=function(t){delete this._tweens[t.getId()],delete this._tweensAddedDuringUpdate[t.getId()]},t.prototype.update=function(t,e){void 0===t&&(t=s()),void 0===e&&(e=!1);var i=Object.keys(this._tweens);if(0===i.length)return!1;for(;i.length>0;){this._tweensAddedDuringUpdate={};for(var n=0;n<i.length;n++){var r=this._tweens[i[n]],o=!e;r&&!1===r.update(t,o)&&!e&&delete this._tweens[i[n]]}i=Object.keys(this._tweensAddedDuringUpdate)}return!0},t}(),u={Linear:function(t,e){var i=t.length-1,n=i*e,r=Math.floor(n),o=u.Utils.Linear;return e<0?o(t[0],t[1],n):e>1?o(t[i],t[i-1],i-n):o(t[r],t[r+1>i?i:r+1],n-r)},Bezier:function(t,e){for(var i=0,n=t.length-1,r=Math.pow,o=u.Utils.Bernstein,s=0;s<=n;s++)i+=r(1-e,n-s)*r(e,s)*t[s]*o(n,s);return i},CatmullRom:function(t,e){var i=t.length-1,n=i*e,r=Math.floor(n),o=u.Utils.CatmullRom;return t[0]===t[i]?(e<0&&(r=Math.floor(n=i*(1+e))),o(t[(r-1+i)%i],t[r],t[(r+1)%i],t[(r+2)%i],n-r)):e<0?t[0]-(o(t[0],t[0],t[1],t[1],-n)-t[0]):e>1?t[i]-(o(t[i],t[i],t[i-1],t[i-1],n-i)-t[i]):o(t[r?r-1:0],t[r],t[i<r+1?i:r+1],t[i<r+2?i:r+2],n-r)},Utils:{Linear:function(t,e,i){return(e-t)*i+t},Bernstein:function(t,e){var i=u.Utils.Factorial;return i(t)/i(e)/i(t-e)},Factorial:(t=[1],function(e){var i=1;if(t[e])return t[e];for(var n=e;n>1;n--)i*=n;return t[e]=i,i}),CatmullRom:function(t,e,i,n,r){var o=.5*(i-t),s=.5*(n-e),a=r*r;return(2*e-2*i+o+s)*(r*a)+(-3*e+3*i-2*o-s)*a+o*r+e}}},c=function(){function t(){}return t.nextId=function(){return t._nextId++},t._nextId=0,t}(),h=new a,l=function(){function t(t,e){void 0===e&&(e=h),this._object=t,this._group=e,this._isPaused=!1,this._pauseStart=0,this._valuesStart={},this._valuesEnd={},this._valuesStartRepeat={},this._duration=1e3,this._initialRepeat=0,this._repeat=0,this._yoyo=!1,this._isPlaying=!1,this._reversed=!1,this._delayTime=0,this._startTime=0,this._easingFunction=o.Linear.None,this._interpolationFunction=u.Linear,this._chainedTweens=[],this._onStartCallbackFired=!1,this._id=c.nextId(),this._isChainStopped=!1,this._goToEnd=!1}return t.prototype.getId=function(){return this._id},t.prototype.isPlaying=function(){return this._isPlaying},t.prototype.isPaused=function(){return this._isPaused},t.prototype.to=function(t,e){return this._valuesEnd=Object.create(t),void 0!==e&&(this._duration=e),this},t.prototype.duration=function(t){return this._duration=t,this},t.prototype.start=function(t){if(this._isPlaying)return this;if(this._group&&this._group.add(this),this._repeat=this._initialRepeat,this._reversed)for(var e in this._reversed=!1,this._valuesStartRepeat)this._swapEndStartRepeatValues(e),this._valuesStart[e]=this._valuesStartRepeat[e];return this._isPlaying=!0,this._isPaused=!1,this._onStartCallbackFired=!1,this._isChainStopped=!1,this._startTime=void 0!==t?"string"==typeof t?s()+parseFloat(t):t:s(),this._startTime+=this._delayTime,this._setupProperties(this._object,this._valuesStart,this._valuesEnd,this._valuesStartRepeat),this},t.prototype._setupProperties=function(t,e,i,n){for(var r in i){var o=t[r],s=Array.isArray(o),a=s?"array":typeof o,u=!s&&Array.isArray(i[r]);if("undefined"!==a&&"function"!==a){if(u){var c=i[r];if(0===c.length)continue;c=c.map(this._handleRelativeValue.bind(this,o)),i[r]=[o].concat(c)}if("object"!==a&&!s||!o||u)void 0===e[r]&&(e[r]=o),s||(e[r]*=1),n[r]=u?i[r].slice().reverse():e[r]||0;else{for(var h in e[r]=s?[]:{},o)e[r][h]=o[h];n[r]=s?[]:{},this._setupProperties(o,e[r],i[r],n[r])}}}},t.prototype.stop=function(){return this._isChainStopped||(this._isChainStopped=!0,this.stopChainedTweens()),this._isPlaying?(this._group&&this._group.remove(this),this._isPlaying=!1,this._isPaused=!1,this._onStopCallback&&this._onStopCallback(this._object),this):this},t.prototype.end=function(){return this._goToEnd=!0,this.update(1/0),this},t.prototype.pause=function(t){return void 0===t&&(t=s()),this._isPaused||!this._isPlaying||(this._isPaused=!0,this._pauseStart=t,this._group&&this._group.remove(this)),this},t.prototype.resume=function(t){return void 0===t&&(t=s()),this._isPaused&&this._isPlaying?(this._isPaused=!1,this._startTime+=t-this._pauseStart,this._pauseStart=0,this._group&&this._group.add(this),this):this},t.prototype.stopChainedTweens=function(){for(var t=0,e=this._chainedTweens.length;t<e;t++)this._chainedTweens[t].stop();return this},t.prototype.group=function(t){return this._group=t,this},t.prototype.delay=function(t){return this._delayTime=t,this},t.prototype.repeat=function(t){return this._initialRepeat=t,this._repeat=t,this},t.prototype.repeatDelay=function(t){return this._repeatDelayTime=t,this},t.prototype.yoyo=function(t){return this._yoyo=t,this},t.prototype.easing=function(t){return this._easingFunction=t,this},t.prototype.interpolation=function(t){return this._interpolationFunction=t,this},t.prototype.chain=function(){for(var t=[],e=0;e<arguments.length;e++)t[e]=arguments[e];return this._chainedTweens=t,this},t.prototype.onStart=function(t){return this._onStartCallback=t,this},t.prototype.onUpdate=function(t){return this._onUpdateCallback=t,this},t.prototype.onRepeat=function(t){return this._onRepeatCallback=t,this},t.prototype.onComplete=function(t){return this._onCompleteCallback=t,this},t.prototype.onStop=function(t){return this._onStopCallback=t,this},t.prototype.update=function(t,e){if(void 0===t&&(t=s()),void 0===e&&(e=!0),this._isPaused)return!0;var i,n,r=this._startTime+this._duration;if(!this._goToEnd&&!this._isPlaying){if(t>r)return!1;e&&this.start(t)}if(this._goToEnd=!1,t<this._startTime)return!0;!1===this._onStartCallbackFired&&(this._onStartCallback&&this._onStartCallback(this._object),this._onStartCallbackFired=!0),n=(t-this._startTime)/this._duration,n=0===this._duration||n>1?1:n;var o=this._easingFunction(n);if(this._updateProperties(this._object,this._valuesStart,this._valuesEnd,o),this._onUpdateCallback&&this._onUpdateCallback(this._object,n),1===n){if(this._repeat>0){for(i in isFinite(this._repeat)&&this._repeat--,this._valuesStartRepeat)this._yoyo||"string"!=typeof this._valuesEnd[i]||(this._valuesStartRepeat[i]=this._valuesStartRepeat[i]+parseFloat(this._valuesEnd[i])),this._yoyo&&this._swapEndStartRepeatValues(i),this._valuesStart[i]=this._valuesStartRepeat[i];return this._yoyo&&(this._reversed=!this._reversed),void 0!==this._repeatDelayTime?this._startTime=t+this._repeatDelayTime:this._startTime=t+this._delayTime,this._onRepeatCallback&&this._onRepeatCallback(this._object),!0}this._onCompleteCallback&&this._onCompleteCallback(this._object);for(var a=0,u=this._chainedTweens.length;a<u;a++)this._chainedTweens[a].start(this._startTime+this._duration);return this._isPlaying=!1,!1}return!0},t.prototype._updateProperties=function(t,e,i,n){for(var r in i)if(void 0!==e[r]){var o=e[r]||0,s=i[r],a=Array.isArray(t[r]),u=Array.isArray(s);!a&&u?t[r]=this._interpolationFunction(s,n):"object"==typeof s&&s?this._updateProperties(t[r],o,s,n):"number"==typeof(s=this._handleRelativeValue(o,s))&&(t[r]=o+(s-o)*n)}},t.prototype._handleRelativeValue=function(t,e){return"string"!=typeof e?e:"+"===e.charAt(0)||"-"===e.charAt(0)?t+parseFloat(e):parseFloat(e)},t.prototype._swapEndStartRepeatValues=function(t){var e=this._valuesStartRepeat[t],i=this._valuesEnd[t];this._valuesStartRepeat[t]="string"==typeof i?this._valuesStartRepeat[t]+parseFloat(i):this._valuesEnd[t],this._valuesEnd[t]=e},t}(),p=c.nextId,d=h,f=d.getAll.bind(d),v=d.removeAll.bind(d),y=d.add.bind(d),m=d.remove.bind(d),b=d.update.bind(d);const g={Easing:o,Group:a,Interpolation:u,now:s,Sequence:c,nextId:p,Tween:l,VERSION:"18.6.4",getAll:f,removeAll:v,add:y,remove:m,update:b};var w=function(){if("undefined"!=typeof Map)return Map;function t(t,e){var i=-1;return t.some((function(t,n){return t[0]===e&&(i=n,!0)})),i}return function(){function e(){this.__entries__=[]}return Object.defineProperty(e.prototype,"size",{get:function(){return this.__entries__.length},enumerable:!0,configurable:!0}),e.prototype.get=function(e){var i=t(this.__entries__,e),n=this.__entries__[i];return n&&n[1]},e.prototype.set=function(e,i){var n=t(this.__entries__,e);~n?this.__entries__[n][1]=i:this.__entries__.push([e,i])},e.prototype.delete=function(e){var i=this.__entries__,n=t(i,e);~n&&i.splice(n,1)},e.prototype.has=function(e){return!!~t(this.__entries__,e)},e.prototype.clear=function(){this.__entries__.splice(0)},e.prototype.forEach=function(t,e){void 0===e&&(e=null);for(var i=0,n=this.__entries__;i<n.length;i++){var r=n[i];t.call(e,r[1],r[0])}},e}()}(),_="undefined"!=typeof window&&"undefined"!=typeof document&&window.document===document,S=void 0!==n.g&&n.g.Math===Math?n.g:"undefined"!=typeof self&&self.Math===Math?self:"undefined"!=typeof window&&window.Math===Math?window:Function("return this")(),O="function"==typeof requestAnimationFrame?requestAnimationFrame.bind(S):function(t){return setTimeout((function(){return t(Date.now())}),1e3/60)},T=["top","right","bottom","left","width","height","size","weight"],k="undefined"!=typeof MutationObserver,x=function(){function t(){this.connected_=!1,this.mutationEventsAdded_=!1,this.mutationsObserver_=null,this.observers_=[],this.onTransitionEnd_=this.onTransitionEnd_.bind(this),this.refresh=function(t,e){var i=!1,n=!1,r=0;function o(){i&&(i=!1,t()),n&&a()}function s(){O(o)}function a(){var t=Date.now();if(i){if(t-r<2)return;n=!0}else i=!0,n=!1,setTimeout(s,20);r=t}return a}(this.refresh.bind(this))}return t.prototype.addObserver=function(t){~this.observers_.indexOf(t)||this.observers_.push(t),this.connected_||this.connect_()},t.prototype.removeObserver=function(t){var e=this.observers_,i=e.indexOf(t);~i&&e.splice(i,1),!e.length&&this.connected_&&this.disconnect_()},t.prototype.refresh=function(){this.updateObservers_()&&this.refresh()},t.prototype.updateObservers_=function(){var t=this.observers_.filter((function(t){return t.gatherActive(),t.hasActive()}));return t.forEach((function(t){return t.broadcastActive()})),t.length>0},t.prototype.connect_=function(){_&&!this.connected_&&(document.addEventListener("transitionend",this.onTransitionEnd_),window.addEventListener("resize",this.refresh),k?(this.mutationsObserver_=new MutationObserver(this.refresh),this.mutationsObserver_.observe(document,{attributes:!0,childList:!0,characterData:!0,subtree:!0})):(document.addEventListener("DOMSubtreeModified",this.refresh),this.mutationEventsAdded_=!0),this.connected_=!0)},t.prototype.disconnect_=function(){_&&this.connected_&&(document.removeEventListener("transitionend",this.onTransitionEnd_),window.removeEventListener("resize",this.refresh),this.mutationsObserver_&&this.mutationsObserver_.disconnect(),this.mutationEventsAdded_&&document.removeEventListener("DOMSubtreeModified",this.refresh),this.mutationsObserver_=null,this.mutationEventsAdded_=!1,this.connected_=!1)},t.prototype.onTransitionEnd_=function(t){var e=t.propertyName,i=void 0===e?"":e;T.some((function(t){return!!~i.indexOf(t)}))&&this.refresh()},t.getInstance=function(){return this.instance_||(this.instance_=new t),this.instance_},t.instance_=null,t}(),E=function(t,e){for(var i=0,n=Object.keys(e);i<n.length;i++){var r=n[i];Object.defineProperty(t,r,{value:e[r],enumerable:!1,writable:!1,configurable:!0})}return t},C=function(t){return t&&t.ownerDocument&&t.ownerDocument.defaultView||S},M=A(0,0,0,0);function j(t){return parseFloat(t)||0}function P(t){for(var e=[],i=1;i<arguments.length;i++)e[i-1]=arguments[i];return e.reduce((function(e,i){return e+j(t["border-"+i+"-width"])}),0)}var I="undefined"!=typeof SVGGraphicsElement?function(t){return t instanceof C(t).SVGGraphicsElement}:function(t){return t instanceof C(t).SVGElement&&"function"==typeof t.getBBox};function R(t){return _?I(t)?function(t){var e=t.getBBox();return A(0,0,e.width,e.height)}(t):function(t){var e=t.clientWidth,i=t.clientHeight;if(!e&&!i)return M;var n=C(t).getComputedStyle(t),r=function(t){for(var e={},i=0,n=["top","right","bottom","left"];i<n.length;i++){var r=n[i],o=t["padding-"+r];e[r]=j(o)}return e}(n),o=r.left+r.right,s=r.top+r.bottom,a=j(n.width),u=j(n.height);if("border-box"===n.boxSizing&&(Math.round(a+o)!==e&&(a-=P(n,"left","right")+o),Math.round(u+s)!==i&&(u-=P(n,"top","bottom")+s)),!function(t){return t===C(t).document.documentElement}(t)){var c=Math.round(a+o)-e,h=Math.round(u+s)-i;1!==Math.abs(c)&&(a-=c),1!==Math.abs(h)&&(u-=h)}return A(r.left,r.top,a,u)}(t):M}function A(t,e,i,n){return{x:t,y:e,width:i,height:n}}var z=function(){function t(t){this.broadcastWidth=0,this.broadcastHeight=0,this.contentRect_=A(0,0,0,0),this.target=t}return t.prototype.isActive=function(){var t=R(this.target);return this.contentRect_=t,t.width!==this.broadcastWidth||t.height!==this.broadcastHeight},t.prototype.broadcastRect=function(){var t=this.contentRect_;return this.broadcastWidth=t.width,this.broadcastHeight=t.height,t},t}(),W=function(t,e){var i,n,r,o,s,a,u,c=(n=(i=e).x,r=i.y,o=i.width,s=i.height,a="undefined"!=typeof DOMRectReadOnly?DOMRectReadOnly:Object,u=Object.create(a.prototype),E(u,{x:n,y:r,width:o,height:s,top:r,right:n+o,bottom:s+r,left:n}),u);E(this,{target:t,contentRect:c})},D=function(){function t(t,e,i){if(this.activeObservations_=[],this.observations_=new w,"function"!=typeof t)throw new TypeError("The callback provided as parameter 1 is not a function.");this.callback_=t,this.controller_=e,this.callbackCtx_=i}return t.prototype.observe=function(t){if(!arguments.length)throw new TypeError("1 argument required, but only 0 present.");if("undefined"!=typeof Element&&Element instanceof Object){if(!(t instanceof C(t).Element))throw new TypeError('parameter 1 is not of type "Element".');var e=this.observations_;e.has(t)||(e.set(t,new z(t)),this.controller_.addObserver(this),this.controller_.refresh())}},t.prototype.unobserve=function(t){if(!arguments.length)throw new TypeError("1 argument required, but only 0 present.");if("undefined"!=typeof Element&&Element instanceof Object){if(!(t instanceof C(t).Element))throw new TypeError('parameter 1 is not of type "Element".');var e=this.observations_;e.has(t)&&(e.delete(t),e.size||this.controller_.removeObserver(this))}},t.prototype.disconnect=function(){this.clearActive(),this.observations_.clear(),this.controller_.removeObserver(this)},t.prototype.gatherActive=function(){var t=this;this.clearActive(),this.observations_.forEach((function(e){e.isActive()&&t.activeObservations_.push(e)}))},t.prototype.broadcastActive=function(){if(this.hasActive()){var t=this.callbackCtx_,e=this.activeObservations_.map((function(t){return new W(t.target,t.broadcastRect())}));this.callback_.call(t,e,t),this.clearActive()}},t.prototype.clearActive=function(){this.activeObservations_.splice(0)},t.prototype.hasActive=function(){return this.activeObservations_.length>0},t}(),N="undefined"!=typeof WeakMap?new WeakMap:new w,F=function t(e){if(!(this instanceof t))throw new TypeError("Cannot call a class as a function.");if(!arguments.length)throw new TypeError("1 argument required, but only 0 present.");var i=x.getInstance(),n=new D(e,i,this);N.set(this,n)};["observe","unobserve","disconnect"].forEach((function(t){F.prototype[t]=function(){var e;return(e=N.get(this))[t].apply(e,arguments)}}));const U=void 0!==S.ResizeObserver?S.ResizeObserver:F;function G(t){return G="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(t){return typeof t}:function(t){return t&&"function"==typeof Symbol&&t.constructor===Symbol&&t!==Symbol.prototype?"symbol":typeof t},G(t)}function B(t,e){var i=Object.keys(t);if(Object.getOwnPropertySymbols){var n=Object.getOwnPropertySymbols(t);e&&(n=n.filter((function(e){return Object.getOwnPropertyDescriptor(t,e).enumerable}))),i.push.apply(i,n)}return i}function X(t,e,i){return e in t?Object.defineProperty(t,e,{value:i,enumerable:!0,configurable:!0,writable:!0}):t[e]=i,t}var L={duration:5e3,transitionDuration:1e3,defaultIndex:0,infinite:!0,autoplay:!0,indicators:!1,arrows:!0,pauseOnHover:!0,scale:1,easing:"linear",canSwipe:!0,slidesToShow:1,slidesToScroll:1,cssClass:"",responsive:[]},q=function(t){var e,n=i().Children.map(t.children,(function(t){return t})),r={};if("undefined"!=typeof window&&Array.isArray(t.responsive)){var o=(e=window.innerWidth,t.responsive.find((function(t){return t.breakpoint<=e})));o&&(r=o.settings)}return function(t){for(var e=1;e<arguments.length;e++){var i=null!=arguments[e]?arguments[e]:{};e%2?B(i,!0).forEach((function(e){X(t,e,i[e])})):Object.getOwnPropertyDescriptors?Object.defineProperties(t,Object.getOwnPropertyDescriptors(i)):B(i).forEach((function(e){Object.defineProperty(t,e,Object.getOwnPropertyDescriptor(i,e))}))}return t}({},L,{},t,{},r,{children:n})},H={duration:"number",transitionDuration:"number",defaultIndex:"number",infinite:"boolean",indicators:["boolean","function"],autoplay:"boolean",arrows:"boolean",onChange:"function",pauseOnHover:"boolean",prevArrow:["object","function"],nextArrow:["object","function"],scale:"number",easing:"string",canSwipe:"boolean",slidesToShow:"number",slidesToScroll:"number",cssClass:"string",responsive:"array"},V=function(t){for(var e in t){var i=G(t[e]);H[e]&&(Array.isArray(H[e])&&!H[e].includes(i)?console.warn("".concat(e," must be of one of type ").concat(H[e].join(", "))):("array"!==H[e]||Array.isArray(t[e]))&&("array"===H[e]||Array.isArray(H[e])||i===H[e])||console.warn("".concat(e," must be of type ").concat(H[e])))}};function Q(){return Q=Object.assign||function(t){for(var e=1;e<arguments.length;e++){var i=arguments[e];for(var n in i)Object.prototype.hasOwnProperty.call(i,n)&&(t[n]=i[n])}return t},Q.apply(this,arguments)}function Z(t,e){var i=Object.keys(t);if(Object.getOwnPropertySymbols){var n=Object.getOwnPropertySymbols(t);e&&(n=n.filter((function(e){return Object.getOwnPropertyDescriptor(t,e).enumerable}))),i.push.apply(i,n)}return i}function J(t){for(var e=1;e<arguments.length;e++){var i=null!=arguments[e]?arguments[e]:{};e%2?Z(i,!0).forEach((function(e){K(t,e,i[e])})):Object.getOwnPropertyDescriptors?Object.defineProperties(t,Object.getOwnPropertyDescriptors(i)):Z(i).forEach((function(e){Object.defineProperty(t,e,Object.getOwnPropertyDescriptor(i,e))}))}return t}function K(t,e,i){return e in t?Object.defineProperty(t,e,{value:i,enumerable:!0,configurable:!0,writable:!0}):t[e]=i,t}var Y={linear:g.Easing.Linear.None,ease:g.Easing.Quadratic.InOut,"ease-in":g.Easing.Quadratic.In,"ease-out":g.Easing.Quadratic.Out,cubic:g.Easing.Cubic.InOut,"cubic-in":g.Easing.Cubic.In,"cubic-out":g.Easing.Cubic.Out},$=function(t){return Y[t]||Y.linear},tt=function(t,e){var i=Object.keys(t);return Object.keys(e).reduce((function(t,n){return-1===i.indexOf(n)&&(t[n]=e[n]),t}),{})},et=function(t,e,n){var r=t.prevArrow,o=t.infinite,s=e<=0&&!o,a={"data-type":"prev","aria-label":"Previous Slide",disabled:s,onClick:n};if(r)return i().cloneElement(r,J({className:"".concat(r.props.className," nav ").concat(s?"disabled":"")},a));var u="nav default-nav ".concat(s?"disabled":"");return i().createElement("button",Q({className:u},a),i().createElement("svg",{width:"24",height:"24",viewBox:"0 0 24 24"},i().createElement("path",{d:"M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z"})))},it=function(t,e,n){var r=t.nextArrow,o=t.infinite,s=t.children,a=t.slidesToScroll,u=e>=s.length-a&&!o,c={"data-type":"next","aria-label":"Next Slide",disabled:u,onClick:n};if(r)return i().cloneElement(r,J({className:"".concat(r.props.className," nav ").concat(u?"disabled":"")},c));var h="nav default-nav ".concat(u?"disabled":"");return i().createElement("button",Q({className:h},c),i().createElement("svg",{width:"24",height:"24",viewBox:"0 0 24 24"},i().createElement("path",{d:"M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z"})))},nt=function(t,e,n){var r=t.children,o=t.indicators,s=t.slidesToScroll,a="boolean"!=typeof o,u=Math.ceil(r.length/s);return i().createElement("ul",{className:"indicators"},Array.from({length:u},(function(t,r){var u={"data-key":r,"aria-label":"Go to slide ".concat(r+1),onClick:n},c=Math.floor((e+s-1)/s)===r;return a?function(t,e,n,r){return i().cloneElement(r,J({className:"".concat(r.props.className," ").concat(t?"active":""),key:e},n))}(c,r,u,o(r)):function(t,e,n){return i().createElement("li",{key:e},i().createElement("button",Q({className:"each-slideshow-indicator ".concat(t?"active":"")},n)))}(c,r,u)})))};function rt(t){return rt="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(t){return typeof t}:function(t){return t&&"function"==typeof Symbol&&t.constructor===Symbol&&t!==Symbol.prototype?"symbol":typeof t},rt(t)}function ot(){return ot=Object.assign||function(t){for(var e=1;e<arguments.length;e++){var i=arguments[e];for(var n in i)Object.prototype.hasOwnProperty.call(i,n)&&(t[n]=i[n])}return t},ot.apply(this,arguments)}function st(t,e){for(var i=0;i<e.length;i++){var n=e[i];n.enumerable=n.enumerable||!1,n.configurable=!0,"value"in n&&(n.writable=!0),Object.defineProperty(t,n.key,n)}}function at(t){return at=Object.setPrototypeOf?Object.getPrototypeOf:function(t){return t.__proto__||Object.getPrototypeOf(t)},at(t)}function ut(t){if(void 0===t)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return t}function ct(t,e){return ct=Object.setPrototypeOf||function(t,e){return t.__proto__=e,t},ct(t,e)}const ht=function(t){function n(t){var i;return function(t,e){if(!(t instanceof e))throw new TypeError("Cannot call a class as a function")}(this,n),(i=function(t,e){return!e||"object"!==rt(e)&&"function"!=typeof e?ut(t):e}(this,at(n).call(this))).state={slidesToShow:t.slidesToShow||1,index:t.defaultIndex&&t.defaultIndex<t.children.length?t.defaultIndex:0},i.width=0,i.dragging=!1,i.imageContainer=null,i.wrapper=null,i.timeout=null,i.moveSlides=i.moveSlides.bind(ut(i)),i.pauseSlides=i.pauseSlides.bind(ut(i)),i.startSlides=i.startSlides.bind(ut(i)),i.handleResize=i.handleResize.bind(ut(i)),i.initResizeObserver=i.initResizeObserver.bind(ut(i)),i.reactSlideshowWrapper=(0,e.createRef)(),i.goToSlide=i.goToSlide.bind(ut(i)),i.tweenGroup=new g.Group,i.startSwipe=i.startSwipe.bind(ut(i)),i.endSwipe=i.endSwipe.bind(ut(i)),i.swipe=i.swipe.bind(ut(i)),i.distanceSwiped=0,i}var r,o;return function(t,e){if("function"!=typeof e&&null!==e)throw new TypeError("Super expression must either be null or a function");t.prototype=Object.create(e&&e.prototype,{constructor:{value:t,writable:!0,configurable:!0}}),e&&ct(t,e)}(n,t),r=n,(o=[{key:"componentDidMount",value:function(){var t=this;this.setWidth(),this.initResizeObserver(),V(this.props);var e=q(this.props),i=e.autoplay,n=e.duration;i&&(this.timeout=setTimeout((function(){return t.goNext()}),n))}},{key:"initResizeObserver",value:function(){var t=this;this.resizeObserver=new U((function(e){e&&t.handleResize()})),this.reactSlideshowWrapper.current&&this.resizeObserver.observe(this.reactSlideshowWrapper.current)}},{key:"componentWillUnmount",value:function(){this.tweenGroup.removeAll(),clearTimeout(this.timeout),this.removeResizeObserver()}},{key:"startSwipe",value:function(t){q(this.props).canSwipe&&(this.startingClientX=t.touches?t.touches[0].pageX:t.clientX,clearTimeout(this.timeout),this.dragging=!0)}},{key:"endSwipe",value:function(){q(this.props).canSwipe&&(this.dragging=!1,Math.abs(this.distanceSwiped)/this.width>.2?this.distanceSwiped<0?this.goNext():this.goBack():Math.abs(this.distanceSwiped)>0&&this.slideImages(this.state.index,300))}},{key:"swipe",value:function(t){var e=q(this.props),i=e.canSwipe,n=e.slidesToShow,r=e.children,o=e.infinite,s=e.slidesToScroll;if(i){var a=t.touches?t.touches[0].pageX:t.clientX;if(this.dragging){var u=this.width*(this.state.index+this.getOffset(o,n)),c=a-this.startingClientX;if(!o&&this.state.index===r.length-s&&c<0)return;if(!o&&0===this.state.index&&c>0)return;this.distanceSwiped=c,u-=this.distanceSwiped,this.imageContainer.style.transform="translate(-".concat(u,"px)")}}}},{key:"removeResizeObserver",value:function(){this.resizeObserver&&this.reactSlideshowWrapper&&this.reactSlideshowWrapper.current&&this.resizeObserver.unobserve(this.reactSlideshowWrapper.current)}},{key:"setWidth",value:function(){this.allImages=this.wrapper&&Array.prototype.slice.call(this.wrapper.querySelectorAll(".images-wrap > div"),0)||[];var t=q(this.props),e=t.slidesToShow,n=t.infinite;this.state.slidesToShow!==e&&this.setState({slidesToShow:e,index:0}),this.width=(this.wrapper&&this.wrapper.clientWidth||0)/e;var r=i().Children.count(this.props.children),o=this.width*(r+2*e);this.imageContainer&&(this.imageContainer.style.width="".concat(o,"px"),this.imageContainer.style.transform="translate(-".concat(this.width*(this.state.index+this.getOffset(n,e)),"px)")),this.applySlideStyle()}},{key:"componentDidUpdate",value:function(t){var e=this,i=q(this.props),n=i.autoplay,r=i.duration,o=i.children,s=q(t);n!==s.autoplay&&(n?this.timeout=setTimeout((function(){return e.goNext()}),r):clearTimeout(this.timeout)),o.length!=s.children.length&&(this.setWidth(),clearTimeout(this.timeout),this.timeout=setTimeout((function(){return e.goNext()}),r))}},{key:"handleResize",value:function(){this.setWidth()}},{key:"applySlideStyle",value:function(){var t=this;this.allImages.forEach((function(e,i){e.style.width="".concat(t.width,"px")}))}},{key:"pauseSlides",value:function(){q(this.props).pauseOnHover&&clearTimeout(this.timeout)}},{key:"startSlides",value:function(){var t=this,e=q(this.props),i=e.pauseOnHover,n=e.autoplay,r=e.duration;this.dragging?this.endSwipe():i&&n&&(this.timeout=setTimeout((function(){return t.goNext()}),r))}},{key:"moveSlides",value:function(t){"next"===t.currentTarget.dataset.type?this.goNext():this.goBack()}},{key:"goToSlide",value:function(t){var e=t.currentTarget,i=q(this.props).slidesToScroll;this.goTo(parseInt(e.dataset.key*i))}},{key:"goTo",value:function(t){this.slideImages(this.calculateIndex(t))}},{key:"calculateIndex",value:function(t){var e=q(this.props),i=e.children,n=e.slidesToScroll;return t<i.length&&t+n>i.length&&(i.length-n)%n?i.length-n:t}},{key:"goNext",value:function(){var t=this.state.index,e=q(this.props),i=e.children,n=e.infinite,r=e.slidesToScroll;if(n||t!==i.length-r){var o=this.calculateIndex(t+r);this.slideImages(o)}}},{key:"goBack",value:function(){var t=this.state.index,e=q(this.props),i=e.infinite,n=e.slidesToScroll;if(i||0!==t){var r=t-n;r%n&&(r=Math.ceil(r/n)*n),this.slideImages(r)}}},{key:"isSlideActive",value:function(t){var e=q(this.props).slidesToShow;return t<this.state.index+e&&t>=this.state.index}},{key:"renderPreceedingSlides",value:function(t,e){return t.slice(-e).map((function(t,n){return i().createElement("div",{"data-index":n-e,"aria-roledescription":"slide","aria-hidden":"true",key:n-e},t)}))}},{key:"renderTrailingSlides",value:function(){var t=q(this.props),e=t.children,n=t.slidesToShow,r=t.slidesToScroll;if(t.infinite||n!==r)return e.slice(0,n).map((function(t,n){return i().createElement("div",{"data-index":e.length+n,"aria-roledescription":"slide","aria-hidden":"true",key:e.length+n},t)}))}},{key:"getOffset",value:function(t,e){return t?e:0}},{key:"render",value:function(){var t=this,e=q(this.props),n=e.children,r=e.indicators,o=e.arrows,s=e.cssClass,a=e.slidesToShow,u=e.infinite,c=tt(H,this.props),h=this.state.index,l={transform:"translate(-".concat((h+this.getOffset(u,a))*this.width,"px)")};return i().createElement("div",ot({dir:"ltr","aria-roledescription":"carousel"},c),i().createElement("div",{className:"react-slideshow-container",onMouseEnter:this.pauseSlides,onMouseOver:this.pauseSlides,onMouseLeave:this.startSlides,onMouseDown:this.startSwipe,onMouseUp:this.endSwipe,onMouseMove:this.swipe,onTouchStart:this.startSwipe,onTouchEnd:this.endSwipe,onTouchCancel:this.endSwipe,onTouchMove:this.swipe,ref:this.reactSlideshowWrapper},o&&et(q(this.props),this.state.index,this.moveSlides),i().createElement("div",{className:"react-slideshow-wrapper slide ".concat(s),ref:function(e){return t.wrapper=e}},i().createElement("div",{className:"images-wrap",style:l,ref:function(e){return t.imageContainer=e}},u?this.renderPreceedingSlides(n,a):"",n.map((function(e,n){var r=t.isSlideActive(n);return i().createElement("div",{"data-index":n,key:n,className:r?"active":"","aria-roledescription":"slide","aria-hidden":r?"false":"true"},e)})),this.renderTrailingSlides())),o&&it(q(this.props),this.state.index,this.moveSlides)),r&&nt(q(this.props),this.state.index,this.goToSlide))}},{key:"slideImages",value:function(t,e){var i=this,n=q(this.props),r=n.children,o=n.transitionDuration,s=n.autoplay,a=n.infinite,u=n.duration,c=n.onChange,h=n.easing,l=n.slidesToShow,p=n.slidesToScroll;if(o=e||o,!this.tweenGroup.getAll().length){clearTimeout(this.timeout);var d={margin:-this.width*(this.state.index+this.getOffset(a,l))+this.distanceSwiped},f=new g.Tween(d,this.tweenGroup).to({margin:-this.width*(t+this.getOffset(a,l))},o).onUpdate((function(t){i.imageContainer&&(i.imageContainer.style.transform="translate(".concat(t.margin,"px)"))})).start();f.easing($(h)),function t(){requestAnimationFrame(t),i.tweenGroup.update()}(),f.onComplete((function(){i.distanceSwiped=0;var e=t;e<0?e=r.length-p:e>=r.length&&(e=0),"function"==typeof c&&c(i.state.index,e),i.setState({index:e},(function(){s&&(a||i.state.index<r.length)&&(clearTimeout(i.timeout),i.timeout=setTimeout((function(){return i.goNext()}),u))}))}))}}}])&&st(r.prototype,o),n}(e.Component);function lt(t){return lt="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(t){return typeof t}:function(t){return t&&"function"==typeof Symbol&&t.constructor===Symbol&&t!==Symbol.prototype?"symbol":typeof t},lt(t)}function pt(){return pt=Object.assign||function(t){for(var e=1;e<arguments.length;e++){var i=arguments[e];for(var n in i)Object.prototype.hasOwnProperty.call(i,n)&&(t[n]=i[n])}return t},pt.apply(this,arguments)}function dt(t,e){for(var i=0;i<e.length;i++){var n=e[i];n.enumerable=n.enumerable||!1,n.configurable=!0,"value"in n&&(n.writable=!0),Object.defineProperty(t,n.key,n)}}function ft(t){return ft=Object.setPrototypeOf?Object.getPrototypeOf:function(t){return t.__proto__||Object.getPrototypeOf(t)},ft(t)}function vt(t){if(void 0===t)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return t}function yt(t,e){return yt=Object.setPrototypeOf||function(t,e){return t.__proto__=e,t},yt(t,e)}const mt=function(t){function n(t){var i;return function(t,e){if(!(t instanceof e))throw new TypeError("Cannot call a class as a function")}(this,n),(i=function(t,e){return!e||"object"!==lt(e)&&"function"!=typeof e?vt(t):e}(this,ft(n).call(this))).state={index:t.defaultIndex&&t.defaultIndex<t.children.length?t.defaultIndex:0},i.width=0,i.timeout=null,i.divsContainer=null,i.wrapper=null,i.setWidth=i.setWidth.bind(vt(i)),i.handleResize=i.handleResize.bind(vt(i)),i.navigate=i.navigate.bind(vt(i)),i.preFade=i.preFade.bind(vt(i)),i.pauseSlides=i.pauseSlides.bind(vt(i)),i.startSlides=i.startSlides.bind(vt(i)),i.initResizeObserver=i.initResizeObserver.bind(vt(i)),i.tweenGroup=new g.Group,i.reactSlideshowWrapper=(0,e.createRef)(),i.wrapper=(0,e.createRef)(),i.startSwipe=i.startSwipe.bind(vt(i)),i.endSwipe=i.endSwipe.bind(vt(i)),i}var r,o;return function(t,e){if("function"!=typeof e&&null!==e)throw new TypeError("Super expression must either be null or a function");t.prototype=Object.create(e&&e.prototype,{constructor:{value:t,writable:!0,configurable:!0}}),e&&yt(t,e)}(n,t),r=n,(o=[{key:"componentDidMount",value:function(){this.setWidth(),this.play(),this.initResizeObserver(),V(this.props)}},{key:"initResizeObserver",value:function(){var t=this;this.reactSlideshowWrapper.current&&(this.resizeObserver=new U((function(e){e&&t.handleResize()})),this.resizeObserver.observe(this.reactSlideshowWrapper.current))}},{key:"play",value:function(){var t=this,e=q(this.props),i=e.autoplay,n=e.children,r=e.duration,o=this.state.index;i&&n.length>1&&(clearTimeout(this.timeout),this.timeout=setTimeout((function(){return t.fadeImages(o+1)}),r))}},{key:"componentDidUpdate",value:function(t){var e=q(this.props),i=e.autoplay,n=e.children,r=q(t);i!==r.autoplay&&(i?this.play():clearTimeout(this.timeout)),n.length!=r.children.length&&(this.applyStyle(),clearTimeout(this.timeout),this.play())}},{key:"componentWillUnmount",value:function(){this.tweenGroup.removeAll(),clearTimeout(this.timeout),this.removeResizeObserver()}},{key:"removeResizeObserver",value:function(){this.resizeObserver&&this.reactSlideshowWrapper&&this.reactSlideshowWrapper.current&&this.resizeObserver.unobserve(this.reactSlideshowWrapper.current)}},{key:"setWidth",value:function(){this.wrapper.current&&(this.width=this.wrapper.current.clientWidth),this.applyStyle()}},{key:"handleResize",value:function(){this.setWidth()}},{key:"applyStyle",value:function(){var t=this.width*i().Children.count(this.props.children);if(this.divsContainer){this.divsContainer.style.width="".concat(t,"px");for(var e=0;e<this.divsContainer.children.length;e++){var n=this.divsContainer.children[e];n&&(n.style.width="".concat(this.width,"px"),n.style.left="".concat(e*-this.width,"px"))}}}},{key:"pauseSlides",value:function(){q(this.props).pauseOnHover&&clearTimeout(this.timeout)}},{key:"startSlides",value:function(){var t=this,e=q(this.props),i=e.pauseOnHover,n=e.autoplay,r=e.duration;i&&n&&(this.timeout=setTimeout((function(){return t.goNext()}),r))}},{key:"goNext",value:function(){var t=this.state.index,e=q(this.props),i=e.children;(e.infinite||t!==i.length-1)&&this.fadeImages((t+1)%i.length)}},{key:"goBack",value:function(){var t=this.state.index,e=q(this.props),i=e.children;(e.infinite||0!==t)&&this.fadeImages(0===t?i.length-1:t-1)}},{key:"navigate",value:function(t){var e=t.currentTarget.dataset;e.key!=this.state.index&&this.goTo(parseInt(e.key))}},{key:"goTo",value:function(t){this.fadeImages(t)}},{key:"preFade",value:function(t){"prev"===t.currentTarget.dataset.type?this.goBack():this.goNext()}},{key:"startSwipe",value:function(t){q(this.props).canSwipe&&(this.startingClientX=t.touches?t.touches[0].pageX:t.clientX,clearTimeout(this.timeout),this.dragging=!0)}},{key:"endSwipe",value:function(t){var e=(t.changedTouches?t.changedTouches[0].pageX:t.clientX)-this.startingClientX;q(this.props).canSwipe&&(this.dragging=!1,Math.abs(e)/this.width>.2&&(e<0?this.goNext():this.goBack()))}},{key:"render",value:function(){var t=this,e=q(this.props),n=e.indicators,r=e.children,o=e.arrows,s=e.cssClass,a=this.state.index,u=tt(H,this.props);return i().createElement("div",pt({dir:"ltr","aria-roledescription":"carousel"},u),i().createElement("div",{className:"react-slideshow-container",onMouseEnter:this.pauseSlides,onMouseOver:this.pauseSlides,onMouseLeave:this.startSlides,onMouseDown:this.startSwipe,onMouseUp:this.endSwipe,onTouchStart:this.startSwipe,onTouchEnd:this.endSwipe,onTouchCancel:this.endSwipe,ref:this.reactSlideshowWrapper},o&&et(q(this.props),this.state.index,this.preFade),i().createElement("div",{className:"react-slideshow-fade-wrapper ".concat(s),ref:this.wrapper},i().createElement("div",{className:"react-slideshow-fade-images-wrap",ref:function(e){return t.divsContainer=e}},r.map((function(t,e){return i().createElement("div",{style:{opacity:e===a?"1":"0",zIndex:e===a?"1":"0"},"data-index":e,key:e,"aria-roledescription":"slide","aria-hidden":e===a?"false":"true"},t)})))),o&&it(q(this.props),this.state.index,this.preFade)),n&&nt(q(this.props),this.state.index,this.navigate))}},{key:"fadeImages",value:function(t){var e=this,i=this.state.index,n=q(this.props),r=n.autoplay,o=n.children,s=n.infinite,a=n.duration,u=n.transitionDuration,c=n.onChange,h=n.easing;if(!this.tweenGroup.getAll().length){this.divsContainer.children[t]||(t=0),clearTimeout(this.timeout),function t(){requestAnimationFrame(t),e.tweenGroup.update()}();var l=new g.Tween({opacity:0},this.tweenGroup).to({opacity:1},u).onUpdate((function(n){e.divsContainer.children[t].style.opacity=n.opacity,e.divsContainer.children[i].style.opacity=1-n.opacity})).start();l.easing($(h)),l.onComplete((function(){e.setState({index:t}),"function"==typeof c&&c(i,t),r&&(s||t<o.length-1)&&(clearTimeout(e.timeout),e.timeout=setTimeout((function(){e.fadeImages((t+1)%o.length)}),a))}))}}}])&&dt(r.prototype,o),n}(e.Component);function bt(t){return bt="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(t){return typeof t}:function(t){return t&&"function"==typeof Symbol&&t.constructor===Symbol&&t!==Symbol.prototype?"symbol":typeof t},bt(t)}function gt(){return gt=Object.assign||function(t){for(var e=1;e<arguments.length;e++){var i=arguments[e];for(var n in i)Object.prototype.hasOwnProperty.call(i,n)&&(t[n]=i[n])}return t},gt.apply(this,arguments)}function wt(t,e){for(var i=0;i<e.length;i++){var n=e[i];n.enumerable=n.enumerable||!1,n.configurable=!0,"value"in n&&(n.writable=!0),Object.defineProperty(t,n.key,n)}}function _t(t){return _t=Object.setPrototypeOf?Object.getPrototypeOf:function(t){return t.__proto__||Object.getPrototypeOf(t)},_t(t)}function St(t){if(void 0===t)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return t}function Ot(t,e){return Ot=Object.setPrototypeOf||function(t,e){return t.__proto__=e,t},Ot(t,e)}const Tt=function(t){function n(t){var i;return function(t,e){if(!(t instanceof e))throw new TypeError("Cannot call a class as a function")}(this,n),(i=function(t,e){return!e||"object"!==bt(e)&&"function"!=typeof e?St(t):e}(this,_t(n).call(this))).state={index:t.defaultIndex&&t.defaultIndex<t.children.length?t.defaultIndex:0},i.width=0,i.timeout=null,i.divsContainer=null,i.wrapper=null,i.setWidth=i.setWidth.bind(St(i)),i.handleResize=i.handleResize.bind(St(i)),i.navigate=i.navigate.bind(St(i)),i.preZoom=i.preZoom.bind(St(i)),i.pauseSlides=i.pauseSlides.bind(St(i)),i.startSlides=i.startSlides.bind(St(i)),i.tweenGroup=new g.Group,i.initResizeObserver=i.initResizeObserver.bind(St(i)),i.reactSlideshowWrapper=(0,e.createRef)(),i.startSwipe=i.startSwipe.bind(St(i)),i.endSwipe=i.endSwipe.bind(St(i)),i}var r,o;return function(t,e){if("function"!=typeof e&&null!==e)throw new TypeError("Super expression must either be null or a function");t.prototype=Object.create(e&&e.prototype,{constructor:{value:t,writable:!0,configurable:!0}}),e&&Ot(t,e)}(n,t),r=n,(o=[{key:"componentDidMount",value:function(){this.setWidth(),this.play(),this.initResizeObserver(),V(this.props)}},{key:"initResizeObserver",value:function(){var t=this;this.reactSlideshowWrapper.current&&(this.resizeObserver=new U((function(e){e&&t.handleResize()})),this.resizeObserver.observe(this.reactSlideshowWrapper.current))}},{key:"play",value:function(){var t=this,e=q(this.props),i=e.autoplay,n=e.children,r=e.duration,o=this.state.index;i&&n.length>1&&(clearTimeout(this.timeout),this.timeout=setTimeout((function(){return t.zoomTo(o+1)}),r))}},{key:"componentWillUnmount",value:function(){this.tweenGroup.removeAll(),clearTimeout(this.timeout),this.removeResizeObserver()}},{key:"removeResizeObserver",value:function(){this.resizeObserver&&this.reactSlideshowWrapper&&this.reactSlideshowWrapper.current&&this.resizeObserver.unobserve(this.reactSlideshowWrapper.current)}},{key:"componentDidUpdate",value:function(t){var e=q(this.props),i=e.autoplay,n=e.children,r=q(t);i!==r.autoplay&&(i?this.play():clearTimeout(this.timeout)),n.length!=r.children.length&&(this.applyStyle(),clearTimeout(this.timeout),this.play())}},{key:"setWidth",value:function(){this.wrapper&&(this.width=this.wrapper.clientWidth),this.applyStyle()}},{key:"handleResize",value:function(){this.setWidth()}},{key:"applyStyle",value:function(){var t=this.width*i().Children.count(this.props.children);if(this.divsContainer){this.divsContainer.style.width="".concat(t,"px");for(var e=0;e<this.divsContainer.children.length;e++){var n=this.divsContainer.children[e];n&&(n.style.width="".concat(this.width,"px"),n.style.left="".concat(e*-this.width,"px"))}}}},{key:"pauseSlides",value:function(){q(this.props).pauseOnHover&&clearTimeout(this.timeout)}},{key:"startSlides",value:function(){var t=this,e=q(this.props),i=e.pauseOnHover,n=e.autoplay,r=e.duration;i&&n&&(this.timeout=setTimeout((function(){return t.goNext()}),r))}},{key:"goNext",value:function(){var t=this.state.index,e=q(this.props),i=e.children;(e.infinite||t!==i.length-1)&&this.zoomTo((t+1)%i.length)}},{key:"goBack",value:function(){var t=this.state.index,e=q(this.props),i=e.children;(e.infinite||0!==t)&&this.zoomTo(0===t?i.length-1:t-1)}},{key:"goTo",value:function(t){this.zoomTo(t)}},{key:"navigate",value:function(t){var e=t.currentTarget.dataset;e.key!=this.state.index&&this.goTo(parseInt(e.key))}},{key:"preZoom",value:function(t){"prev"===t.currentTarget.dataset.type?this.goBack():this.goNext()}},{key:"startSwipe",value:function(t){q(this.props).canSwipe&&(this.startingClientX=t.touches?t.touches[0].pageX:t.clientX,clearTimeout(this.timeout),this.dragging=!0)}},{key:"endSwipe",value:function(t){var e=(t.changedTouches?t.changedTouches[0].pageX:t.clientX)-this.startingClientX;q(this.props).canSwipe&&(this.dragging=!1,Math.abs(e)/this.width>.2&&(e<0?this.goNext():this.goBack()))}},{key:"render",value:function(){var t=this,e=q(this.props),n=e.indicators,r=e.arrows,o=e.children,s=e.cssClass,a=this.state.index,u=tt(H,this.props);return i().createElement("div",gt({dir:"ltr","aria-roledescription":"carousel"},u),i().createElement("div",{className:"react-slideshow-container",onMouseEnter:this.pauseSlides,onMouseOver:this.pauseSlides,onMouseLeave:this.startSlides,onMouseDown:this.startSwipe,onMouseUp:this.endSwipe,onTouchStart:this.startSwipe,onTouchEnd:this.endSwipe,onTouchCancel:this.endSwipe,ref:this.reactSlideshowWrapper},r&&et(q(this.props),this.state.index,this.preZoom),i().createElement("div",{className:"react-slideshow-zoom-wrapper ".concat(s),ref:function(e){return t.wrapper=e}},i().createElement("div",{className:"zoom-wrapper",ref:function(e){return t.divsContainer=e}},o.map((function(t,e){return i().createElement("div",{style:{opacity:e===a?"1":"0",zIndex:e===a?"1":"0"},"data-index":e,key:e,"aria-roledescription":"slide","aria-hidden":e===a?"false":"true"},t)})))),r&&it(q(this.props),this.state.index,this.preZoom)),n&&nt(q(this.props),this.state.index,this.navigate))}},{key:"zoomTo",value:function(t){var e=this,i=this.state.index,n=q(this.props),r=n.children,o=n.scale,s=n.autoplay,a=n.infinite,u=n.transitionDuration,c=n.duration,h=n.onChange,l=n.easing;if(!this.tweenGroup.getAll().length){this.divsContainer&&!this.divsContainer.children[t]&&(t=0),clearTimeout(this.timeout),function t(){requestAnimationFrame(t),e.tweenGroup.update()}();var p=new g.Tween({opacity:0,scale:1},this.tweenGroup).to({opacity:1,scale:o},u).onUpdate((function(n){e.divsContainer&&(e.divsContainer.children[t].style.opacity=n.opacity,e.divsContainer.children[i].style.opacity=1-n.opacity,e.divsContainer.children[i].style.transform="scale(".concat(n.scale,")"))})).start();p.easing($(l)),p.onComplete((function(){"function"==typeof h&&h(i,t),e.setState({index:t},(function(){e.divsContainer&&(e.divsContainer.children[i].style.transform="scale(1)")})),s&&(a||t<r.length-1)&&(clearTimeout(e.timeout),e.timeout=setTimeout((function(){e.zoomTo((t+1)%r.length)}),c))}))}}}])&&wt(r.prototype,o),n}(e.Component)})(),r})()));
+//# sourceMappingURL=react-slideshow-image.min.js.map
+
+/***/ }),
+
 /***/ "./node_modules/react/cjs/react-jsx-runtime.development.js":
 /*!*****************************************************************!*\
   !*** ./node_modules/react/cjs/react-jsx-runtime.development.js ***!
@@ -63801,6 +63941,315 @@ if (false) {} else {
   module.exports = __webpack_require__(/*! ./cjs/scheduler-tracing.development.js */ "./node_modules/scheduler/cjs/scheduler-tracing.development.js");
 }
 
+
+/***/ }),
+
+/***/ "./node_modules/react-slideshow-image/dist/styles.css":
+/*!************************************************************!*\
+  !*** ./node_modules/react-slideshow-image/dist/styles.css ***!
+  \************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_styles_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!../../postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./styles.css */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./node_modules/react-slideshow-image/dist/styles.css");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_styles_css__WEBPACK_IMPORTED_MODULE_1__["default"], options);
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_styles_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js":
+/*!****************************************************************************!*\
+  !*** ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js ***!
+  \****************************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+
+
+var isOldIE = function isOldIE() {
+  var memo;
+  return function memorize() {
+    if (typeof memo === 'undefined') {
+      // Test for IE <= 9 as proposed by Browserhacks
+      // @see http://browserhacks.com/#hack-e71d8692f65334173fee715c222cb805
+      // Tests for existence of standard globals is to allow style-loader
+      // to operate correctly into non-standard environments
+      // @see https://github.com/webpack-contrib/style-loader/issues/177
+      memo = Boolean(window && document && document.all && !window.atob);
+    }
+
+    return memo;
+  };
+}();
+
+var getTarget = function getTarget() {
+  var memo = {};
+  return function memorize(target) {
+    if (typeof memo[target] === 'undefined') {
+      var styleTarget = document.querySelector(target); // Special case to return head of iframe instead of iframe itself
+
+      if (window.HTMLIFrameElement && styleTarget instanceof window.HTMLIFrameElement) {
+        try {
+          // This will throw an exception if access to iframe is blocked
+          // due to cross-origin restrictions
+          styleTarget = styleTarget.contentDocument.head;
+        } catch (e) {
+          // istanbul ignore next
+          styleTarget = null;
+        }
+      }
+
+      memo[target] = styleTarget;
+    }
+
+    return memo[target];
+  };
+}();
+
+var stylesInDom = [];
+
+function getIndexByIdentifier(identifier) {
+  var result = -1;
+
+  for (var i = 0; i < stylesInDom.length; i++) {
+    if (stylesInDom[i].identifier === identifier) {
+      result = i;
+      break;
+    }
+  }
+
+  return result;
+}
+
+function modulesToDom(list, options) {
+  var idCountMap = {};
+  var identifiers = [];
+
+  for (var i = 0; i < list.length; i++) {
+    var item = list[i];
+    var id = options.base ? item[0] + options.base : item[0];
+    var count = idCountMap[id] || 0;
+    var identifier = "".concat(id, " ").concat(count);
+    idCountMap[id] = count + 1;
+    var index = getIndexByIdentifier(identifier);
+    var obj = {
+      css: item[1],
+      media: item[2],
+      sourceMap: item[3]
+    };
+
+    if (index !== -1) {
+      stylesInDom[index].references++;
+      stylesInDom[index].updater(obj);
+    } else {
+      stylesInDom.push({
+        identifier: identifier,
+        updater: addStyle(obj, options),
+        references: 1
+      });
+    }
+
+    identifiers.push(identifier);
+  }
+
+  return identifiers;
+}
+
+function insertStyleElement(options) {
+  var style = document.createElement('style');
+  var attributes = options.attributes || {};
+
+  if (typeof attributes.nonce === 'undefined') {
+    var nonce =  true ? __webpack_require__.nc : 0;
+
+    if (nonce) {
+      attributes.nonce = nonce;
+    }
+  }
+
+  Object.keys(attributes).forEach(function (key) {
+    style.setAttribute(key, attributes[key]);
+  });
+
+  if (typeof options.insert === 'function') {
+    options.insert(style);
+  } else {
+    var target = getTarget(options.insert || 'head');
+
+    if (!target) {
+      throw new Error("Couldn't find a style target. This probably means that the value for the 'insert' parameter is invalid.");
+    }
+
+    target.appendChild(style);
+  }
+
+  return style;
+}
+
+function removeStyleElement(style) {
+  // istanbul ignore if
+  if (style.parentNode === null) {
+    return false;
+  }
+
+  style.parentNode.removeChild(style);
+}
+/* istanbul ignore next  */
+
+
+var replaceText = function replaceText() {
+  var textStore = [];
+  return function replace(index, replacement) {
+    textStore[index] = replacement;
+    return textStore.filter(Boolean).join('\n');
+  };
+}();
+
+function applyToSingletonTag(style, index, remove, obj) {
+  var css = remove ? '' : obj.media ? "@media ".concat(obj.media, " {").concat(obj.css, "}") : obj.css; // For old IE
+
+  /* istanbul ignore if  */
+
+  if (style.styleSheet) {
+    style.styleSheet.cssText = replaceText(index, css);
+  } else {
+    var cssNode = document.createTextNode(css);
+    var childNodes = style.childNodes;
+
+    if (childNodes[index]) {
+      style.removeChild(childNodes[index]);
+    }
+
+    if (childNodes.length) {
+      style.insertBefore(cssNode, childNodes[index]);
+    } else {
+      style.appendChild(cssNode);
+    }
+  }
+}
+
+function applyToTag(style, options, obj) {
+  var css = obj.css;
+  var media = obj.media;
+  var sourceMap = obj.sourceMap;
+
+  if (media) {
+    style.setAttribute('media', media);
+  } else {
+    style.removeAttribute('media');
+  }
+
+  if (sourceMap && typeof btoa !== 'undefined') {
+    css += "\n/*# sourceMappingURL=data:application/json;base64,".concat(btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))), " */");
+  } // For old IE
+
+  /* istanbul ignore if  */
+
+
+  if (style.styleSheet) {
+    style.styleSheet.cssText = css;
+  } else {
+    while (style.firstChild) {
+      style.removeChild(style.firstChild);
+    }
+
+    style.appendChild(document.createTextNode(css));
+  }
+}
+
+var singleton = null;
+var singletonCounter = 0;
+
+function addStyle(obj, options) {
+  var style;
+  var update;
+  var remove;
+
+  if (options.singleton) {
+    var styleIndex = singletonCounter++;
+    style = singleton || (singleton = insertStyleElement(options));
+    update = applyToSingletonTag.bind(null, style, styleIndex, false);
+    remove = applyToSingletonTag.bind(null, style, styleIndex, true);
+  } else {
+    style = insertStyleElement(options);
+    update = applyToTag.bind(null, style, options);
+
+    remove = function remove() {
+      removeStyleElement(style);
+    };
+  }
+
+  update(obj);
+  return function updateStyle(newObj) {
+    if (newObj) {
+      if (newObj.css === obj.css && newObj.media === obj.media && newObj.sourceMap === obj.sourceMap) {
+        return;
+      }
+
+      update(obj = newObj);
+    } else {
+      remove();
+    }
+  };
+}
+
+module.exports = function (list, options) {
+  options = options || {}; // Force single-tag solution on IE6-9, which has a hard limit on the # of <style>
+  // tags it will allow on a page
+
+  if (!options.singleton && typeof options.singleton !== 'boolean') {
+    options.singleton = isOldIE();
+  }
+
+  list = list || [];
+  var lastIdentifiers = modulesToDom(list, options);
+  return function update(newList) {
+    newList = newList || [];
+
+    if (Object.prototype.toString.call(newList) !== '[object Array]') {
+      return;
+    }
+
+    for (var i = 0; i < lastIdentifiers.length; i++) {
+      var identifier = lastIdentifiers[i];
+      var index = getIndexByIdentifier(identifier);
+      stylesInDom[index].references--;
+    }
+
+    var newLastIdentifiers = modulesToDom(newList, options);
+
+    for (var _i = 0; _i < lastIdentifiers.length; _i++) {
+      var _identifier = lastIdentifiers[_i];
+
+      var _index = getIndexByIdentifier(_identifier);
+
+      if (stylesInDom[_index].references === 0) {
+        stylesInDom[_index].updater();
+
+        stylesInDom.splice(_index, 1);
+      }
+    }
+
+    lastIdentifiers = newLastIdentifiers;
+  };
+};
 
 /***/ }),
 

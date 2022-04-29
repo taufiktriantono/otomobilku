@@ -1,8 +1,10 @@
 import Layout from '@/Layouts/Main'
-
+  
 import { useCallback, useEffect, useState } from 'react'
 import { formatDate } from '@/utils'
 import { Head } from '@inertiajs/inertia-react';
+import { Slide } from 'react-slideshow-image';
+import 'react-slideshow-image/dist/styles.css'
 
 export default function DetailProduct(props) {
   const { slug, breadcrumb, cs_phone } = props
@@ -108,7 +110,7 @@ export default function DetailProduct(props) {
                   </nav>
 
                   <div className='max-w-2xl mx-auto py-4 px-4 sm:px-6 lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-3 lg:grid-rows-[auto,auto,1fr] lg:gap-x-8'>
-                    <div className="lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8">
+                    <div className="lg:col-span-2  lg:border-gray-200 lg:pr-8">
                       <h1 className="text-2xl font-extrabold tracking-tight text-gray-900 sm:text-3xl">{product.name}</h1>
                     </div>
                     <div className="mt-4 lg:mt-0 lg:row-span-3">
@@ -119,11 +121,42 @@ export default function DetailProduct(props) {
 
                   {/* Image gallery */}
                   <div className="max-w-2xl mx-auto py-4 px-4 sm:px-6 lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-3 lg:grid-rows-[auto,auto,1fr] lg:gap-x-8">
-                    <div className="lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8">
-                      <img
-                        src={`http://otomobilku.id/storage/${selectedImage?.path}`}
-                        className="w-full object-center object-cover rounded-md"
-                      />
+                    <div className="bg-black p-4 rounded-md lg:col-span-2  lg:border-gray-200 lg:pr-8">
+                      <div className='w-full'>
+                            <Slide>
+                              {
+                                product.images.map((img, i) => {
+                                  return (
+                                    <div className="each-slide flex justify-center" key={i}>
+                                      <img
+                                        src={`http://otomobilku.test/storage/${selectedImage?.path}`}
+                                        className="object-center object-fill rounded-md"
+                                        style={{
+                                          maxHeight: "350px"
+                                        }}
+                                      />
+                                    </div>
+                                  )
+                                })
+                              }
+                            </Slide>
+                          {/* </div> */}
+                      </div>
+                      <div className="lg:col-span-2 lg:pr-8 mt-4">
+                        <div className='flex w-full overflow-y-auto'>
+                          {
+                            product.images.map((img, i) => {
+                              return (
+                                <img
+                                  key={i}
+                                  src={`http://otomobilku.test/storage/${img.path}`}
+                                  className="w-52 object-center object-cover mr-3 rounded-md cursor-pointer"
+                                />
+                              )
+                            })
+                          }
+                        </div>
+                      </div>
                     </div>
 
                     {/* Product Information */}
@@ -131,13 +164,13 @@ export default function DetailProduct(props) {
                         <div className='grid grid-cols-2 gap-10 p-4 border-b'>
                           <div className='text-left'>
                             <div className='flex'>
-                              <img className='w-8 h-8' src='http://admid/storage/images/gasoline-pump.png' />
+                              <img className='w-8 h-8' src='http://otomobilku.id/storage/images/gasoline-pump.png' />
                               <div className='ml-2 text-center'>{product.fuel.fuel_name}</div>
                             </div>
                           </div>
                           <div className='text-right'>
                             <div className='flex justify-end'>
-                              <img className='w-8 h-8' src='http://admin.otomobilku.id/storage/images/gear.png' />
+                              <img className='w-8 h-8' src='http://otomobilku.id/storage/images/gear.png' />
                               <div className='ml-2'>{product.transmission.transmission_name}</div>
                             </div>
                           </div>
@@ -145,7 +178,7 @@ export default function DetailProduct(props) {
                         <div className='my-2'>
                           <div className='grid grid-cols-2 gap-10 p-4 border-b'>
                             <div className='text-left'>
-                              <img className='w-8 h-8' src='http://admin.otomobilku.id/storage/images/racing.png' />
+                              <img className='w-8 h-8' src='http://otomobilku.id/storage/images/racing.png' />
                             </div>
                             <div className='text-right'>
                               {product.distance} Kilometer
@@ -162,9 +195,9 @@ export default function DetailProduct(props) {
                               {product.district.district_name}, {product.district.city.city_name}
                             </div>
                           </div>
-                          <div className='h-48'>
+                          {/* <div className='h-48'> */}
                             {/* Maps Here */}
-                          </div>
+                          {/* </div> */}
                           <div className='w-full bg-emerald-600 rounded'>
                             <a className='flex justify-center py-2' href={`https://wa.me/${cs_phone}?text=http://ottomobilku.test/items/${product.slug}%0ASaya%20tertarik%20dengan%20mobil%20ini`} target={'_blank'}>
                               <svg className='h-8 w-auto' fill="#ffffff" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24" width="24px" height="24px">    <path d="M 12.011719 2 C 6.5057187 2 2.0234844 6.478375 2.0214844 11.984375 C 2.0204844 13.744375 2.4814687 15.462563 3.3554688 16.976562 L 2 22 L 7.2324219 20.763672 C 8.6914219 21.559672 10.333859 21.977516 12.005859 21.978516 L 12.009766 21.978516 C 17.514766 21.978516 21.995047 17.499141 21.998047 11.994141 C 22.000047 9.3251406 20.962172 6.8157344 19.076172 4.9277344 C 17.190172 3.0407344 14.683719 2.001 12.011719 2 z M 12.009766 4 C 14.145766 4.001 16.153109 4.8337969 17.662109 6.3417969 C 19.171109 7.8517969 20.000047 9.8581875 19.998047 11.992188 C 19.996047 16.396187 16.413812 19.978516 12.007812 19.978516 C 10.674812 19.977516 9.3544062 19.642812 8.1914062 19.007812 L 7.5175781 18.640625 L 6.7734375 18.816406 L 4.8046875 19.28125 L 5.2851562 17.496094 L 5.5019531 16.695312 L 5.0878906 15.976562 C 4.3898906 14.768562 4.0204844 13.387375 4.0214844 11.984375 C 4.0234844 7.582375 7.6067656 4 12.009766 4 z M 8.4765625 7.375 C 8.3095625 7.375 8.0395469 7.4375 7.8105469 7.6875 C 7.5815469 7.9365 6.9355469 8.5395781 6.9355469 9.7675781 C 6.9355469 10.995578 7.8300781 12.182609 7.9550781 12.349609 C 8.0790781 12.515609 9.68175 15.115234 12.21875 16.115234 C 14.32675 16.946234 14.754891 16.782234 15.212891 16.740234 C 15.670891 16.699234 16.690438 16.137687 16.898438 15.554688 C 17.106437 14.971687 17.106922 14.470187 17.044922 14.367188 C 16.982922 14.263188 16.816406 14.201172 16.566406 14.076172 C 16.317406 13.951172 15.090328 13.348625 14.861328 13.265625 C 14.632328 13.182625 14.464828 13.140625 14.298828 13.390625 C 14.132828 13.640625 13.655766 14.201187 13.509766 14.367188 C 13.363766 14.534188 13.21875 14.556641 12.96875 14.431641 C 12.71875 14.305641 11.914938 14.041406 10.960938 13.191406 C 10.218937 12.530406 9.7182656 11.714844 9.5722656 11.464844 C 9.4272656 11.215844 9.5585938 11.079078 9.6835938 10.955078 C 9.7955938 10.843078 9.9316406 10.663578 10.056641 10.517578 C 10.180641 10.371578 10.223641 10.267562 10.306641 10.101562 C 10.389641 9.9355625 10.347156 9.7890625 10.285156 9.6640625 C 10.223156 9.5390625 9.737625 8.3065 9.515625 7.8125 C 9.328625 7.3975 9.131125 7.3878594 8.953125 7.3808594 C 8.808125 7.3748594 8.6425625 7.375 8.4765625 7.375 z"/></svg>
@@ -172,33 +205,17 @@ export default function DetailProduct(props) {
                           </div>
                         </div>
                     </div>
-                    <div className="lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8 mt-4">
-                      <div className='flex w-full overflow-y-auto'>
-                        {
-                          product.images.map((img, i) => {
-                            return (
-                              <img
-                                key={i}
-                                onClick={() => onClickImage(i)}
-                                src={`http://otomobilku.id/storage/${img.path}`}
-                                className="w-52 object-center object-cover mx-2 rounded-md"
-                              />
-                            )
-                          })
-                        }
-                      </div>
-                    </div>
                   </div>
 
                   {/* Product info */}
                   <div className="max-w-2xl mx-auto pb-4 px-4 sm:px-6 lg:max-w-7xl lg:pt-4 lg:pb-24 lg:px-8 lg:grid lg:grid-cols-3 lg:grid-rows-[auto,auto,1fr] lg:gap-x-8">
 
-                    <div className="lg:pt-6 lg:pb-16 lg:col-start-1 lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8">
+                    <div className="lg:pt-4 lg:pb-16 lg:col-start-1 lg:col-span-2 lg:border-gray-200 lg:pr-8">
                       {/* Description and details */}
                       <div>
-                        <h3 className='font-bold'>Description</h3>
+                        <h3 className='font-bold text-lg'>Description</h3>
                         <div className="space-y-6 mt-6">
-                          <p className="text-base text-gray-900">{product.description}</p>
+                          <textarea className="w-full h-96 border-none text-base text-gray-900" value={product.description} disabled={true}></textarea>
                         </div>
                       </div>
                     </div>
