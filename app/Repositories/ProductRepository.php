@@ -191,6 +191,18 @@ class ProductRepository
       'is_active' => $params['is_active']
     ]);
 
+    $images = ProductImage::where('product_id', '=', $product->id)->get();
+    foreach ($images as $image) {
+      $image->delete();
+    }
+
+    foreach ($params['image_path'] as $image) {
+      $productImage = ProductImage::create([
+        'product_id' => $product->id,
+        'path' => $image['path']
+      ]);
+    }
+
     return $product;
   }
 

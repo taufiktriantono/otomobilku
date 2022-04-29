@@ -53,7 +53,7 @@ class ProductController extends Controller
             'product_transmission_id' => 'required',
             'product_district_id' => 'required',
             'distance' => 'required',
-            'geo_point' => 'required',
+            'geo_point' => 'string|nullable',
             'is_active' => 'required',
             'seller_id' => 'required',
             'full_name' => 'required',

@@ -213,7 +213,9 @@ export default function EditProduct(props) {
       if (index !== -1) {
         console.log(fileUploaded.splice(index, 1))
       }
-      setFileUploaded(fileUploaded)
+      setFileUploaded((prevstate) => {
+        return [...fileUploaded]
+      })
     }
 
     const onFileChange = async (e) => {
@@ -229,7 +231,9 @@ export default function EditProduct(props) {
         })
 
         response = await response.json()
-        setFileUploaded(response)
+        setFileUploaded((prevstate) => {
+          return [...prevstate, ...response]
+        })
       }
     }
 
@@ -411,42 +415,37 @@ export default function EditProduct(props) {
                       </div>
                       <div className='w-full mb-4'>
                           <label>Unggah Foto</label>
-                          <div className='w-full min:h-52 rounded border-2'>
-                            <div className="relative min:h-52">
-                                  <div className="flex items-center justify-center w-full h-full">
-                                      <div className='absolute top-0 w-full'>
-                                        <div className='grid grid-cols-4 gap-4'>
-                                          {
-                                            fileUploaded != null ?
-                                            fileUploaded.map((file, i) => {
-                                              return (
-                                                <div key={file.path} className='relative p-1 m-2 shadow-md rounded-md'>
-                                                  <svg className="w-6 h-6 absolute cursor-pointer" fill="indigo" stroke="white" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                                                  <img
-                                                  src={'http://admin.otomobilku.id/storage/' + file.path}
-                                                />
-                                                </div>
-                                              )
-                                            }) : null
-                                          }
-                                        </div>
-                                      </div>
-                                      <label className="flex flex-col w-full h-full">
-                                          <div className="flex flex-col items-center justify-center pt-7 h-full">
-                                              <svg xmlns="http://www.w3.org/2000/svg"
-                                                  className="w-12 h-12 text-gray-400 group-hover:text-gray-600" viewBox="0 0 20 20"
-                                                  fill="currentColor">
-                                                  <path fillRule="evenodd"
-                                                      d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z"
-                                                      clipRule="evenodd" />
-                                              </svg>
-                                              <p className="pt-1 text-sm tracking-wider text-gray-400 group-hover:text-gray-600">
-                                                  Select a photo</p>
-                                          </div>
-                                          <input type="file" className="opacity-0" onChange={onFileChange} multiple/>
-                                      </label>
-                                  </div>
+                          <div className='w-full rounded border-2'>
+                            <div className='grid grid-cols-4 gap-4'>
+                              {
+                                fileUploaded != null ?
+                                fileUploaded.map((file, i) => {
+                                  return (
+                                    <div key={file.path} className='p-1 m-2 shadow-md rounded-md'>
+                                      <svg onClick={() => removeImage(file)} className="w-6 h-6 absolute cursor-pointer" fill="indigo" stroke="white" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                      <img
+                                      src={'http://admin.otomobilku.id/storage/' + file.path}
+                                      className="min-h-16"
+                                    />
+                                    </div>
+                                  )
+                                }) : null
+                              }
+                            </div>
+                            <label className="flex flex-col w-full h-auto">
+                              <div className="flex flex-col items-center justify-center pt-7 h-full">
+                                  <svg xmlns="http://www.w3.org/2000/svg"
+                                      className="w-12 h-12 text-gray-400 group-hover:text-gray-600" viewBox="0 0 20 20"
+                                      fill="currentColor">
+                                      <path fillRule="evenodd"
+                                          d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z"
+                                          clipRule="evenodd" />
+                                  </svg>
+                                  <p className="pt-1 text-sm tracking-wider text-gray-400 group-hover:text-gray-600">
+                                      Select a photo</p>
                               </div>
+                              <input type="file" className="opacity-0" onChange={onFileChange} multiple/>
+                            </label>
                           </div>
                       </div>
                       <div className='w-full mb-4'>
