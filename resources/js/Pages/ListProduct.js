@@ -611,8 +611,8 @@ export default function ListProduct(props) {
                                   {formatRupiah(product.price)}
                                 </a>
                               </h3>
-                              <p className="h-10 mt-1 text-md font-bold text-gray-700 text-ellipsis">{product.name}</p>
-                              <p className="mt-1 text-md font-bold text-gray-700">Tahun {product.build_year}</p>
+                              <div className="w-full h-10 mt-1 text-md font-bold text-gray-700 text-ellipsis">{product.name}</div>
+                              <div className="mt-2 text-md font-bold text-gray-700">Tahun {product.build_year}</div>
                               <div className='flex justify-between mt-1'>
                                 <div className="mt-1 text-sm font-bold text-gray-700">{product?.district?.district_name ? product?.district?.district_name : '-'}</div>
                                 <div className="mt-1 text-xs font-bold text-gray-700">{formatDate(product.updated_at)}</div>
