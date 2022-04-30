@@ -60,14 +60,14 @@ export default function DetailProduct(props) {
           <meta property='product:price:amount' content={product?.price} />
           <meta property='product:price:currency' content={'IDR'} />
 
-          <meta name='twitter:card' content={'summary_large_image'}/>
-          <meta name='twitter:site' content={'@otomobilku.id'} />
-          <meta name='twitter:creator' content={'@otomobilku.id'} />
-          <meta name='twitter:title' content={`${product?.models.brand.name} ${product?.models.name} ${product?.build_year}`} />
-          <meta name='twitter:description' content={product?.description} />
-          <meta name='twitter:image' content={`http://otomobilku.id/storage/${product?.images[0].path}`} />
-          <meta name='twitter:data1' content={product?.price} />
-          <meta name='twitter:label1' content={'Harga'} />
+          <meta name='twitter:card' content={'product'}/>
+          <meta property='twitter:site' content={'@otomobilku.id'} />
+          <meta property='twitter:creator' content={'@otomobilku.id'} />
+          <meta property='twitter:title' content={`${product?.models.brand.property} ${product?.models.property} ${product?.build_year}`} />
+          <meta property='twitter:description' content={product?.description} />
+          <meta property='twitter:image' content={`http://otomobilku.id/storage/${product?.images[0].path}`} />
+          <meta property='twitter:data1' content={product?.price} />
+          <meta property='twitter:label1' content={'Harga'} />
 
         </Head>
         <div className="bg-white">
