@@ -60,7 +60,7 @@ export default function DetailProduct(props) {
           <meta property='product:price:amount' content={product?.price} />
           <meta property='product:price:currency' content={'IDR'} />
 
-          <meta property='twitter:card' content={'product'} />
+          <meta property='twitter:card' content={'summary'} />
           <meta property='twitter:site' content={'@otomobilku.com'} />
           <meta property='twitter:creator' content={'@otomobilku.com'} />
           <meta property='twitter:title' content={`${product?.models.brand.name} ${product?.models.name} ${product?.build_year}`} />
@@ -123,24 +123,23 @@ export default function DetailProduct(props) {
                   <div className="max-w-2xl mx-auto py-4 px-4 sm:px-6 lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-3 lg:grid-rows-[auto,auto,1fr] lg:gap-x-8">
                     <div className="bg-black p-4 rounded-md lg:col-span-2  lg:border-gray-200 lg:pr-8">
                       <div className='w-full'>
-                            <Slide>
-                              {
-                                product.images.map((img, i) => {
-                                  return (
-                                    <div className="each-slide flex justify-center" key={i}>
-                                      <img
-                                        src={`http://otomobilku.id/storage/${selectedImage?.path}`}
-                                        className="object-center object-fill rounded-md"
-                                        style={{
-                                          maxHeight: "350px"
-                                        }}
-                                      />
-                                    </div>
-                                  )
-                                })
-                              }
-                            </Slide>
-                          {/* </div> */}
+                          <Slide>
+                            {
+                              product.images.map((img, i) => {
+                                return (
+                                  <div className="each-slide flex justify-center" key={i}>
+                                    <img
+                                      src={`http://otomobilku.id/storage/${img?.path}`}
+                                      className="object-center object-fill rounded-md"
+                                      style={{
+                                        maxHeight: "350px"
+                                      }}
+                                    />
+                                  </div>
+                                )
+                              })
+                            }
+                          </Slide>
                       </div>
                       <div className="lg:col-span-2 lg:pr-8 mt-4">
                         <div className='flex w-full overflow-y-auto'>
