@@ -60,7 +60,7 @@ export default function DetailProduct(props) {
           <meta property='product:price:amount' content={product?.price} />
           <meta property='product:price:currency' content={'IDR'} />
 
-          <meta name='twitter:card' content={'product'} />
+          <meta name='twitter:card' content={'summary_large_image'} />
           <meta name='twitter:site' content={'@otomobilku.com'} />
           <meta name='twitter:creator' content={'@otomobilku.com'} />
           <meta name='twitter:title' content={`${product?.models.brand.name} ${product?.models.name} ${product?.build_year}`} />
