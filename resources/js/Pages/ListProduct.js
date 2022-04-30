@@ -387,7 +387,7 @@ export default function ListProduct(props) {
   return (
     <Layout q={keyword}>
         <Head title='Situs Jual Beli Mobil Online' />
-        <div id='top' className='grid grid-cols-4 gap-4'>
+        <div id='top' className='grid grid-cols-6'>
           {
             isLoading ? loading() :
             (
@@ -557,7 +557,7 @@ export default function ListProduct(props) {
                     </div>
                   </div>
                 </div>
-                <div className='w-full px-8 sm:px-0 md:col-span-3'>
+                <div className='w-full px-8 sm:px-0 col-span-5'>
 
                   {/* Urutkan */}
                   <div className='flex justify-between'>
@@ -611,7 +611,7 @@ export default function ListProduct(props) {
                                   {formatRupiah(product.price)}
                                 </a>
                               </h3>
-                              <div className="w-full h-10 mt-1 text-md font-bold text-gray-700 text-ellipsis">{product.name}</div>
+                              <p className="w-full h-12 mt-1 text-md font-bold text-gray-700 text-ellipsis overflow-hidden">{product.name}</p>
                               <div className="mt-2 text-md font-bold text-gray-700">Tahun {product.build_year}</div>
                               <div className='flex justify-between mt-1'>
                                 <div className="mt-1 text-sm font-bold text-gray-700">{product?.district?.district_name ? product?.district?.district_name : '-'}</div>

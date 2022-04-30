@@ -114,8 +114,8 @@ export default function DetailProduct(props) {
                       <h1 className="text-2xl font-extrabold tracking-tight text-gray-900 sm:text-3xl">{product.name}</h1>
                     </div>
                     <div className="mt-4 lg:mt-0 lg:row-span-3">
-                      <p className="text-3xl text-gray-900 text-right">{formatRupiah(product.price)}</p>
-                      <p className='text-sm text-right'>Tanggal Posting: {formatDate(product.created_at)}</p>
+                      <p className="text-3xl text-gray-900 lg:text-right md:text-left">{formatRupiah(product.price)}</p>
+                      <p className='text-sm lg:text-right md:text-left'>Tanggal Posting: {formatDate(product.created_at)}</p>
                     </div>
                   </div>
 
