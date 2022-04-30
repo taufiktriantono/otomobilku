@@ -48,7 +48,7 @@ export default function DetailProduct(props) {
     <Layout>
         <Head title={product ? `${product?.models.brand.name} ${product?.models.name} ${product?.build_year}` : 'Detail Product'}>
 
-          <meta property='description' content={product?.description} />
+          <meta name='description' content={product?.description} />
 
           <meta property='og:title' content={`${product?.models.brand.name} ${product?.models.name} ${product?.build_year}`} />
           <meta property='og:description' content={product?.description} />
@@ -60,14 +60,14 @@ export default function DetailProduct(props) {
           <meta property='product:price:amount' content={product?.price} />
           <meta property='product:price:currency' content={'IDR'} />
 
-          <meta property='twitter:card' content={'summary'} />
-          <meta property='twitter:site' content={'@otomobilku.com'} />
-          <meta property='twitter:creator' content={'@otomobilku.com'} />
-          <meta property='twitter:title' content={`${product?.models.brand.name} ${product?.models.name} ${product?.build_year}`} />
-          <meta property='twitter:description' content={product?.description} />
-          <meta property='twitter:image' content={`http://otomobilku.id/storage/${product?.images[0].path}`} />
-          <meta property='twitter:data1' content={product?.price} />
-          <meta property='twitter:label1' content={'Harga'} />
+          <meta name='twitter:card' content={'product'} />
+          <meta name='twitter:site' content={'@otomobilku.com'} />
+          <meta name='twitter:creator' content={'@otomobilku.com'} />
+          <meta name='twitter:title' content={`${product?.models.brand.name} ${product?.models.name} ${product?.build_year}`} />
+          <meta name='twitter:description' content={product?.description} />
+          <meta name='twitter:image' content={`http://otomobilku.id/storage/${product?.images[0].path}`} />
+          <meta name='twitter:data1' content={product?.price} />
+          <meta name='twitter:label1' content={'Harga'} />
 
         </Head>
         <div className="bg-white">
