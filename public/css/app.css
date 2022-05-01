@@ -672,6 +672,10 @@ select {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
 }
+.my-4 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
 .ml-3 {
   margin-left: 0.75rem;
 }
@@ -810,6 +814,9 @@ select {
 .h-96 {
   height: 24rem;
 }
+.h-14 {
+  height: 3.5rem;
+}
 .h-32 {
   height: 8rem;
 }
@@ -821,9 +828,6 @@ select {
 }
 .h-\[34px\] {
   height: 34px;
-}
-.h-14 {
-  height: 3.5rem;
 }
 .max-h-60 {
   max-height: 15rem;
@@ -878,9 +882,6 @@ select {
 }
 .w-1\/2 {
   width: 50%;
-}
-.w-40 {
-  width: 10rem;
 }
 .w-3\/5 {
   width: 60%;
@@ -1025,9 +1026,6 @@ select {
 .gap-10 {
   gap: 2.5rem;
 }
-.gap-1 {
-  gap: 0.25rem;
-}
 .gap-2 {
   gap: 0.5rem;
 }
@@ -1047,9 +1045,6 @@ select {
 .gap-x-6 {
   -moz-column-gap: 1.5rem;
        column-gap: 1.5rem;
-}
-.gap-y-2 {
-  row-gap: 0.5rem;
 }
 .space-x-8 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-x-reverse: 0;
@@ -1231,6 +1226,18 @@ select {
 .bg-gray-50 {
   --tw-bg-opacity: 1;
   background-color: rgb(249 250 251 / var(--tw-bg-opacity));
+}
+.bg-gray-400 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(156 163 175 / var(--tw-bg-opacity));
+}
+.bg-emerald-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(16 185 129 / var(--tw-bg-opacity));
+}
+.bg-gray-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(107 114 128 / var(--tw-bg-opacity));
 }
 .fill-current {
   fill: currentColor;
@@ -1869,10 +1876,6 @@ input[type=number] {
     height: 2.5rem;
   }
 
-  .sm\:w-40 {
-    width: 10rem;
-  }
-
   .sm\:max-w-md {
     max-width: 28rem;
   }
@@ -1943,16 +1946,8 @@ input[type=number] {
 }
 @media (min-width: 768px) {
 
-  .md\:ml-4 {
-    margin-left: 1rem;
-  }
-
   .md\:hidden {
     display: none;
-  }
-
-  .md\:w-40 {
-    width: 10rem;
   }
 
   .md\:grid-cols-2 {
