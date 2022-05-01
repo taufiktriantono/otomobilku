@@ -47,7 +47,7 @@ export default function Mobile(props) {
 
   return (
     <>
-      <div className="m-auto h-screen overflow-hidden">
+      <div className="m-auto h-screen">
         <div className={`p-4`}>
           <div className="flex justify-center">
             <Link href="/">
