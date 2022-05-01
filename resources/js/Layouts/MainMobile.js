@@ -86,8 +86,13 @@ export default function Mobile(props) {
         leaveTo="opacity-0"
       >
         <div className="w-screen h-screen absolute z-10 bottom-0 bg-white p-4">
-          <div onClick={() => setIsShow(!isShow)} className="flex justify-end">
-            <XIcon className="h-8 w-8" aria-hidden="true" onClick={() => setIsShow(false)} />
+          <div onClick={() => setIsShow(!isShow)} className="flex justify-between">
+            <Link href="/">
+              <ApplicationLogo className="h-8 w-auto sm:h-10"/>
+            </Link>
+            <div className="">
+              <XIcon className="h-8 w-8" aria-hidden="true" onClick={() => setIsShow(false)} />
+            </div>
           </div>
           <form onSubmit={submit} className="w-full flex justify-center m-auto mt-4 border rounded-md">
             <input

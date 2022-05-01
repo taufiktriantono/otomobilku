@@ -1,11 +1,15 @@
 import Layout from '@/Layouts/Main'
 
-import { Disclosure } from '@headlessui/react'
+import { Disclosure, Transition } from '@headlessui/react'
 import { ChevronUpIcon } from '@heroicons/react/solid'
 import { useCallback, useEffect, useState } from 'react'
-import { Head, useForm } from '@inertiajs/inertia-react';
+import { Head } from '@inertiajs/inertia-react';
 import { months } from '@/utils';
 import Mobile from '@/Layouts/MainMobile';
+import {
+  AdjustmentsIcon,
+  XIcon
+} from '@heroicons/react/solid'
 
 const params = new URLSearchParams()
 
@@ -299,7 +303,9 @@ export default function ListProduct(props) {
       }
     })
 
-    setLocationCheckedState(updatedCheckedState);
+    setLocationCheckedState((prevState) => {
+      return [...updatedCheckedState]
+    });
     setLoadProduct(true)
     fetchListProducts(params)
   };
@@ -372,6 +378,8 @@ export default function ListProduct(props) {
         </svg>
     </div>
   )
+
+  const [isShow, setIsShow] = useState(false);
 
   const web = () => (
     <Layout q={keyword}>
@@ -640,10 +648,144 @@ export default function ListProduct(props) {
         <Mobile>
           <Head title='Situs Jual Beli Mobil Online' />
           <div className='w-full'>
-            {/* <div className='flex justify-between p-4'>
-              <div>Filtering</div>
-              <div>Show Filtered</div>
-            </div> */}
+            <div className='py-2 px-4'>
+              <div className='flex'>
+                <AdjustmentsIcon className='w-6 h-6 bg-gray-500 rounded text-center text-white' aria-hidden="true" onClick={() => setIsShow(!isShow)} />
+              </div>
+              <div className={`${isShow ? 'mt-4' : ''}`}>
+                <Transition show={isShow}>
+                  <Disclosure defaultOpen={false}>
+                    {({ open }) => (
+                      <>
+                        <Disclosure.Button className={`w-full flex justify-between border-2 rounded-md text-lg font-normal text-left p-2 ${isShow ? 'mb-4' : ''}`}>
+                          <span>Lokasi</span>
+                          <ChevronUpIcon
+                            className={`${
+                              open ? 'transform rotate-180' : ''
+                            } w-5 h-5`}
+                          />
+                        </Disclosure.Button>
+                        <Disclosure.Panel className="px-2">
+                          <div className='h-full overflow-y-auto' >
+                            {cities.map((v, i) => {
+                              return (
+                                <div key={v.city_id} className='flex'>
+                                  <input className='mb-4' id={`city-${v.city_id}`} name='city' type='checkbox' checked={checkedLocationState[i]} onChange={() => handleOnChangeLocation(i)}/>
+                                  <div className='ml-2'>{v.city_name}</div>
+                                </div>
+                              )
+                            })}
+                          </div>
+                        </Disclosure.Panel>
+                      </>
+                    )}
+                  </Disclosure>
+                  <Disclosure defaultOpen={false}>
+                    {({ open }) => (
+                      <>
+                        <Disclosure.Button className={`w-full flex justify-between border-2 rounded-md text-lg font-normal text-left p-2 ${isShow  ? 'mb-4' : ''}`}>
+                          <span>Merk</span>
+                          <ChevronUpIcon
+                            className={`${
+                              open ? 'transform rotate-180' : ''
+                            } w-5 h-5`}
+                          />
+                        </Disclosure.Button>
+                        <Disclosure.Panel className="px-2">
+                          <div className='h-full overflow-y-auto'>
+                            {brands.map((v, i) => {
+                                return (
+                                  <div key={v.id} className='flex'>
+                                    <input className='mb-4' id={`brand-${v.id}`} name='brand' type='checkbox' checked={checkedBrandState[i]} onChange={() => handleOnChangeBrand(i)}/>
+                                    <div className='ml-2'>{v.name}</div>
+                                  </div>
+                                )
+                            })}
+                          </div>
+                        </Disclosure.Panel>
+                      </>
+                    )}
+                  </Disclosure>
+                  <Disclosure defaultOpen={false}>
+                    {({ open }) => (
+                      <>
+                        <Disclosure.Button className={`w-full flex justify-between border-2 rounded-md text-lg font-normal text-left p-2 ${isShow ? 'mb-4' : ''}`}>
+                          <span>Model</span>
+                          <ChevronUpIcon
+                            className={`${
+                              open ? 'transform rotate-180' : ''
+                            } w-5 h-5`}
+                          />
+                        </Disclosure.Button>
+                        <Disclosure.Panel className="px-2">
+                          <div className='h-full overflow-y-auto'>
+                            {models.map((v, i) => {
+                                return (
+                                  <div key={v.id} className='flex'>
+                                    <input className='mb-4' id={`model-${v.id}`} name='model' type='checkbox' checked={checkedModelState[i]} onChange={() => handleOnChangeModel(i)}/>
+                                    <div className='ml-2'>{v.name}</div>
+                                  </div>
+                                )
+                            })}
+                          </div>
+                        </Disclosure.Panel>
+                      </>
+                    )}
+                  </Disclosure>
+                  <Disclosure defaultOpen={false}>
+                    {({ open }) => (
+                      <>
+                        <Disclosure.Button className={`w-full flex justify-between border-2 rounded-md text-lg font-normal text-left p-2 ${isShow ? 'mb-4' : ''}`}>
+                          <span>Tahun Produksi</span>
+                          <ChevronUpIcon
+                            className={`${
+                              open ? 'transform rotate-180' : ''
+                            } w-5 h-5`}
+                          />
+                        </Disclosure.Button>
+                        <Disclosure.Panel className="px-2">
+                          <div className='b-4'>
+                            <input className='flex w-20 h-6 rounded-md text-sm' type={'number'} name={'min_build_year'} placeholder={2006} value={buildYear.min_build_year} onChange={handleChangeBuildYear}/>
+                            <div className='my-2'>sampai</div>
+                            <input className='flex w-20 h-6 rounded-md text-sm' type={'number'} name={'max_build_year'} placeholder={2020} value={buildYear.max_build_year} onChange={handleChangeBuildYear}/>
+                          </div>
+                          <div className='flex justify-end'>
+                            <a href='#top' className='px-2 py-1 mt-4 text-white font-bold rounded-md bg-emerald-600' onClick={handleSubmitBuildYear}>Simpan</a>
+                          </div>
+                        </Disclosure.Panel>
+                      </>
+                    )}
+                  </Disclosure>
+                  <Disclosure defaultOpen={false}>
+                    {({ open }) => (
+                      <>
+                        <Disclosure.Button className={`w-full flex justify-between border-2 rounded-md text-lg font-normal text-left p-2 ${isShow ? 'mb-4' : ''}`}>
+                          <span>Harga</span>
+                          <ChevronUpIcon
+                            className={`${
+                              open ? 'transform rotate-180' : ''
+                            } w-5 h-5`}
+                          />
+                        </Disclosure.Button>
+                        <Disclosure.Panel className="px-2">
+                          <div className='mb-4'>
+                                <input className='flex w-1/2 h-6 rounded-md text-sm' type={'number'} name={'min_price'} placeholder={'min'} value={price.min_price} onChange={handleChangePrice}/>
+                            <div className='my-2'>sampai</div>
+                            <input className='flex w-1/2 h-6 rounded-md text-sm' type={'number'} name={'max_price'} placeholder={'max'} value={price.max_price} onChange={handleChangePrice}/>
+                          </div>
+                          <div className='flex justify-end'>
+                            {/* {
+                              clearPriceShow ? (<a href='#top' className='px-2 py-1 text-white font-bold rounded-md bg-gray-600' onClick={clearFilterPrice}>Clear</a>) : null
+                            } */}
+                            <a href='#top' className='px-2 py-1 ml-2 text-white font-bold rounded-md bg-emerald-600' onClick={handleSubmitPrice}>Simpan</a>
+                          </div>
+                        </Disclosure.Panel>
+                      </>
+                    )}
+                  </Disclosure>
+                </Transition>
+              </div>
+            </div>
             <div className='h-screen overflow-y-auto p-4'>
               {
                 loadProduct ? (
@@ -680,6 +822,7 @@ export default function ListProduct(props) {
               </div>
             </div>
           </div>
+
         </Mobile>
       )
     } else {
