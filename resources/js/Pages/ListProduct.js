@@ -644,7 +644,7 @@ export default function ListProduct(props) {
               <div>Filtering</div>
               <div>Show Filtered</div>
             </div> */}
-            <div className='h-screen overflow-y-auto'>
+            <div className='h-screen overflow-y-auto p-4'>
               {
                 loadProduct ? (
                   <div className='w-full flex justify-center'>
@@ -654,7 +654,7 @@ export default function ListProduct(props) {
               }
               <div className="grid grid-cols-1 gap-y-2 md:grid-cols-2">
                 { !loadProduct ? products.data.map((product) => (
-                  <div key={product.id} className="group relative grid grid-cols-2 p-4">
+                  <div key={product.id} className="group relative grid grid-cols-2 p-4 shadow-md overflow-hidden rounded hover:bg-gray-300">
                     <div className="bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:aspect-none w-40 md:w-40 sm:w-40" style={{
                       height: "160px"
                     }}>
