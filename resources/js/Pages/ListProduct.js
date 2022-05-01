@@ -655,9 +655,7 @@ export default function ListProduct(props) {
               <div className="grid grid-cols-1 gap-y-4 md:grid-cols-2">
                 { !loadProduct ? products.data.map((product) => (
                   <div key={product.id} className="group relative grid grid-cols-2 gap-2 shadow-md overflow-hidden rounded hover:bg-gray-300">
-                    <div className="bg-gray-200 aspect-w-1 aspect-h-1 overflow-hidden group-hover:opacity-75 lg:aspect-none" style={{
-                      height: "160px"
-                    }}>
+                    <div className="bg-gray-200 aspect-w-1 aspect-h-1 overflow-hidden group-hover:opacity-75 lg:aspect-none">
                       <img
                         src={product?.images.length > 0 ? `http://otomobilku.id/storage/${product?.images[0].path}` : ''}
                         className="w-full h-full object-center object-cover lg:w-full lg:h-full"
