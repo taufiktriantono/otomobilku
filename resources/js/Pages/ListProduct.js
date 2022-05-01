@@ -652,10 +652,10 @@ export default function ListProduct(props) {
                   </div>
                 ) : null
               }
-              <div className="grid grid-cols-1 gap-y-2 md:grid-cols-2">
+              <div className="grid grid-cols-1 gap-y-4 md:grid-cols-2">
                 { !loadProduct ? products.data.map((product) => (
-                  <div key={product.id} className="group relative grid grid-cols-2 p-4 shadow-md overflow-hidden rounded hover:bg-gray-300">
-                    <div className="bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:aspect-none w-40 md:w-40 sm:w-40" style={{
+                  <div key={product.id} className="group relative grid grid-cols-2 gap-2 shadow-md overflow-hidden rounded hover:bg-gray-300">
+                    <div className="bg-gray-200 aspect-w-1 aspect-h-1 overflow-hidden group-hover:opacity-75 lg:aspect-none" style={{
                       height: "160px"
                     }}>
                       <img
@@ -663,14 +663,14 @@ export default function ListProduct(props) {
                         className="w-full h-full object-center object-cover lg:w-full lg:h-full"
                       />
                     </div>
-                    <div className='md:ml-4'>
+                    <div className='p-4'>
                       <h3 className="text-lg text-black-600 font-bold">
                         <a href={route('show:product', {slug: product.slug})}>
                           <span aria-hidden="true" className="absolute inset-0" />
                           {formatRupiah(product.price)}
                         </a>
                       </h3>
-                      <div className="h-12 w-11/12 mt-1 text-md font-bold text-gray-700 text-ellipsis overflow-hidden whitespace-nowrap">{product.name}</div>
+                      <div className="h-14 mt-1 text-sm font-bold text-gray-700 text-ellipsis overflow-hidden whitespace-nowrap">{product.name}</div>
                       <div className="mt-2 text-md font-bold text-gray-700">{product.build_year} - {product.distance} KM</div>
                       <div className='flex justify-between mt-1'>
                         <div className="mt-1 text-sm font-bold text-gray-700">{product?.district?.district_name ? product?.district?.district_name : '-'}</div>
