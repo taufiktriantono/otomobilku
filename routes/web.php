@@ -23,8 +23,8 @@ use App\Http\Controllers\Api\ProductController as ApiProductController;
 */
 
 Route::domain(env('APP_DOMAIN'))->group(function() {
-    Route::get('/', [HomeController::class, 'index'])->name('home');
-    Route::get('/mobil-bekas', [HomeController::class, 'listProduct'])->name('list.product');
+    Route::get('/', [HomeController::class, 'listProduct'])->name('home');
+    // Route::get('/mobil-bekas', [HomeController::class, 'listProduct'])->name('list.product');
     Route::get('/mobil-bekas/{slug}', [HomeController::class, 'showProduct'])->name('show:product');
 });
 
