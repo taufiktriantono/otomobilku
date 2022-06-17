@@ -65,7 +65,7 @@ export default function Layout(props) {
                 <div className="flex justify-between items-center border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10">
                   <div className="flex justify-start lg:w-0 lg:flex-1">
                       <Link href="/">
-                        <ApplicationLogo className="h-12 w-auto sm:h-10"/>
+                        <ApplicationLogo className="h-32 w-auto sm:h-10"/>
                       </Link>
                       <div className="group relative mt-1">
                           <form onSubmit={submit} className="flex justify-center ml-10 border rounded-md">
