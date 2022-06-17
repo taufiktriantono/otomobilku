@@ -51,7 +51,7 @@ export default function Mobile(props) {
         <div className={`p-4`}>
           <div className="flex justify-center">
             <Link href="/">
-              <ApplicationLogo className="h-8 w-auto sm:h-10"/>
+              <ApplicationLogo className="h-8 w-auto sm:h-10" src='http://otomobilku.id/storage/images/otomobilku_fix.png' />
             </Link>
           </div>
           {

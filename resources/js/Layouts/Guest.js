@@ -7,7 +7,7 @@ export default function GuestBak({ children }) {
         <div className="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
             <div>
                 <Link href="/">
-                    <ApplicationLogo className="w-32 h-32 fill-current text-gray-500" />
+                    <ApplicationLogo className="w-auto h-16 fill-current text-gray-500" src='http://otomobilku.id/storage/images/otomobilku_fix_bak.png' />
                 </Link>
             </div>
 

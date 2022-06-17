@@ -1,7 +1,7 @@
 import React from 'react';
 
-export default function ApplicationLogo({ className }) {
+export default function ApplicationLogo({ className, src }) {
     return (
-        <img className={className} src={'http://otomobilku.id/storage/images/otomobilku_fix.png'} />
+        <img className={className} src={src} />
     );
 }
