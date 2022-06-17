@@ -31,7 +31,9 @@ class Product extends Model
         'distance',
         'geo_point',
         'seller_id',
-        'is_active'
+        'is_active',
+        'archive',
+        'verified'
     ];
 
     public function bodyType() {

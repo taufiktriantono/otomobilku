@@ -57,7 +57,9 @@ class ProductController extends Controller
             'geo_point' => 'string|nullable',
             'is_active' => 'required',
             'seller_id' => 'required',
-            'image_path' => 'array'
+            'image_path' => 'array',
+            'archive' => 'nullable',
+            'verified' => 'nullable'
         ]);
 
         $productRepo = new ProductRepository();

@@ -71,6 +71,19 @@ class ProductRepository
       $stmt->whereIn('product_model_id', $mnodelIds);
     }
 
+    if (isset($params['phone_number'])) {
+      $ownerIds = ProductOwner::where('phone_number', $params['phone_number'])->select('id')->get();
+      $stmt->whereIn('product_owner_id', $ownerIds);
+    }
+
+    if (isset($params['archive'])) {
+      $stmt->where('archive', $params['archive']);
+    }
+
+    if (isset($params['verified'])) {
+      $stmt->where('verified', $params['verified']);
+    }
+
     $stmt->orderBy('updated_at', 'desc');
 
     $stmt->with('bodyType')
@@ -188,7 +201,9 @@ class ProductRepository
       'price' => $params['price'],
       'geo_point' => $params['geo_point'],
       'seller_id' => $params['seller_id'],
-      'is_active' => $params['is_active']
+      'is_active' => $params['is_active'],
+      'archive' => $params['archived'],
+      'verified' => $params['verified']
     ]);
 
     $images = ProductImage::where('product_id', '=', $product->id)->get();
@@ -200,6 +215,19 @@ class ProductRepository
       $productImage = ProductImage::create([
         'product_id' => $product->id,
         'path' => $image['path']
+      ]);
+    }
+
+    $owner = ProductOwner::where('phone_number', '=', $params['phone_number'])->first();
+    if (!$owner) {
+      $owner = ProductOwner::create([
+        'full_name' => $params['full_name'],
+        'phone_number' => $params['phone_number']
+      ]);
+    } else {
+      $owner->update([
+        'full_name' => $params['full_name'],
+        'phone_number' => $params['phone_number']
       ]);
     }
 

@@ -282,7 +282,7 @@ export default function ListProduct(props) {
                         </nav>
                     </div>
                 </div>
-                </div>
+            </div>
         </Dashboard>
     );
 }

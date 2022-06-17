@@ -4,6 +4,7 @@ import { Switch } from '@headlessui/react'
 import { Inertia } from '@inertiajs/inertia';
 import { Head } from '@inertiajs/inertia-react';
 import ValidationErrors from '@/Components/ValidationErrors';
+import Label from '@/Components/Label';
 
 export default function ListProduct(props) {
     const { auth, errors } = props
@@ -464,6 +465,7 @@ export default function ListProduct(props) {
                         </div>
                       </div>
                       <div className='w-full mb-4'>
+                        <Label>Publish</Label>
                         <Switch
                           checked={enabled}
                           onChange={setEnabled}

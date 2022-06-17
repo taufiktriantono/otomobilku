@@ -9,6 +9,7 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\Admin\HomeController as AdminController;
 use App\Http\Controllers\Admin\ProductController as ProductController;
 use App\Http\Controllers\Admin\ImageController as ImageController;
+use App\Http\Controllers\Admin\RequestController as RequestController;
 use App\Http\Controllers\Api\ProductController as ApiProductController;
 
 /*
@@ -38,6 +39,8 @@ Route::domain('admin.'.env('APP_DOMAIN'))->group(function() {
         Route::get('/products/{slug}/edit', [ProductController::class, 'edit'])->name('update:product');
         Route::put('/products/{id}', [ProductController::class, 'doEdit']);
         Route::post('/images', [ImageController::class, 'upload']);
+        Route::get('/permintaan', [RequestController::class, 'index'])->name('list-permintaan');
+        Route::put('/permintaan/{id}', [RequestController::class, 'update'])->name('update-permintaan');
     });
 
     require __DIR__.'/auth.php';
