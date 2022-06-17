@@ -4747,7 +4747,7 @@ function Authenticated(_ref) {
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_5__.Link, {
                 href: "/",
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Components_ApplicationLogo__WEBPACK_IMPORTED_MODULE_1__["default"], {
-                  className: "block w-auto h-16 py-4 text-gray-500",
+                  className: "block w-auto h-36 py-4 text-gray-500",
                   src: "http://otomobilku.id/storage/images/otomobilku_fix.png"
                 })
               })
@@ -4891,7 +4891,7 @@ function GuestBak(_ref) {
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__.Link, {
         href: "/",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Components_ApplicationLogo__WEBPACK_IMPORTED_MODULE_1__["default"], {
-          className: "w-auto h-16 fill-current text-gray-500",
+          className: "w-auto h-36 fill-current text-gray-500",
           src: "http://otomobilku.id/storage/images/otomobilku_fix.png"
         })
       })

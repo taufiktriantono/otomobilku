@@ -789,6 +789,9 @@ select {
 .h-12 {
   height: 3rem;
 }
+.h-32 {
+  height: 8rem;
+}
 .h-4 {
   height: 1rem;
 }
@@ -807,9 +810,6 @@ select {
 .h-14 {
   height: 3.5rem;
 }
-.h-32 {
-  height: 8rem;
-}
 .h-auto {
   height: auto;
 }
@@ -818,6 +818,9 @@ select {
 }
 .h-\[34px\] {
   height: 34px;
+}
+.h-36 {
+  height: 9rem;
 }
 .max-h-60 {
   max-height: 15rem;
