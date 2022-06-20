@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 use App\Repositories\BrandRepository;
 use App\Repositories\ModelRepository;
+use App\Repositories\VariantRepository;
 
 class BrandController extends Controller
 {
@@ -42,5 +43,13 @@ class BrandController extends Controller
         return response()->json($models, 200);
     }
 
-    public function showModel($id) {}
+    public function findAllVariant($modelId) {
+        $variantRepo = new VariantRepository();
+
+        $variants = $variantRepo->findAll([
+            'model_id' => $modelId
+        ]);
+
+        return response()->json($variants, 200);
+    }
 }

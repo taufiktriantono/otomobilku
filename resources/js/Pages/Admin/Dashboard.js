@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Authenticated from '@/Layouts/Authenticated';
 import { Head } from '@inertiajs/inertia-react';
-import { ArchiveIcon } from '@heroicons/react/outline';
+import { ArchiveIcon, ArrowRightIcon, ChevronDownIcon, ChevronRightIcon, CogIcon } from '@heroicons/react/outline';
+import { Transition } from '@headlessui/react';
 
 export default function Dashboard(props) {
+
+    const [open, setOpen] = useState(false)
+
     return (
         <Authenticated
             auth={props.auth}
@@ -30,6 +34,38 @@ export default function Dashboard(props) {
                                             <ArchiveIcon className='flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white' />
                                             <span className="flex-1 ml-3 text-gray-500 hover:text-white">Permintaan Jual Mobil</span>
                                             </a>
+                                        </li>
+                                        <li>
+                                            <a onClick={() => setOpen(!open)} href={'#'} className="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-indigo-700">
+                                            <CogIcon className='flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white' />
+                                            <span className="flex-1 ml-3 text-gray-500 hover:text-white">Configuration</span>
+                                            {open ? (
+                                                <ChevronDownIcon className='flex-shrink-0 w-4 h-4 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white' />
+                                            ) : (
+                                                <ChevronRightIcon className='flex-shrink-0 w-4 h-4 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white' />
+                                            )}
+                                            </a>
+                                            {open ? (
+                                                <Transition
+                                                    show={open}
+                                                    enter="transition-opacity duration-75"
+                                                    enterFrom="opacity-0"
+                                                    enterTo="opacity-100"
+                                                    leave="transition-opacity duration-150"
+                                                    leaveFrom="opacity-100"
+                                                    leaveTo="opacity-0"
+                                                >
+                                                    <ul className='space-y-2 ml-2'>
+                                                        <li>
+                                                            <a href={route('setting-model')} className="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-indigo-700">
+                                                            <ArrowRightIcon className='flex-shrink-0 w-4 h-4 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white' />
+                                                            <span className="flex-1 ml-3 text-gray-500 hover:text-white">Models</span>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </Transition>
+                                            ) : null
+                                            }
                                         </li>
                                     </ul>
                                 </div>

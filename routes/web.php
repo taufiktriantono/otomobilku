@@ -6,10 +6,12 @@ use Inertia\Inertia;
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\BlogController;
+
 use App\Http\Controllers\Admin\HomeController as AdminController;
 use App\Http\Controllers\Admin\ProductController as ProductController;
 use App\Http\Controllers\Admin\ImageController as ImageController;
 use App\Http\Controllers\Admin\RequestController as RequestController;
+use App\Http\Controllers\Admin\SettingController as SettingController;
 use App\Http\Controllers\Api\ProductController as ApiProductController;
 
 /*
@@ -27,6 +29,8 @@ Route::domain(env('APP_DOMAIN'))->group(function() {
     Route::get('/', [HomeController::class, 'listProduct'])->name('home');
     // Route::get('/mobil-bekas', [HomeController::class, 'listProduct'])->name('list.product');
     Route::get('/mobil-bekas/{slug}', [HomeController::class, 'showProduct'])->name('show:product');
+    Route::get('/jual-mobil', [HomeController::class, 'form'])->name('sell:product');
+    Route::post('/jual-mobil', [HomeController::class, 'storeForm']);
 });
 
 Route::domain('admin.'.env('APP_DOMAIN'))->group(function() {
@@ -41,6 +45,11 @@ Route::domain('admin.'.env('APP_DOMAIN'))->group(function() {
         Route::post('/images', [ImageController::class, 'upload']);
         Route::get('/permintaan', [RequestController::class, 'index'])->name('list-permintaan');
         Route::put('/permintaan/{id}', [RequestController::class, 'update'])->name('update-permintaan');
+
+        Route::prefix('settings')->group(function () {
+                Route::get('/models', [SettingController::class, 'index'])->name('setting-model'); 
+        });
+
     });
 
     require __DIR__.'/auth.php';

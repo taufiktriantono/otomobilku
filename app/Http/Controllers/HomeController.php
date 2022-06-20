@@ -35,7 +35,10 @@ class HomeController extends Controller
         return Inertia::render('DetailProduct', [ 'slug' => $slug, 'breadcrumb' => $breadcrumb, 'cs_phone' => env('OFFICIAL_PHONE'),]);
     }
 
-    public function form(Request $request) {}
+    public function form(Request $request) {
+        return Inertia::render('ListRequest');
+    }
 
-    public function storeForm(Request $request) {} 
+    public function storeForm(Request $request) {}
+
 }

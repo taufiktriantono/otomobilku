@@ -32,6 +32,11 @@ Route::get('/bodyTypes', [GeneralController::class, 'listBodyType']);
 Route::get('/transmissions', [GeneralController::class, 'listTransmission']);
 
 Route::get('/models', [BrandController::class, 'findAllModels']);
+// Route::post('/models', [BrandController::class, 'findAllModels']);
+
+Route::get('/models/{model_id}/variants', [BrandController::class, 'findAllVariants']);
+// Route::post('/models/{model_id}/variants', [BrandController::class, 'findAllVariants']);
+
 Route::get('/brands', [BrandController::class, 'findAll']);
 Route::get('/brands/{brand_id}', [BrandController::class, 'show']);
 Route::get('/brands/{brand_id}/models', [BrandController::class, 'findAllModel']);
