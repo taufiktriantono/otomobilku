@@ -44,10 +44,15 @@ Route::domain('admin.'.env('APP_DOMAIN'))->group(function() {
         Route::put('/products/{id}', [ProductController::class, 'doEdit']);
         Route::post('/images', [ImageController::class, 'upload']);
         Route::get('/permintaan', [RequestController::class, 'index'])->name('list-permintaan');
-        Route::put('/permintaan/{id}', [RequestController::class, 'update'])->name('update-permintaan');
+        Route::put('/permintaan/{id}', [ProductController::class, 'doEdit'])->name('update-permintaan');
 
         Route::prefix('settings')->group(function () {
-                Route::get('/models', [SettingController::class, 'index'])->name('setting-model'); 
+                Route::get('/brands', [SettingController::class, 'listBrand'])->name('setting-brand');
+                Route::get('/brands/show/{id}', [SettingController::class, 'showBrand'])->name('setting-show-brand');
+                Route::get('/brands/add', [SettingController::class, 'addBrand'])->name('setting-add-brand');
+                // Route::post('/brands/add', [SettingController::class, 'addBrand']);
+
+                Route::get('/models', [SettingController::class, 'listModel'])->name('setting-model');
         });
 
     });

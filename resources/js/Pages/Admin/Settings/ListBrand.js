@@ -4,9 +4,9 @@ import { Head, useForm } from "@inertiajs/inertia-react";
 import { useCallback, useEffect, useState } from "react";
 import Dashboard from "../Dashboard";
 
-export default function ListModels(props) {
+export default function ListBrand(props) {
 
-  const { current_page, per_page } = props.models
+  const { current_page, per_page } = props.brands
 
   const {brand, setBrand} = useState('')
   const { data, setData, get } = useForm({
@@ -74,57 +74,40 @@ export default function ListModels(props) {
 
   return (
     <Dashboard auth={props.auth} header={props.header} errors={props.errors}>
-      <Head title="Daftar Model Mobil" />
-      <div className='w-full flex text-gray-700 space-x-2'>
+      <Head title="Daftar Brand Mobil" />
+      <div className='w-full flex justify-between text-gray-700 space-x-2'>
+        <div className="self-center text-lg font-bold">List Brand</div>
         <div>
-            <Label value={'Brand'} className="mb-2" />
-            <select className='w-full rounded' name='merk' value={data.brand_id} onChange={handleChangeBrand}>
-              <option value='*'>All Brand</option>
-              {
-                brands.map((brand, i) => {
-                  return (
-                    <option key={brand.id} value={brand.id}>{brand.name}</option>
-                  )
-                })
-              }
-            </select>
-        </div>
-        <div className="flex">
-          <button type={'button'} className={'py-2 px-4 self-end bg-indigo-700 rounded-md text-white'} onClick={search}>
-            Search
-          </button>
-          <button type={'button'} className={'py-2 px-4 self-end bg-gray-700 rounded-md text-white ml-2'} onClick={clear}>
-            Clear
-          </button>
+          <a href={route('setting-add-brand')} className={'py-2 px-4 self-end bg-indigo-700 rounded-md text-white'} >
+            Add Brand
+          </a>
         </div>
       </div>
       <table className="w-full mt-4 text-sm text-left text-gray-500">
         <thead className="text-xs text-gray-700 uppercase bg-gray-50 ">
           <tr>
+            <th scope="col" className="px-6 py-3">Image</th>
+            <th scope="col" className="px-6 py-3">Brand</th>
             <th scope="col" className="px-6 py-3">Model</th>
-            <th scope="col" className="px-6 py-3">Variant</th>
           </tr>
         </thead>
         <tbody>
           {
-            props.models.data.map((model, i) => {
+            props.brands.data.map((brand, i) => {
               return (
-                <tr key={model.id} className="bg-white border-b">
+                <tr key={brand.id} className="bg-white border-b">
+                  <td className="px-6 py-4">
+                    -
+                  </td>
                   <td className="px-6 py-4">
                     <div className="font-bold">
-                      <a href={'#'}>
-                        {model.name}
+                      <a href={route('setting-show-brand', brand.id)}>
+                        {brand.name}
                       </a>
                     </div>
                   </td>
                   <td className="px-6 py-4">
-                    <div className="w-1/2 flex space-x-2">
-                      {
-                        renderVariant(model.variants).map((variant) => {
-                          return <div className="border border-indigo-500 bg-indigo-500 px-1.5 rounded-lg font-bold text-sm text-white">{variant}</div>
-                        })
-                      }
-                    </div>
+                    {brand.models.length} Model
                   </td>
                 </tr>
               )
@@ -150,30 +133,30 @@ export default function ListModels(props) {
         <div className="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between">
             <div>
                 <p className="text-sm text-gray-700">
-                  Showing <span className="font-medium">{props.models.from != null ? props.models.from : 0}</span> to <span className="font-medium">{props.models.to != null ? props.models.to : 0}</span> of{' '}
-                  <span className="font-medium">{props.models.total}</span> results
+                  Showing <span className="font-medium">{props.brands.from != null ? props.brands.from : 0}</span> to <span className="font-medium">{props.brands.to != null ? props.brands.to : 0}</span> of{' '}
+                  <span className="font-medium">{props.brands.total}</span> results
                 </p>
             </div>
             <div>
                 <nav className="relative z-0 inline-flex rounded-md shadow-sm -space-x-px" aria-label="Pagination">
                     {
-                        props.models.links.map((link, i) => {
+                        props.brands.links.map((link, i) => {
                             if (i == 0) {
                                 return (
                                     <a
                                         key={i}
-                                        href={props.models.prev_page_url}
+                                        href={props.brands.prev_page_url}
                                         className="relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50 cursor-pointer"
                                     >
                                         <span className="sr-only">Previous</span>
                                         <ChevronLeftIcon className="h-5 w-5" aria-hidden="true" />
                                     </a>
                                 )
-                            } else if (props.models.links.length === i+1) {
+                            } else if (props.brands.links.length === i+1) {
                                 return (
                                     <a
                                         key={i}
-                                        href={props.models.next_page_url}
+                                        href={props.brands.next_page_url}
                                         className="relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50 cursor-pointer"
                                     >
                                     <span className="sr-only">Next</span>

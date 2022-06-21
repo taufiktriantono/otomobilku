@@ -18,10 +18,10 @@ class ModelRepository
       $stmt->where('brand_id', $params['brand_id']);
     }
 
-    $stmt->limit($params['limit']);
-    $stmt->offset($params['page']);
+    $stmt->orderBy('name', 'asc');
 
-    return $stmt->orderBy('name', 'asc')->get();
+    return $stmt->with('variants');
+
   }
 
 }

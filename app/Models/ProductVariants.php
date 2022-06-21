@@ -18,6 +18,7 @@ class ProductVariants extends Model
     protected $fillable = [
         'product_id',
         'variant_id',
+        'is_master',
     ];
 
 }

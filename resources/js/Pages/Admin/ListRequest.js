@@ -8,16 +8,17 @@ import Dashboard from "./Dashboard"
 export default function ListRequests(props) {
 
   const { auth, products } = props
+  const { current_page, per_page } = products
   const params = new URLSearchParams()
   const [query, setQuery] = useState({
-    page: 1,
-    limit: 20,
+    page: current_page,
+    limit: per_page,
     created_at: '',
     phone_number: '',
     q: '',
   })
 
-  const { data, setData, get, put } = useForm(products.data)
+  const { data, setData, get, put, processing } = useForm()
 
   params.set('page', query.page)
   params.set('limit', query.limit)
@@ -34,7 +35,7 @@ export default function ListRequests(props) {
   }
 
   const handleChange = (e) => {
-    setQuery((prev) => {
+    setData((prev) => {
       return {
           ...prev,
         [e.target.name]: e.target.value
@@ -43,7 +44,7 @@ export default function ListRequests(props) {
   }
 
   const changePage = (pos) => {
-    setQuery((prev) => {
+    setData((prev) => {
       return {
         ...prev,
         page: pos,
@@ -52,7 +53,7 @@ export default function ListRequests(props) {
   }
 
   const linkActive = (pos) => {
-    if (query.page == pos) {
+    if (data.page == pos) {
         return 'z-10 bg-indigo-50 border-indigo-500 text-indigo-600 relative inline-flex items-center px-4 py-2 border text-sm font-medium cursor-pointer'
     } else {
         return 'bg-white border-gray-300 text-gray-500 hover:bg-gray-50 relative inline-flex items-center px-4 py-2 border text-sm font-medium cursor-pointer'
@@ -77,14 +78,16 @@ export default function ListRequests(props) {
   }
 
   const submit = (i) => {
+    const product = products.data[i]
+    product.verified = !product.verified
     setData((prev) => {
-      const product = prev[i]
-      product.verified = !product.verified
-      return [...prev]
+      return {
+        ...prev,
+        ...product
+      }
     })
 
-    const product = data[i]
-    put(route('update-permintaan', product));
+    put(route('update-permintaan', product.id));
   }
 
   return (
@@ -148,7 +151,7 @@ export default function ListRequests(props) {
             </tr>
           </thead>
           <tbody>
-            {data.map((product, i) => {
+            {products.data.map((product, i) => {
                   return (
                       <tr key={product.id} className="bg-white border-b">
                           <td className="px-6 py-4">{product.id}</td>
@@ -168,9 +171,9 @@ export default function ListRequests(props) {
                           </td>
                           <td className="px-6 -y-4">
                             <form onSubmit={() => submit(product)}>
-                              <button type={'button'} className={'py-2 px-4 self-end bg-indigo-700 rounded-md text-white disabled:bg-gray-400'} disabled={data[i].verified} onClick={() => submit(i)}>
+                              <button type={'button'} className={'py-2 px-4 self-end bg-indigo-700 rounded-md text-white disabled:bg-gray-400'} disabled={products.data[i].verified} onClick={() => submit(i)}>
                                 {
-                                  data[i].verified ? 'Inactive' : 'Hubungi'
+                                  products.data[i].verified ? 'Inactive' : 'Hubungi'
                                 }
                               </button>
                             </form>

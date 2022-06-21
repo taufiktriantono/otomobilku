@@ -16,6 +16,7 @@ class Variants extends Model
     public $incrementing = false;
 
     protected $fillable = [
+        'model_id',
         'name',
         'slug'
     ];

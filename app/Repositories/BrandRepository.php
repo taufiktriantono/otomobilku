@@ -8,7 +8,11 @@ class BrandRepository
 {
 
   public function findAll() {
-    return ProductBrand::orderBy('order', 'asc')->get();
+    return ProductBrand::orderBy('order', 'asc')->with('models');
+  }
+
+  public function findOneByID($id) {
+    return ProductBrand::where('id', '=', $id)->with('models');
   }
 
 }

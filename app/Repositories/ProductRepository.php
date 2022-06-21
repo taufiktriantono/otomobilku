@@ -202,33 +202,50 @@ class ProductRepository
       'geo_point' => $params['geo_point'],
       'seller_id' => $params['seller_id'],
       'is_active' => $params['is_active'],
-      'archive' => $params['archived'],
+      'archive' => $params['archive'],
       'verified' => $params['verified']
     ]);
 
-    $images = ProductImage::where('product_id', '=', $product->id)->get();
-    foreach ($images as $image) {
-      $image->delete();
+    if (isset($params['image_path'])) {
+      $images = ProductImage::where('product_id', '=', $product->id)->get();
+      foreach ($images as $image) {
+        $image->delete();
+      }
+
+      foreach ($params['image_path'] as $image) {
+        $productImage = ProductImage::create([
+          'product_id' => $product->id,
+          'path' => $image['path']
+        ]);
+      }
     }
 
-    foreach ($params['image_path'] as $image) {
-      $productImage = ProductImage::create([
-        'product_id' => $product->id,
-        'path' => $image['path']
-      ]);
-    }
-
-    $owner = ProductOwner::where('phone_number', '=', $params['phone_number'])->first();
-    if (!$owner) {
-      $owner = ProductOwner::create([
-        'full_name' => $params['full_name'],
-        'phone_number' => $params['phone_number']
-      ]);
+    if (isset($params['owner'])) {
+      $owner = ProductOwner::where('phone_number', '=', $params['owner']['phone_number'])->first();
+      if (!$owner) {
+        $owner = ProductOwner::create([
+          'full_name' => $params['owner']['full_name'],
+          'phone_number' => $params['owner']['phone_number']
+        ]);
+      } else {
+        $owner->update([
+          'full_name' => $params['owner']['full_name'],
+          'phone_number' => $params['owner']['phone_number']
+        ]);
+      }
     } else {
-      $owner->update([
-        'full_name' => $params['full_name'],
-        'phone_number' => $params['phone_number']
-      ]);
+      $owner = ProductOwner::where('phone_number', '=', $params['phone_number'])->first();
+      if (!$owner) {
+        $owner = ProductOwner::create([
+          'full_name' => $params['full_name'],
+          'phone_number' => $params['phone_number']
+        ]);
+      } else {
+        $owner->update([
+          'full_name' => $params['full_name'],
+          'phone_number' => $params['phone_number']
+        ]);
+      }
     }
 
     return $product;

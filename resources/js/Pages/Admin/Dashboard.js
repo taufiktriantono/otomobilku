@@ -37,13 +37,13 @@ export default function Dashboard(props) {
                                         </li>
                                         <li>
                                             <a onClick={() => setOpen(!open)} href={'#'} className="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-indigo-700">
-                                            <CogIcon className='flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white' />
-                                            <span className="flex-1 ml-3 text-gray-500 hover:text-white">Configuration</span>
-                                            {open ? (
-                                                <ChevronDownIcon className='flex-shrink-0 w-4 h-4 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white' />
-                                            ) : (
-                                                <ChevronRightIcon className='flex-shrink-0 w-4 h-4 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white' />
-                                            )}
+                                                <CogIcon className='flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white' />
+                                                <span className="flex-1 ml-3 text-gray-500 hover:text-white">Configuration</span>
+                                                {open ? (
+                                                    <ChevronDownIcon className='flex-shrink-0 w-4 h-4 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white' />
+                                                ) : (
+                                                    <ChevronRightIcon className='flex-shrink-0 w-4 h-4 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white' />
+                                                )}
                                             </a>
                                             {open ? (
                                                 <Transition
@@ -55,11 +55,17 @@ export default function Dashboard(props) {
                                                     leaveFrom="opacity-100"
                                                     leaveTo="opacity-0"
                                                 >
-                                                    <ul className='space-y-2 ml-2'>
+                                                    <ul className='space-y-2 ml-4'>
+                                                        <li>
+                                                            <a href={route('setting-brand')} className="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-indigo-700">
+                                                                <ArrowRightIcon className='flex-shrink-0 w-4 h-4 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white' />
+                                                                <span className="flex-1 ml-3 text-gray-500 hover:text-white">Brands</span>
+                                                            </a>
+                                                        </li>
                                                         <li>
                                                             <a href={route('setting-model')} className="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-indigo-700">
-                                                            <ArrowRightIcon className='flex-shrink-0 w-4 h-4 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white' />
-                                                            <span className="flex-1 ml-3 text-gray-500 hover:text-white">Models</span>
+                                                                <ArrowRightIcon className='flex-shrink-0 w-4 h-4 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white' />
+                                                                <span className="flex-1 ml-3 text-gray-500 hover:text-white">Models</span>
                                                             </a>
                                                         </li>
                                                     </ul>

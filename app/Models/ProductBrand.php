@@ -15,4 +15,14 @@ class ProductBrand extends Model
 
     public $incrementing = false;
 
+    protected $fillable = [
+        'name',
+        'slug',
+        'is_active'
+    ];
+
+    public function models() {
+        return $this->hasMany(ProductModel::class, 'brand_id', 'id');
+    }
+
 }

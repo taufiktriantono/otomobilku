@@ -14,7 +14,7 @@ class BrandController extends Controller
     public function findAll() {
         $brandRepo = new BrandRepository();
 
-        $brands = $brandRepo->findAll();
+        $brands = $brandRepo->findAll()->get();
 
         return response()->json($brands, 200);
     }
@@ -28,7 +28,7 @@ class BrandController extends Controller
 
         $modelRepo = new ModelRepository();
 
-        $models = $modelRepo->findAll($validator);
+        $models = $modelRepo->findAll($validator)->get();
 
         return response()->json($models, 200);
     } 
@@ -38,7 +38,7 @@ class BrandController extends Controller
 
         $models = $modelRepo->findAll([
             'brand_id' => $brandId
-        ]);
+        ])->get();
 
         return response()->json($models, 200);
     }

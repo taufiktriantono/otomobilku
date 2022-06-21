@@ -15,9 +15,15 @@ return new class extends Migration
     {
         Schema::create('variants', function (Blueprint $table) {
             $table->uuid('id')->primary();
+            $table->uuid('model_id');
             $table->string('name');
             $table->string('slug');
             $table->timestamps();
+
+            $table->foreign('model_id')
+                ->references('id')
+                ->on('product_models')
+                ->onDelete('cascade');
         });
     }
 
