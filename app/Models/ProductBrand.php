@@ -22,7 +22,7 @@ class ProductBrand extends Model
     ];
 
     public function models() {
-        return $this->hasMany(ProductModel::class, 'brand_id', 'id');
+        return $this->hasMany(ProductModel::class, 'brand_id', 'id')->with('variants');
     }
 
 }

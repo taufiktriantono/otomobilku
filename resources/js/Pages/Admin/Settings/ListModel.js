@@ -77,7 +77,7 @@ export default function ListModels(props) {
       <Head title="Daftar Model Mobil" />
       <div className='w-full flex text-gray-700 space-x-2'>
         <div>
-            <Label value={'Brand'} className="mb-2" />
+            <Label value={'Filter Brand'} className="mb-2" />
             <select className='w-full rounded' name='merk' value={data.brand_id} onChange={handleChangeBrand}>
               <option value='*'>All Brand</option>
               {
@@ -112,7 +112,7 @@ export default function ListModels(props) {
                 <tr key={model.id} className="bg-white border-b">
                   <td className="px-6 py-4">
                     <div className="font-bold">
-                      <a href={'#'}>
+                      <a href={route('setting-show-model', model.id)}>
                         {model.name}
                       </a>
                     </div>
@@ -121,7 +121,7 @@ export default function ListModels(props) {
                     <div className="w-1/2 flex space-x-2">
                       {
                         renderVariant(model.variants).map((variant) => {
-                          return <div className="border border-indigo-500 bg-indigo-500 px-1.5 rounded-lg font-bold text-sm text-white">{variant}</div>
+                          return <div key={variant} className="border border-indigo-500 bg-indigo-500 px-1.5 rounded-lg font-bold text-sm text-white">{variant}</div>
                         })
                       }
                     </div>

@@ -62,4 +62,48 @@ class SettingController extends Controller
         ]);
     }
 
+    public function addModel(Request $request) {
+        return Inertia::render('Admin/Settings/EditModel', [
+            'action' => 'store',
+        ]);
+    }
+
+    public function showModel($id, Request $request) {
+        $modelRepo = new ModelRepository();
+        $model = $modelRepo->findOneByID($id)
+            ->first();
+
+        return Inertia::render('Admin/Settings/EditModel', [
+            'action' => 'show',
+            'model' => $model
+        ]);
+    }
+
+    public function updateModel($id, Request $request) {
+        $modelRepo = new ModelRepository();
+        $model = $modelRepo->findOneByID($id)
+            ->first();
+
+        return Inertia::render('Admin/Settings/EditModel', [
+            'action' => 'update',
+            'model' => $model
+        ]);
+    }
+
+    public function update($id, Request $request) {
+
+        $validator = $request->validate([
+            'name' => 'required',
+            'variants' => 'array'
+        ]);
+
+        $modelRepo = new ModelRepository();
+        if ($modelRepo->updateByID($id, $validator)) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        };
+
+        return redirect()->route('setting-show-model', ['id' => $id]);
+
+    }
+
 }

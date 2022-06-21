@@ -9860,6 +9860,237 @@ function ListBrand(props) {
 
 /***/ }),
 
+/***/ "./resources/js/Pages/Admin/Settings/EditModel.js":
+/*!********************************************************!*\
+  !*** ./resources/js/Pages/Admin/Settings/EditModel.js ***!
+  \********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ EditModel)
+/* harmony export */ });
+/* harmony import */ var _Components_Button__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/Components/Button */ "./resources/js/Components/Button.js");
+/* harmony import */ var _Components_Input__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/Components/Input */ "./resources/js/Components/Input.js");
+/* harmony import */ var _Components_Label__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/Components/Label */ "./resources/js/Components/Label.js");
+/* harmony import */ var _heroicons_react_outline__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @heroicons/react/outline */ "./node_modules/@heroicons/react/outline/esm/TrashIcon.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _Dashboard__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../Dashboard */ "./resources/js/Pages/Admin/Dashboard.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+
+
+
+
+
+
+
+
+function EditModel(props) {
+  var action = props.action,
+      model = props.model;
+
+  var _useForm = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__.useForm)(model != undefined ? model : null),
+      data = _useForm.data,
+      setData = _useForm.setData,
+      put = _useForm.put,
+      processing = _useForm.processing;
+
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_5__.useState)(action == 'store' || action == 'update' || action == 'show'),
+      _useState2 = _slicedToArray(_useState, 2),
+      open = _useState2[0],
+      setOpen = _useState2[1];
+
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_5__.useState)(model != undefined && model.variants.length > 0 ? model.variants.map(function (m) {
+    return {
+      'model_id': model.id,
+      'name': m.name
+    };
+  }) : [{
+    model_id: model != undefined ? model.id : '',
+    name: ''
+  }]),
+      _useState4 = _slicedToArray(_useState3, 2),
+      variant = _useState4[0],
+      setVariant = _useState4[1];
+
+  var handleChange = function handleChange(e) {
+    setOpen(function (prev) {
+      return !open;
+    });
+  };
+
+  var handleChangeModel = function handleChangeModel(e) {
+    variant[e.target.name]['name'] = e.target.value;
+    setVariant(function (prev) {
+      return _toConsumableArray(variant);
+    });
+    setData(function (prev) {
+      return _objectSpread(_objectSpread({}, prev), {}, {
+        variants: variant
+      });
+    });
+  };
+
+  var handleAddModel = function handleAddModel(e) {
+    variant.push({
+      name: ''
+    });
+    setVariant(function (prev) {
+      return _toConsumableArray(variant);
+    });
+    setData(function (prev) {
+      return _objectSpread(_objectSpread({}, prev), {}, {
+        variants: variant
+      });
+    });
+  };
+
+  var handleRemovedModel = function handleRemovedModel(i) {};
+
+  var submit = function submit() {
+    console.log('SUBMIT ', data);
+  };
+
+  var update = function update() {
+    put(route('update-model', model.id));
+  };
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_Dashboard__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    auth: props.auth,
+    header: props.header,
+    errors: props.errors,
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__.Head, {
+      title: "Daftar Brand Mobil"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+      className: "w-full flex justify-between text-gray-700 space-x-2",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+        className: "self-center text-2xl font-bold py-4",
+        children: [action == 'store' ? 'Add' : action == 'update' ? 'Edit' : 'Show', " Model"]
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("form", {
+      className: "w-1/2 space-y-2 bg-white p-4 rounded-md",
+      onSubmit: action == 'store' ? submit : update,
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+        className: "",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Label__WEBPACK_IMPORTED_MODULE_2__["default"], {
+          value: "Model Name",
+          className: 'mb-2'
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Input__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          className: 'w-full',
+          required: true,
+          disabled: action == 'show',
+          value: data.name
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+        className: "",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("input", {
+          name: "add-model",
+          type: "checkbox",
+          className: "border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mr-2",
+          value: open,
+          checked: open,
+          disabled: action != 'store' && action != 'update',
+          onChange: handleChange
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("span", {
+          className: "text-sm",
+          children: [action == 'store' ? 'Add' : action == 'update' ? 'Add' : 'Show', " Variant"]
+        })]
+      }), open ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+        className: "space-y-2",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+          className: "text-sm font-bold text-gray-500",
+          children: "Variant"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+          className: "space-y-2",
+          children: variant.map(function (v, i) {
+            return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+              className: "flex justify-start",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("input", {
+                type: 'text',
+                name: i,
+                className: 'border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm',
+                value: v.name,
+                onChange: handleChangeModel,
+                required: true,
+                disabled: action == 'show'
+              }), action == 'store' || action == 'update' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("button", {
+                type: "button",
+                className: "self-center px-2 py-1",
+                onClick: handleRemovedModel,
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_heroicons_react_outline__WEBPACK_IMPORTED_MODULE_8__["default"], {
+                  className: "w-6 h-6 text-gray-500"
+                })
+              }) : null]
+            }, i);
+          })
+        }), action == 'store' || action == 'update' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("button", {
+            type: "button",
+            className: "px-2 py-1 bg-indigo-500 rounded text-white",
+            onClick: handleAddModel,
+            children: "Add Model"
+          })
+        }) : null]
+      }) : null, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+        className: "flex",
+        children: action == 'store' || action == 'update' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.Fragment, {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Button__WEBPACK_IMPORTED_MODULE_0__["default"], {
+            className: "bg-gray-500 font-bold mt-2 mr-2",
+            disabled: processing,
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("a", {
+              href: route('setting-show-model', model.id),
+              children: "Back"
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Button__WEBPACK_IMPORTED_MODULE_0__["default"], {
+            className: "bg-indigo-500 font-bold mt-2",
+            disabled: processing,
+            children: "Save"
+          })]
+        }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("a", {
+          href: route('setting-update-model', model.id),
+          className: "self-end py-2 px-4 bg-indigo-500 rounded-md text-white",
+          children: "Edit"
+        })
+      })]
+    })]
+  });
+}
+
+/***/ }),
+
 /***/ "./resources/js/Pages/Admin/Settings/ListBrand.js":
 /*!********************************************************!*\
   !*** ./resources/js/Pages/Admin/Settings/ListBrand.js ***!
@@ -10365,7 +10596,7 @@ function ListModels(props) {
       className: "w-full flex text-gray-700 space-x-2",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Components_Label__WEBPACK_IMPORTED_MODULE_1__["default"], {
-          value: 'Brand',
+          value: 'Filter Brand',
           className: "mb-2"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("select", {
           className: "w-full rounded",
@@ -10420,7 +10651,7 @@ function ListModels(props) {
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
                 className: "font-bold",
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("a", {
-                  href: '#',
+                  href: route('setting-show-model', model.id),
                   children: model.name
                 })
               })
@@ -10432,7 +10663,7 @@ function ListModels(props) {
                   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
                     className: "border border-indigo-500 bg-indigo-500 px-1.5 rounded-lg font-bold text-sm text-white",
                     children: variant
-                  });
+                  }, variant);
                 })
               })
             })]
@@ -13292,13 +13523,18 @@ function ListRequest(props) {
       isModelSelected = _useState6[0],
       setIsModelSelected = _useState6[1];
 
+  var _useForm = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__.useForm)(),
+      data = _useForm.data,
+      setData = _useForm.setData,
+      post = _useForm.post;
+
   var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_4__.useState)([]),
       _useState8 = _slicedToArray(_useState7, 2),
       brands = _useState8[0],
       setListBrands = _useState8[1];
 
   var fetchListBrand = (0,react__WEBPACK_IMPORTED_MODULE_4__.useCallback)( /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
-    var response;
+    var response, brand;
     return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
@@ -13314,10 +13550,13 @@ function ListRequest(props) {
           case 5:
             response = _context.sent;
             setListBrands(response);
-            _context.next = 9;
-            return fetchListModel(response[0].id);
+            brand = response[0];
+            setIsBrandSelected(response[0].id);
+            setListModels(brand.models);
+            setIsModelSelected(brand.models[0].id);
+            setSelectedModel(brand.models[0].name); // await fetchListModel(response[0].id)
 
-          case 9:
+          case 12:
           case "end":
             return _context.stop();
         }
@@ -13325,10 +13564,15 @@ function ListRequest(props) {
     }, _callee);
   })), []);
 
-  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_4__.useState)([]),
+  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_4__.useState)(''),
       _useState10 = _slicedToArray(_useState9, 2),
-      models = _useState10[0],
-      setListModels = _useState10[1];
+      selectedModel = _useState10[0],
+      setSelectedModel = _useState10[1];
+
+  var _useState11 = (0,react__WEBPACK_IMPORTED_MODULE_4__.useState)([]),
+      _useState12 = _slicedToArray(_useState11, 2),
+      models = _useState12[0],
+      setListModels = _useState12[1];
 
   var fetchListModel = (0,react__WEBPACK_IMPORTED_MODULE_4__.useCallback)( /*#__PURE__*/function () {
     var _ref2 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2(brandId) {
@@ -13363,37 +13607,6 @@ function ListRequest(props) {
     };
   }(), []);
 
-  var _useState11 = (0,react__WEBPACK_IMPORTED_MODULE_4__.useState)([]),
-      _useState12 = _slicedToArray(_useState11, 2),
-      variant = _useState12[0],
-      setVariant = _useState12[1];
-
-  var fetchListVariant = (0,react__WEBPACK_IMPORTED_MODULE_4__.useCallback)( /*#__PURE__*/function () {
-    var _ref3 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee3(id) {
-      var response;
-      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee3$(_context3) {
-        while (1) {
-          switch (_context3.prev = _context3.next) {
-            case 0:
-              _context3.next = 2;
-              return fetch('/api/');
-
-            case 2:
-              response = _context3.sent;
-
-            case 3:
-            case "end":
-              return _context3.stop();
-          }
-        }
-      }, _callee3);
-    }));
-
-    return function (_x2) {
-      return _ref3.apply(this, arguments);
-    };
-  }(), []);
-
   var _useState13 = (0,react__WEBPACK_IMPORTED_MODULE_4__.useState)(''),
       _useState14 = _slicedToArray(_useState13, 2),
       selectedFuel = _useState14[0],
@@ -13404,32 +13617,31 @@ function ListRequest(props) {
       fuels = _useState16[0],
       setFuels = _useState16[1];
 
-  var fetchListFuel = (0,react__WEBPACK_IMPORTED_MODULE_4__.useCallback)( /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee4() {
+  var fetchListFuel = (0,react__WEBPACK_IMPORTED_MODULE_4__.useCallback)( /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee3() {
     var response;
-    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee4$(_context4) {
+    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee3$(_context3) {
       while (1) {
-        switch (_context4.prev = _context4.next) {
+        switch (_context3.prev = _context3.next) {
           case 0:
-            _context4.next = 2;
+            _context3.next = 2;
             return fetch('/api/fuels');
 
           case 2:
-            response = _context4.sent;
-            _context4.next = 5;
+            response = _context3.sent;
+            _context3.next = 5;
             return response.json();
 
           case 5:
-            response = _context4.sent;
+            response = _context3.sent;
             setFuels(response);
-            setSelectedFuel(response[0].name);
-            setFuel(response[0].id);
+            setSelectedFuel(response[0].name); // setFuel(response[0].id)
 
-          case 9:
+          case 8:
           case "end":
-            return _context4.stop();
+            return _context3.stop();
         }
       }
-    }, _callee4);
+    }, _callee3);
   })), []);
 
   var _useState17 = (0,react__WEBPACK_IMPORTED_MODULE_4__.useState)(''),
@@ -13442,80 +13654,73 @@ function ListRequest(props) {
       transmissions = _useState20[0],
       setTransmissions = _useState20[1];
 
-  var fetchListTransmission = (0,react__WEBPACK_IMPORTED_MODULE_4__.useCallback)( /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee5() {
+  var fetchListTransmission = (0,react__WEBPACK_IMPORTED_MODULE_4__.useCallback)( /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee4() {
     var response;
-    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee5$(_context5) {
+    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee4$(_context4) {
       while (1) {
-        switch (_context5.prev = _context5.next) {
+        switch (_context4.prev = _context4.next) {
           case 0:
-            _context5.next = 2;
+            _context4.next = 2;
             return fetch('/api/transmissions');
 
           case 2:
-            response = _context5.sent;
-            _context5.next = 5;
+            response = _context4.sent;
+            _context4.next = 5;
             return response.json();
 
           case 5:
-            response = _context5.sent;
+            response = _context4.sent;
             setTransmissions(response);
-            setSelectedTransmission(response[0].transmission_name);
-            setTransmission(response[0].id);
+            setSelectedTransmission(response[0].transmission_name); // setTransmission(response[0].id)
 
-          case 9:
+          case 8:
           case "end":
-            return _context5.stop();
+            return _context4.stop();
         }
       }
-    }, _callee5);
+    }, _callee4);
   })), []);
 
   var handleChangeBrand = /*#__PURE__*/function () {
-    var _ref6 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee6(e) {
-      var b, response;
-      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee6$(_context6) {
+    var _ref5 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee5(e) {
+      var b;
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee5$(_context5) {
         while (1) {
-          switch (_context6.prev = _context6.next) {
+          switch (_context5.prev = _context5.next) {
             case 0:
               setIsBrandSelected(e.target.value);
               b = brands.find(function (v) {
-                return v.name == e.target.value;
+                return v.id == e.target.value;
               });
-              _context6.next = 4;
-              return fetch("/api/brands/".concat(b.id, "/models"));
+              setListModels(b.models);
+              console.log(b.models[0].id);
+              setIsModelSelected(b.models[0].id); // let response = await fetch(`/api/brands/${b.id}/models`)
+              // response = await response.json()
+              // setListModels(response)
 
-            case 4:
-              response = _context6.sent;
-              _context6.next = 7;
-              return response.json();
-
-            case 7:
-              response = _context6.sent;
-              setListModels(response);
-
-            case 9:
+            case 5:
             case "end":
-              return _context6.stop();
+              return _context5.stop();
           }
         }
-      }, _callee6);
+      }, _callee5);
     }));
 
-    return function handleChangeBrand(_x3) {
-      return _ref6.apply(this, arguments);
+    return function handleChangeBrand(_x2) {
+      return _ref5.apply(this, arguments);
     };
   }();
 
   var handleChangeModel = function handleChangeModel(e) {
-    setIsModelSelected(e.target.value);
+    setSelectedModel(e.target.value);
     var m = models.find(function (v) {
       return v.name == e.target.value;
     });
-    setSelectedModel(m.id);
+    setIsModelSelected(m.id);
   };
 
   var handleChangeTransmission = function handleChangeTransmission(e) {
-    setTransmission(e.target.value);
+    setSelectedTransmission(e.target.value);
     var t = transmissions.find(function (v) {
       return v.transmission_name == e.target.value;
     });
@@ -13526,9 +13731,12 @@ function ListRequest(props) {
     Promise.all([fetchListBrand(), fetchListTransmission(), fetchListFuel()])["catch"](function (err) {
       return console.log(err);
     })["finally"](function () {
-      return setIsLoading(false);
+      return setIsLoading(!isLoading);
     });
   }, [fetchListBrand]);
+
+  var submit = function submit(e) {};
+
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_Layouts_Main__WEBPACK_IMPORTED_MODULE_2__["default"], {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__.Head, {
       title: "Situs Jual Beli Mobil Online"
@@ -13542,7 +13750,23 @@ function ListRequest(props) {
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
           className: "text-sm text-center",
           children: "otomobilku akan melakukan komparasi ke berbagai platform yang menawarkan jual mobil cepat, selanjutnya tim kami akan memberikan daftar harga jual yang ditawarkan dari masing-masing platform."
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+        }), isLoading ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+          className: "flex justify-center",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("svg", {
+            role: "status",
+            className: "mr-2 w-10 h-10 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600",
+            viewBox: "0 0 100 101",
+            fill: "none",
+            xmlns: "http://www.w3.org/2000/svg",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("path", {
+              d: "M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z",
+              fill: "currentColor"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("path", {
+              d: "M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z",
+              fill: "currentFill"
+            })]
+          })
+        }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
           className: "border border-gray-400 mx-8 m-auto py-6",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("form", {
             className: "space-y-4",
@@ -13562,7 +13786,7 @@ function ListRequest(props) {
                 children: brands.map(function (brand, i) {
                   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("option", {
                     id: brand.id,
-                    value: brand.name,
+                    value: brand.id,
                     children: brand.name
                   }, brand.id);
                 })
@@ -13574,10 +13798,12 @@ function ListRequest(props) {
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("select", {
                 className: "w-full rounded",
                 name: "model",
-                value: isModelSelected,
+                value: selectedModel,
                 onChange: handleChangeModel,
                 required: true,
-                children: models.map(function (model, i) {
+                children: brands.filter(function (b) {
+                  return b.id == isBrandSelected;
+                })[0].models.map(function (model, i) {
                   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("option", {
                     id: model.id,
                     value: model.name,
@@ -13589,11 +13815,21 @@ function ListRequest(props) {
               className: "mx-8",
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Components_Label__WEBPACK_IMPORTED_MODULE_1__["default"], {
                 value: "Variant Mobil"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("input", {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("select", {
                 className: "w-full rounded",
-                type: 'text',
                 name: "variant",
-                required: true
+                required: models.filter(function (m) {
+                  return m.id == isModelSelected;
+                })[0].variants.length > 0,
+                children: models.filter(function (m) {
+                  return m.id == isModelSelected;
+                })[0].variants.map(function (variant) {
+                  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("option", {
+                    id: variant.id,
+                    value: variant.id,
+                    children: variant.name
+                  }, variant.id);
+                })
               })]
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
               className: "mx-8",
@@ -66840,6 +67076,8 @@ var map = {
 	"./Admin/ListRequest.js": "./resources/js/Pages/Admin/ListRequest.js",
 	"./Admin/Settings/AddBrand": "./resources/js/Pages/Admin/Settings/AddBrand.js",
 	"./Admin/Settings/AddBrand.js": "./resources/js/Pages/Admin/Settings/AddBrand.js",
+	"./Admin/Settings/EditModel": "./resources/js/Pages/Admin/Settings/EditModel.js",
+	"./Admin/Settings/EditModel.js": "./resources/js/Pages/Admin/Settings/EditModel.js",
 	"./Admin/Settings/ListBrand": "./resources/js/Pages/Admin/Settings/ListBrand.js",
 	"./Admin/Settings/ListBrand.js": "./resources/js/Pages/Admin/Settings/ListBrand.js",
 	"./Admin/Settings/ListModel": "./resources/js/Pages/Admin/Settings/ListModel.js",

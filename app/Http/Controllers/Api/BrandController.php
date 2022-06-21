@@ -38,7 +38,7 @@ class BrandController extends Controller
 
         $models = $modelRepo->findAll([
             'brand_id' => $brandId
-        ])->get();
+        ])->with('variants')->get();
 
         return response()->json($models, 200);
     }

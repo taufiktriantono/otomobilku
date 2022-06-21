@@ -48,11 +48,17 @@ Route::domain('admin.'.env('APP_DOMAIN'))->group(function() {
 
         Route::prefix('settings')->group(function () {
                 Route::get('/brands', [SettingController::class, 'listBrand'])->name('setting-brand');
-                Route::get('/brands/show/{id}', [SettingController::class, 'showBrand'])->name('setting-show-brand');
+                Route::get('/brands/{id}/show', [SettingController::class, 'showBrand'])->name('setting-show-brand');
                 Route::get('/brands/add', [SettingController::class, 'addBrand'])->name('setting-add-brand');
                 // Route::post('/brands/add', [SettingController::class, 'addBrand']);
 
                 Route::get('/models', [SettingController::class, 'listModel'])->name('setting-model');
+                Route::get('/models/add', [SettingController::class, 'listModel'])->name('setting-add-model');
+                // Route::post('/models/add', [SettingController::class, 'addModel']);
+
+                Route::get('/models/{id}/show', [SettingController::class, 'showModel'])->name('setting-show-model');
+                Route::get('/models/{id}/edit', [SettingController::class, 'updateModel'])->name('setting-update-model');
+                Route::put('/models/{id}', [SettingController::class, 'update'])->name('update-model');
         });
 
     });
