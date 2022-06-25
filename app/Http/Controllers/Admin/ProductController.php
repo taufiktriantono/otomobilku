@@ -15,6 +15,7 @@ class ProductController extends Controller
 
         $params['limit'] = $request->query('limit', 2);
         $params['page'] = $request->query('page', 1);
+        $params['archive'] = $request->query('archive', true);
 
         $productRepo = new ProductRepository();
 
@@ -84,7 +85,6 @@ class ProductController extends Controller
 
         $product = $productRepo->editRequest($id, $validator);
 
-        return redirect()->back()->withErrors($validator)->withInput();
-        // return redirect()->route('get:product', ['slug' => $product->slug]);
+        return redirect()->route('list:product');
     }
 }
