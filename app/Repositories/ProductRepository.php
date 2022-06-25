@@ -79,9 +79,9 @@ class ProductRepository
       $stmt->whereIn('product_owner_id', $ownerIds);
     }
 
-    // if (isset($params['archive'])) {
-    //   $stmt->where('archive', $params['archive']);
-    // }
+    if (isset($params['archive'])) {
+      $stmt->where('archive', $params['archive']);
+    }
 
     if (isset($params['verified'])) {
       $stmt->where('verified', $params['verified']);

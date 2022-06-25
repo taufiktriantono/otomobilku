@@ -15,7 +15,7 @@ class ProductController extends Controller
 
         $params['limit'] = $request->query('limit', 2);
         $params['page'] = $request->query('page', 1);
-        $params['archive'] = $request->query('archive', true);
+        $params['archive'] = $request->query('archive', false);
 
         $productRepo = new ProductRepository();
 
