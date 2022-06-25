@@ -68,4 +68,8 @@ class Product extends Model
         return $this->hasOne(ProductOwner::class, 'id', 'product_owner_id');
     }
 
+    public function variants() {
+        return $this->hasMany(ProductVariants::class, 'product_id', 'id')->with('variant');
+    }
+
 }

@@ -30,7 +30,8 @@ Route::domain(env('APP_DOMAIN'))->group(function() {
     // Route::get('/mobil-bekas', [HomeController::class, 'listProduct'])->name('list.product');
     Route::get('/mobil-bekas/{slug}', [HomeController::class, 'showProduct'])->name('show:product');
     Route::get('/jual-mobil', [HomeController::class, 'form'])->name('sell:product');
-    Route::post('/jual-mobil', [HomeController::class, 'storeForm']);
+    Route::post('/jual-mobil', [HomeController::class, 'storeForm'])->name('sell:product:store');
+    Route::get('/jual-mobil/success', [HomeController::class, 'success'])->name('sell:product:success');
 });
 
 Route::domain('admin.'.env('APP_DOMAIN'))->group(function() {

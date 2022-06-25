@@ -3,12 +3,25 @@ import Layout from "@/Layouts/Main";
 import { Head, useForm } from "@inertiajs/inertia-react";
 import { useCallback, useEffect, useState } from "react";
 
-export default function ListRequest(props) {
+export default function AddRequest(props) {
 
   const [isLoading, setIsLoading] = useState(true);
   const [isBrandSelected, setIsBrandSelected] = useState('');
   const [isModelSelected, setIsModelSelected] = useState('');
-  const { data, setData, post } = useForm()
+  const [buildYear, setBuildYear] = useState('');
+  const [isVariantSelected, setIsVariantSelected] = useState('');
+
+  const { data, setData, post } = useForm({
+    product_sub_category_id: '547dc152-2722-46a9-8292-df3b559f94ba',
+    product_model_id: '',
+    variant_id: '',
+    build_year: '',
+    product_transmission_id: '',
+    is_active: false,
+    archive: true,
+    verified: false,
+    phone_number: ''
+  })
 
   const [brands, setListBrands] = useState([]);
   const fetchListBrand = useCallback(async () => {
@@ -19,8 +32,16 @@ export default function ListRequest(props) {
       const brand = response[0]
       setIsBrandSelected(response[0].id)
       setListModels(brand.models)
+      console.log(brand.models[0])
       setIsModelSelected(brand.models[0].id)
       setSelectedModel(brand.models[0].name)
+      setData((prev) => {
+        return {
+          ...prev,
+          product_model_id: brand.models[0].id,
+          variant_id: brand.models[0].variants[0] != undefined ? brand.models[0].variants[0].id : '',
+        }
+      })
       // await fetchListModel(response[0].id)
   }, [])
 
@@ -50,30 +71,83 @@ export default function ListRequest(props) {
       response = await response.json()
       setTransmissions(response)
       setSelectedTransmission(response[0].transmission_name)
+      setData((prev) => {
+        return {
+          ...prev,
+          product_transmission_id: response[0].id
+        }
+      })
       // setTransmission(response[0].id)
   }, [])
+
+  const [phoneNumber, setPhoneNumber] = useState('');
+  const handleChangePhoneNumber = (e) => {
+    setPhoneNumber(e.target.value)
+    setData((prev) => {
+      return {
+        ...prev,
+        phone_number: e.target.value
+      }
+    })
+  }
 
   const handleChangeBrand = async (e) => {
     setIsBrandSelected(e.target.value)
     const b = brands.find((v) => v.id == e.target.value)
     setListModels(b.models)
-    console.log(b.models[0].id)
     setIsModelSelected(b.models[0].id)
-    // let response = await fetch(`/api/brands/${b.id}/models`)
-    // response = await response.json()
-    // setListModels(response)
+    setData((prev) => {
+      return {
+        ...prev,
+        product_model_id: b.models[0].id,
+        variant_id: b.models[0].variants[0] != undefined ? b.models[0].variants[0].id : ''
+      }
+    })
   }
 
   const handleChangeModel = (e) => {
     setSelectedModel(e.target.value)
     const m = models.find((v) => v.name == e.target.value)
     setIsModelSelected(m.id)
+    setData((prev) => {
+      return {
+        ...prev,
+        product_model_id: m.id,
+        variant_id: m.variants[0] != undefined ? m.variants[0].id : ''
+      }
+    })
+  }
+
+  const handleChangeVariant = (e) => {
+    setIsVariantSelected(e.target.value)
+    setData((prev) => {
+      return {
+        ...prev,
+        variant_id: e.target.value
+      }
+    })
   }
 
   const handleChangeTransmission = (e) => {
     setSelectedTransmission(e.target.value)
     const t = transmissions.find((v) => v.transmission_name == e.target.value)
-    setTransmission(t.id);
+    // setTransmission(t.transmission_name);
+    setData((prev) => {
+      return {
+        ...prev,
+        product_transmission_id: t.id
+      }
+    })
+  }
+
+  const handleChangeBuildYear = (e) => {
+    setBuildYear(e.target.value)
+    setData((prev) => {
+      return {
+        ...prev,
+        build_year: e.target.value
+      }
+    })
   }
 
   useEffect(() => {
@@ -87,7 +161,9 @@ export default function ListRequest(props) {
   }, [fetchListBrand]);
 
   const submit = (e) => {
-
+    console.log(data);
+    e.preventDefault();
+    post(route('sell:product:store'));
   }
 
   return (
@@ -113,7 +189,7 @@ export default function ListRequest(props) {
               </div>
             ) : (
               <div className="border border-gray-400 mx-8 m-auto py-6">
-                <form className="space-y-4">
+                <form className="space-y-4" onSubmit={submit}>
                     <div className="text-center text-2xl font-bold py-4">Masukan Jenis mobil Anda</div>
                     <div className="mx-8">
                         <Label value={"Merk Mobil"} />
@@ -141,7 +217,7 @@ export default function ListRequest(props) {
                     </div>
                     <div className="mx-8">
                         <Label value={"Variant Mobil"} />
-                        <select className='w-full rounded' name='variant' required={models.filter((m) => m.id == isModelSelected)[0].variants.length > 0}>
+                        <select className='w-full rounded' name='variant' required={models.filter((m) => m.id == isModelSelected)[0].variants.length > 0} value={isVariantSelected} onChange={handleChangeVariant}>
                         {
                           models.filter((m) => m.id == isModelSelected)[0].variants.map((variant) => {
                             return (
@@ -153,7 +229,7 @@ export default function ListRequest(props) {
                     </div>
                     <div className="mx-8">
                         <Label value={"Tahun"} />
-                        <input className='w-full rounded' type={'number'} name='build_year' placeholder='2015' required/>
+                        <input className='w-full rounded' type={'number'} name='build_year' value={buildYear} onChange={handleChangeBuildYear} placeholder='2015' min={0} required/>
                     </div>
                     <div className="mx-8">
                         <Label value={"Transmisi"} />
@@ -169,7 +245,7 @@ export default function ListRequest(props) {
                     </div>
                     <div className="mx-8">
                         <Label value={"Nomor Handphone"} />
-                        <input className='w-full rounded' type={'number'} name='build_year' required/>
+                        <input className='w-full rounded' type={'number'} name='build_year' value={phoneNumber} onChange={handleChangePhoneNumber} placeholder={'081288520706'} required/>
                     </div>
                     <div className="w-2/3 m-auto text-center text-sm">
                       Nomor handphone Anda akan dihubungi oleh tim kami untuk memberikan informasi terkait harga jual.

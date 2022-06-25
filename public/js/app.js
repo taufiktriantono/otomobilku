@@ -5473,6 +5473,528 @@ function Mobile(props) {
 
 /***/ }),
 
+/***/ "./resources/js/Pages/AddRequest.js":
+/*!******************************************!*\
+  !*** ./resources/js/Pages/AddRequest.js ***!
+  \******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ AddRequest)
+/* harmony export */ });
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Components_Label__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/Components/Label */ "./resources/js/Components/Label.js");
+/* harmony import */ var _Layouts_Main__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/Layouts/Main */ "./resources/js/Layouts/Main.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+
+
+
+function AddRequest(props) {
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_4__.useState)(true),
+      _useState2 = _slicedToArray(_useState, 2),
+      isLoading = _useState2[0],
+      setIsLoading = _useState2[1];
+
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_4__.useState)(''),
+      _useState4 = _slicedToArray(_useState3, 2),
+      isBrandSelected = _useState4[0],
+      setIsBrandSelected = _useState4[1];
+
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_4__.useState)(''),
+      _useState6 = _slicedToArray(_useState5, 2),
+      isModelSelected = _useState6[0],
+      setIsModelSelected = _useState6[1];
+
+  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_4__.useState)(''),
+      _useState8 = _slicedToArray(_useState7, 2),
+      buildYear = _useState8[0],
+      setBuildYear = _useState8[1];
+
+  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_4__.useState)(''),
+      _useState10 = _slicedToArray(_useState9, 2),
+      isVariantSelected = _useState10[0],
+      setIsVariantSelected = _useState10[1];
+
+  var _useForm = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__.useForm)({
+    product_sub_category_id: '547dc152-2722-46a9-8292-df3b559f94ba',
+    product_model_id: '',
+    variant_id: '',
+    build_year: '',
+    product_transmission_id: '',
+    is_active: false,
+    archive: true,
+    verified: false,
+    phone_number: ''
+  }),
+      data = _useForm.data,
+      setData = _useForm.setData,
+      post = _useForm.post;
+
+  var _useState11 = (0,react__WEBPACK_IMPORTED_MODULE_4__.useState)([]),
+      _useState12 = _slicedToArray(_useState11, 2),
+      brands = _useState12[0],
+      setListBrands = _useState12[1];
+
+  var fetchListBrand = (0,react__WEBPACK_IMPORTED_MODULE_4__.useCallback)( /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
+    var response, brand;
+    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
+      while (1) {
+        switch (_context.prev = _context.next) {
+          case 0:
+            _context.next = 2;
+            return fetch('/api/brands');
+
+          case 2:
+            response = _context.sent;
+            _context.next = 5;
+            return response.json();
+
+          case 5:
+            response = _context.sent;
+            setListBrands(response);
+            brand = response[0];
+            setIsBrandSelected(response[0].id);
+            setListModels(brand.models);
+            console.log(brand.models[0]);
+            setIsModelSelected(brand.models[0].id);
+            setSelectedModel(brand.models[0].name);
+            setData(function (prev) {
+              return _objectSpread(_objectSpread({}, prev), {}, {
+                product_model_id: brand.models[0].id,
+                variant_id: brand.models[0].variants[0] != undefined ? brand.models[0].variants[0].id : ''
+              });
+            }); // await fetchListModel(response[0].id)
+
+          case 14:
+          case "end":
+            return _context.stop();
+        }
+      }
+    }, _callee);
+  })), []);
+
+  var _useState13 = (0,react__WEBPACK_IMPORTED_MODULE_4__.useState)(''),
+      _useState14 = _slicedToArray(_useState13, 2),
+      selectedModel = _useState14[0],
+      setSelectedModel = _useState14[1];
+
+  var _useState15 = (0,react__WEBPACK_IMPORTED_MODULE_4__.useState)([]),
+      _useState16 = _slicedToArray(_useState15, 2),
+      models = _useState16[0],
+      setListModels = _useState16[1];
+
+  var fetchListModel = (0,react__WEBPACK_IMPORTED_MODULE_4__.useCallback)( /*#__PURE__*/function () {
+    var _ref2 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2(brandId) {
+      var response;
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee2$(_context2) {
+        while (1) {
+          switch (_context2.prev = _context2.next) {
+            case 0:
+              _context2.next = 2;
+              return fetch("/api/brands/".concat(brandId, "/models"));
+
+            case 2:
+              response = _context2.sent;
+              _context2.next = 5;
+              return response.json();
+
+            case 5:
+              response = _context2.sent;
+              setListModels(response);
+              setSelectedModel(response[0].id);
+
+            case 8:
+            case "end":
+              return _context2.stop();
+          }
+        }
+      }, _callee2);
+    }));
+
+    return function (_x) {
+      return _ref2.apply(this, arguments);
+    };
+  }(), []);
+
+  var _useState17 = (0,react__WEBPACK_IMPORTED_MODULE_4__.useState)(''),
+      _useState18 = _slicedToArray(_useState17, 2),
+      selectedFuel = _useState18[0],
+      setSelectedFuel = _useState18[1];
+
+  var _useState19 = (0,react__WEBPACK_IMPORTED_MODULE_4__.useState)(null),
+      _useState20 = _slicedToArray(_useState19, 2),
+      fuels = _useState20[0],
+      setFuels = _useState20[1];
+
+  var fetchListFuel = (0,react__WEBPACK_IMPORTED_MODULE_4__.useCallback)( /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee3() {
+    var response;
+    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee3$(_context3) {
+      while (1) {
+        switch (_context3.prev = _context3.next) {
+          case 0:
+            _context3.next = 2;
+            return fetch('/api/fuels');
+
+          case 2:
+            response = _context3.sent;
+            _context3.next = 5;
+            return response.json();
+
+          case 5:
+            response = _context3.sent;
+            setFuels(response);
+            setSelectedFuel(response[0].name); // setFuel(response[0].id)
+
+          case 8:
+          case "end":
+            return _context3.stop();
+        }
+      }
+    }, _callee3);
+  })), []);
+
+  var _useState21 = (0,react__WEBPACK_IMPORTED_MODULE_4__.useState)(''),
+      _useState22 = _slicedToArray(_useState21, 2),
+      selectedTransmission = _useState22[0],
+      setSelectedTransmission = _useState22[1];
+
+  var _useState23 = (0,react__WEBPACK_IMPORTED_MODULE_4__.useState)([]),
+      _useState24 = _slicedToArray(_useState23, 2),
+      transmissions = _useState24[0],
+      setTransmissions = _useState24[1];
+
+  var fetchListTransmission = (0,react__WEBPACK_IMPORTED_MODULE_4__.useCallback)( /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee4() {
+    var response;
+    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee4$(_context4) {
+      while (1) {
+        switch (_context4.prev = _context4.next) {
+          case 0:
+            _context4.next = 2;
+            return fetch('/api/transmissions');
+
+          case 2:
+            response = _context4.sent;
+            _context4.next = 5;
+            return response.json();
+
+          case 5:
+            response = _context4.sent;
+            setTransmissions(response);
+            setSelectedTransmission(response[0].transmission_name);
+            setData(function (prev) {
+              return _objectSpread(_objectSpread({}, prev), {}, {
+                product_transmission_id: response[0].id
+              });
+            }); // setTransmission(response[0].id)
+
+          case 9:
+          case "end":
+            return _context4.stop();
+        }
+      }
+    }, _callee4);
+  })), []);
+
+  var _useState25 = (0,react__WEBPACK_IMPORTED_MODULE_4__.useState)(''),
+      _useState26 = _slicedToArray(_useState25, 2),
+      phoneNumber = _useState26[0],
+      setPhoneNumber = _useState26[1];
+
+  var handleChangePhoneNumber = function handleChangePhoneNumber(e) {
+    setPhoneNumber(e.target.value);
+    setData(function (prev) {
+      return _objectSpread(_objectSpread({}, prev), {}, {
+        phone_number: e.target.value
+      });
+    });
+  };
+
+  var handleChangeBrand = /*#__PURE__*/function () {
+    var _ref5 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee5(e) {
+      var b;
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee5$(_context5) {
+        while (1) {
+          switch (_context5.prev = _context5.next) {
+            case 0:
+              setIsBrandSelected(e.target.value);
+              b = brands.find(function (v) {
+                return v.id == e.target.value;
+              });
+              setListModels(b.models);
+              setIsModelSelected(b.models[0].id);
+              setData(function (prev) {
+                return _objectSpread(_objectSpread({}, prev), {}, {
+                  product_model_id: b.models[0].id,
+                  variant_id: b.models[0].variants[0] != undefined ? b.models[0].variants[0].id : ''
+                });
+              });
+
+            case 5:
+            case "end":
+              return _context5.stop();
+          }
+        }
+      }, _callee5);
+    }));
+
+    return function handleChangeBrand(_x2) {
+      return _ref5.apply(this, arguments);
+    };
+  }();
+
+  var handleChangeModel = function handleChangeModel(e) {
+    setSelectedModel(e.target.value);
+    var m = models.find(function (v) {
+      return v.name == e.target.value;
+    });
+    setIsModelSelected(m.id);
+    setData(function (prev) {
+      return _objectSpread(_objectSpread({}, prev), {}, {
+        product_model_id: m.id,
+        variant_id: m.variants[0] != undefined ? m.variants[0].id : ''
+      });
+    });
+  };
+
+  var handleChangeVariant = function handleChangeVariant(e) {
+    setIsVariantSelected(e.target.value);
+    setData(function (prev) {
+      return _objectSpread(_objectSpread({}, prev), {}, {
+        variant_id: e.target.value
+      });
+    });
+  };
+
+  var handleChangeTransmission = function handleChangeTransmission(e) {
+    setSelectedTransmission(e.target.value);
+    var t = transmissions.find(function (v) {
+      return v.transmission_name == e.target.value;
+    }); // setTransmission(t.transmission_name);
+
+    setData(function (prev) {
+      return _objectSpread(_objectSpread({}, prev), {}, {
+        product_transmission_id: t.id
+      });
+    });
+  };
+
+  var handleChangeBuildYear = function handleChangeBuildYear(e) {
+    setBuildYear(e.target.value);
+    setData(function (prev) {
+      return _objectSpread(_objectSpread({}, prev), {}, {
+        build_year: e.target.value
+      });
+    });
+  };
+
+  (0,react__WEBPACK_IMPORTED_MODULE_4__.useEffect)(function () {
+    Promise.all([fetchListBrand(), fetchListTransmission(), fetchListFuel()])["catch"](function (err) {
+      return console.log(err);
+    })["finally"](function () {
+      return setIsLoading(!isLoading);
+    });
+  }, [fetchListBrand]);
+
+  var submit = function submit(e) {
+    console.log(data);
+    e.preventDefault();
+    post(route('sell:product:store'));
+  };
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_Layouts_Main__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__.Head, {
+      title: "Situs Jual Beli Mobil Online"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+      className: "m-auto w-2/5",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+        className: "space-y-4",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+          className: "text-xl text-center font-bold",
+          children: "Proses permintaan cek harga jual satu kali saja, biar Kami yang bantu cari harga terbaiknya."
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+          className: "text-sm text-center",
+          children: "otomobilku akan melakukan komparasi ke berbagai platform yang menawarkan jual mobil cepat, selanjutnya tim kami akan memberikan daftar harga jual yang ditawarkan dari masing-masing platform."
+        }), isLoading ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+          className: "flex justify-center",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("svg", {
+            role: "status",
+            className: "mr-2 w-10 h-10 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600",
+            viewBox: "0 0 100 101",
+            fill: "none",
+            xmlns: "http://www.w3.org/2000/svg",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("path", {
+              d: "M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z",
+              fill: "currentColor"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("path", {
+              d: "M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z",
+              fill: "currentFill"
+            })]
+          })
+        }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+          className: "border border-gray-400 mx-8 m-auto py-6",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("form", {
+            className: "space-y-4",
+            onSubmit: submit,
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+              className: "text-center text-2xl font-bold py-4",
+              children: "Masukan Jenis mobil Anda"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+              className: "mx-8",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Components_Label__WEBPACK_IMPORTED_MODULE_1__["default"], {
+                value: "Merk Mobil"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("select", {
+                className: "w-full rounded",
+                name: "merk",
+                value: isBrandSelected,
+                onChange: handleChangeBrand,
+                required: true,
+                children: brands.map(function (brand, i) {
+                  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("option", {
+                    id: brand.id,
+                    value: brand.id,
+                    children: brand.name
+                  }, brand.id);
+                })
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+              className: "mx-8",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Components_Label__WEBPACK_IMPORTED_MODULE_1__["default"], {
+                value: "Model Mobil"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("select", {
+                className: "w-full rounded",
+                name: "model",
+                value: selectedModel,
+                onChange: handleChangeModel,
+                required: true,
+                children: brands.filter(function (b) {
+                  return b.id == isBrandSelected;
+                })[0].models.map(function (model, i) {
+                  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("option", {
+                    id: model.id,
+                    value: model.name,
+                    children: model.name
+                  }, model.id);
+                })
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+              className: "mx-8",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Components_Label__WEBPACK_IMPORTED_MODULE_1__["default"], {
+                value: "Variant Mobil"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("select", {
+                className: "w-full rounded",
+                name: "variant",
+                required: models.filter(function (m) {
+                  return m.id == isModelSelected;
+                })[0].variants.length > 0,
+                value: isVariantSelected,
+                onChange: handleChangeVariant,
+                children: models.filter(function (m) {
+                  return m.id == isModelSelected;
+                })[0].variants.map(function (variant) {
+                  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("option", {
+                    id: variant.id,
+                    value: variant.id,
+                    children: variant.name
+                  }, variant.id);
+                })
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+              className: "mx-8",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Components_Label__WEBPACK_IMPORTED_MODULE_1__["default"], {
+                value: "Tahun"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("input", {
+                className: "w-full rounded",
+                type: 'number',
+                name: "build_year",
+                value: buildYear,
+                onChange: handleChangeBuildYear,
+                placeholder: "2015",
+                min: 0,
+                required: true
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+              className: "mx-8",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Components_Label__WEBPACK_IMPORTED_MODULE_1__["default"], {
+                value: "Transmisi"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("select", {
+                className: "w-full rounded",
+                name: "transmisi",
+                value: selectedTransmission,
+                onChange: handleChangeTransmission,
+                required: true,
+                children: transmissions.map(function (transmission) {
+                  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("option", {
+                    id: transmission.id,
+                    value: transmission.transmission_name,
+                    children: transmission.transmission_name
+                  }, transmission.id);
+                })
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+              className: "mx-8",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Components_Label__WEBPACK_IMPORTED_MODULE_1__["default"], {
+                value: "Nomor Handphone"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("input", {
+                className: "w-full rounded",
+                type: 'number',
+                name: "build_year",
+                value: phoneNumber,
+                onChange: handleChangePhoneNumber,
+                placeholder: '081288520706',
+                required: true
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+              className: "w-2/3 m-auto text-center text-sm",
+              children: "Nomor handphone Anda akan dihubungi oleh tim kami untuk memberikan informasi terkait harga jual."
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+              className: "flex justify-center",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", {
+                type: "submit",
+                className: "w-20 p-2 bg-indigo-700 font-bold rounded text-white",
+                children: "Proses"
+              })
+            })]
+          })
+        })]
+      })
+    })]
+  });
+}
+
+/***/ }),
+
 /***/ "./resources/js/Pages/Admin/AddProduct.js":
 /*!************************************************!*\
   !*** ./resources/js/Pages/Admin/AddProduct.js ***!
@@ -9339,6 +9861,7 @@ function ListRequests(props) {
       products = props.products;
   var current_page = products.current_page,
       per_page = products.per_page;
+  console.log(products);
   var params = new URLSearchParams();
 
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)({
@@ -9545,6 +10068,9 @@ function ListRequests(props) {
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("tbody", {
         children: products.data.map(function (product, i) {
+          console.log(product.variants.filter(function (v) {
+            return v.variant.is_master = true;
+          }));
           return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("tr", {
             className: "bg-white border-b",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("td", {
@@ -9561,7 +10087,11 @@ function ListRequests(props) {
               children: product.models.name
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("td", {
               className: "px-6 -y-4",
-              children: product.body_type.type_name
+              children: product.variants.filter(function (v) {
+                return v.variant.is_master = true;
+              })[0] != undefined ? product.variants.filter(function (v) {
+                return v.variant.is_master = true;
+              })[0].variant.name : '-'
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("td", {
               className: "px-6 -y-4",
               children: product.build_year
@@ -13465,424 +13995,38 @@ function ListProduct(props) {
 
 /***/ }),
 
-/***/ "./resources/js/Pages/ListRequest.js":
-/*!*******************************************!*\
-  !*** ./resources/js/Pages/ListRequest.js ***!
-  \*******************************************/
+/***/ "./resources/js/Pages/SuccessRequest.js":
+/*!**********************************************!*\
+  !*** ./resources/js/Pages/SuccessRequest.js ***!
+  \**********************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ ListRequest)
+/* harmony export */   "default": () => (/* binding */ SuccessRequest)
 /* harmony export */ });
-/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
-/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _Components_Label__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/Components/Label */ "./resources/js/Components/Label.js");
-/* harmony import */ var _Layouts_Main__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/Layouts/Main */ "./resources/js/Layouts/Main.js");
-/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-
-
-function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
-
-function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
-
-function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
-
-function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
-
-function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
-
-function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+/* harmony import */ var _Layouts_Main__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/Layouts/Main */ "./resources/js/Layouts/Main.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
 
 
-
-
-
-function ListRequest(props) {
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_4__.useState)(true),
-      _useState2 = _slicedToArray(_useState, 2),
-      isLoading = _useState2[0],
-      setIsLoading = _useState2[1];
-
-  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_4__.useState)(''),
-      _useState4 = _slicedToArray(_useState3, 2),
-      isBrandSelected = _useState4[0],
-      setIsBrandSelected = _useState4[1];
-
-  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_4__.useState)(''),
-      _useState6 = _slicedToArray(_useState5, 2),
-      isModelSelected = _useState6[0],
-      setIsModelSelected = _useState6[1];
-
-  var _useForm = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__.useForm)(),
-      data = _useForm.data,
-      setData = _useForm.setData,
-      post = _useForm.post;
-
-  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_4__.useState)([]),
-      _useState8 = _slicedToArray(_useState7, 2),
-      brands = _useState8[0],
-      setListBrands = _useState8[1];
-
-  var fetchListBrand = (0,react__WEBPACK_IMPORTED_MODULE_4__.useCallback)( /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
-    var response, brand;
-    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
-      while (1) {
-        switch (_context.prev = _context.next) {
-          case 0:
-            _context.next = 2;
-            return fetch('/api/brands');
-
-          case 2:
-            response = _context.sent;
-            _context.next = 5;
-            return response.json();
-
-          case 5:
-            response = _context.sent;
-            setListBrands(response);
-            brand = response[0];
-            setIsBrandSelected(response[0].id);
-            setListModels(brand.models);
-            setIsModelSelected(brand.models[0].id);
-            setSelectedModel(brand.models[0].name); // await fetchListModel(response[0].id)
-
-          case 12:
-          case "end":
-            return _context.stop();
-        }
-      }
-    }, _callee);
-  })), []);
-
-  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_4__.useState)(''),
-      _useState10 = _slicedToArray(_useState9, 2),
-      selectedModel = _useState10[0],
-      setSelectedModel = _useState10[1];
-
-  var _useState11 = (0,react__WEBPACK_IMPORTED_MODULE_4__.useState)([]),
-      _useState12 = _slicedToArray(_useState11, 2),
-      models = _useState12[0],
-      setListModels = _useState12[1];
-
-  var fetchListModel = (0,react__WEBPACK_IMPORTED_MODULE_4__.useCallback)( /*#__PURE__*/function () {
-    var _ref2 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2(brandId) {
-      var response;
-      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee2$(_context2) {
-        while (1) {
-          switch (_context2.prev = _context2.next) {
-            case 0:
-              _context2.next = 2;
-              return fetch("/api/brands/".concat(brandId, "/models"));
-
-            case 2:
-              response = _context2.sent;
-              _context2.next = 5;
-              return response.json();
-
-            case 5:
-              response = _context2.sent;
-              setListModels(response);
-              setSelectedModel(response[0].id);
-
-            case 8:
-            case "end":
-              return _context2.stop();
-          }
-        }
-      }, _callee2);
-    }));
-
-    return function (_x) {
-      return _ref2.apply(this, arguments);
-    };
-  }(), []);
-
-  var _useState13 = (0,react__WEBPACK_IMPORTED_MODULE_4__.useState)(''),
-      _useState14 = _slicedToArray(_useState13, 2),
-      selectedFuel = _useState14[0],
-      setSelectedFuel = _useState14[1];
-
-  var _useState15 = (0,react__WEBPACK_IMPORTED_MODULE_4__.useState)(null),
-      _useState16 = _slicedToArray(_useState15, 2),
-      fuels = _useState16[0],
-      setFuels = _useState16[1];
-
-  var fetchListFuel = (0,react__WEBPACK_IMPORTED_MODULE_4__.useCallback)( /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee3() {
-    var response;
-    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee3$(_context3) {
-      while (1) {
-        switch (_context3.prev = _context3.next) {
-          case 0:
-            _context3.next = 2;
-            return fetch('/api/fuels');
-
-          case 2:
-            response = _context3.sent;
-            _context3.next = 5;
-            return response.json();
-
-          case 5:
-            response = _context3.sent;
-            setFuels(response);
-            setSelectedFuel(response[0].name); // setFuel(response[0].id)
-
-          case 8:
-          case "end":
-            return _context3.stop();
-        }
-      }
-    }, _callee3);
-  })), []);
-
-  var _useState17 = (0,react__WEBPACK_IMPORTED_MODULE_4__.useState)(''),
-      _useState18 = _slicedToArray(_useState17, 2),
-      selectedTransmission = _useState18[0],
-      setSelectedTransmission = _useState18[1];
-
-  var _useState19 = (0,react__WEBPACK_IMPORTED_MODULE_4__.useState)([]),
-      _useState20 = _slicedToArray(_useState19, 2),
-      transmissions = _useState20[0],
-      setTransmissions = _useState20[1];
-
-  var fetchListTransmission = (0,react__WEBPACK_IMPORTED_MODULE_4__.useCallback)( /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee4() {
-    var response;
-    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee4$(_context4) {
-      while (1) {
-        switch (_context4.prev = _context4.next) {
-          case 0:
-            _context4.next = 2;
-            return fetch('/api/transmissions');
-
-          case 2:
-            response = _context4.sent;
-            _context4.next = 5;
-            return response.json();
-
-          case 5:
-            response = _context4.sent;
-            setTransmissions(response);
-            setSelectedTransmission(response[0].transmission_name); // setTransmission(response[0].id)
-
-          case 8:
-          case "end":
-            return _context4.stop();
-        }
-      }
-    }, _callee4);
-  })), []);
-
-  var handleChangeBrand = /*#__PURE__*/function () {
-    var _ref5 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee5(e) {
-      var b;
-      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee5$(_context5) {
-        while (1) {
-          switch (_context5.prev = _context5.next) {
-            case 0:
-              setIsBrandSelected(e.target.value);
-              b = brands.find(function (v) {
-                return v.id == e.target.value;
-              });
-              setListModels(b.models);
-              console.log(b.models[0].id);
-              setIsModelSelected(b.models[0].id); // let response = await fetch(`/api/brands/${b.id}/models`)
-              // response = await response.json()
-              // setListModels(response)
-
-            case 5:
-            case "end":
-              return _context5.stop();
-          }
-        }
-      }, _callee5);
-    }));
-
-    return function handleChangeBrand(_x2) {
-      return _ref5.apply(this, arguments);
-    };
-  }();
-
-  var handleChangeModel = function handleChangeModel(e) {
-    setSelectedModel(e.target.value);
-    var m = models.find(function (v) {
-      return v.name == e.target.value;
-    });
-    setIsModelSelected(m.id);
-  };
-
-  var handleChangeTransmission = function handleChangeTransmission(e) {
-    setSelectedTransmission(e.target.value);
-    var t = transmissions.find(function (v) {
-      return v.transmission_name == e.target.value;
-    });
-    setTransmission(t.id);
-  };
-
-  (0,react__WEBPACK_IMPORTED_MODULE_4__.useEffect)(function () {
-    Promise.all([fetchListBrand(), fetchListTransmission(), fetchListFuel()])["catch"](function (err) {
-      return console.log(err);
-    })["finally"](function () {
-      return setIsLoading(!isLoading);
-    });
-  }, [fetchListBrand]);
-
-  var submit = function submit(e) {};
-
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_Layouts_Main__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__.Head, {
+function SuccessRequest(props) {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(_Layouts_Main__WEBPACK_IMPORTED_MODULE_0__["default"], {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Head, {
       title: "Situs Jual Beli Mobil Online"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
       className: "m-auto w-2/5",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
         className: "space-y-4",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-          className: "text-xl text-center font-bold",
-          children: "Proses permintaan cek harga jual satu kali saja, biar Kami yang bantu cari harga terbaiknya."
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-          className: "text-sm text-center",
-          children: "otomobilku akan melakukan komparasi ke berbagai platform yang menawarkan jual mobil cepat, selanjutnya tim kami akan memberikan daftar harga jual yang ditawarkan dari masing-masing platform."
-        }), isLoading ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-          className: "flex justify-center",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("svg", {
-            role: "status",
-            className: "mr-2 w-10 h-10 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600",
-            viewBox: "0 0 100 101",
-            fill: "none",
-            xmlns: "http://www.w3.org/2000/svg",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("path", {
-              d: "M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z",
-              fill: "currentColor"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("path", {
-              d: "M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z",
-              fill: "currentFill"
-            })]
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+          className: "text-2xl font-bold text-center",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+            children: "Permintaan berhasil di simpan, Team kami akan segera menghubungi Anda."
           })
-        }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-          className: "border border-gray-400 mx-8 m-auto py-6",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("form", {
-            className: "space-y-4",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-              className: "text-center text-2xl font-bold py-4",
-              children: "Masukan Jenis mobil Anda"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-              className: "mx-8",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Components_Label__WEBPACK_IMPORTED_MODULE_1__["default"], {
-                value: "Merk Mobil"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("select", {
-                className: "w-full rounded",
-                name: "merk",
-                value: isBrandSelected,
-                onChange: handleChangeBrand,
-                required: true,
-                children: brands.map(function (brand, i) {
-                  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("option", {
-                    id: brand.id,
-                    value: brand.id,
-                    children: brand.name
-                  }, brand.id);
-                })
-              })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-              className: "mx-8",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Components_Label__WEBPACK_IMPORTED_MODULE_1__["default"], {
-                value: "Model Mobil"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("select", {
-                className: "w-full rounded",
-                name: "model",
-                value: selectedModel,
-                onChange: handleChangeModel,
-                required: true,
-                children: brands.filter(function (b) {
-                  return b.id == isBrandSelected;
-                })[0].models.map(function (model, i) {
-                  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("option", {
-                    id: model.id,
-                    value: model.name,
-                    children: model.name
-                  }, model.id);
-                })
-              })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-              className: "mx-8",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Components_Label__WEBPACK_IMPORTED_MODULE_1__["default"], {
-                value: "Variant Mobil"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("select", {
-                className: "w-full rounded",
-                name: "variant",
-                required: models.filter(function (m) {
-                  return m.id == isModelSelected;
-                })[0].variants.length > 0,
-                children: models.filter(function (m) {
-                  return m.id == isModelSelected;
-                })[0].variants.map(function (variant) {
-                  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("option", {
-                    id: variant.id,
-                    value: variant.id,
-                    children: variant.name
-                  }, variant.id);
-                })
-              })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-              className: "mx-8",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Components_Label__WEBPACK_IMPORTED_MODULE_1__["default"], {
-                value: "Tahun"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("input", {
-                className: "w-full rounded",
-                type: 'number',
-                name: "build_year",
-                placeholder: "2015",
-                required: true
-              })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-              className: "mx-8",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Components_Label__WEBPACK_IMPORTED_MODULE_1__["default"], {
-                value: "Transmisi"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("select", {
-                className: "w-full rounded",
-                name: "transmisi",
-                value: selectedTransmission,
-                onChange: handleChangeTransmission,
-                required: true,
-                children: transmissions.map(function (transmission) {
-                  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("option", {
-                    id: transmission.id,
-                    value: transmission.transmission_name,
-                    children: transmission.transmission_name
-                  }, transmission.id);
-                })
-              })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-              className: "mx-8",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Components_Label__WEBPACK_IMPORTED_MODULE_1__["default"], {
-                value: "Nomor Handphone"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("input", {
-                className: "w-full rounded",
-                type: 'number',
-                name: "build_year",
-                required: true
-              })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-              className: "w-2/3 m-auto text-center text-sm",
-              children: "Nomor handphone Anda akan dihubungi oleh tim kami untuk memberikan informasi terkait harga jual."
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-              className: "flex justify-center",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", {
-                type: "submit",
-                className: "w-20 p-2 bg-indigo-700 font-bold rounded text-white",
-                children: "Proses"
-              })
-            })]
-          })
-        })]
+        })
       })
     })]
   });
@@ -67062,6 +67206,8 @@ module.exports = function (list, options) {
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 var map = {
+	"./AddRequest": "./resources/js/Pages/AddRequest.js",
+	"./AddRequest.js": "./resources/js/Pages/AddRequest.js",
 	"./Admin/AddProduct": "./resources/js/Pages/Admin/AddProduct.js",
 	"./Admin/AddProduct.js": "./resources/js/Pages/Admin/AddProduct.js",
 	"./Admin/Dashboard": "./resources/js/Pages/Admin/Dashboard.js",
@@ -67100,8 +67246,8 @@ var map = {
 	"./Home.js": "./resources/js/Pages/Home.js",
 	"./ListProduct": "./resources/js/Pages/ListProduct.js",
 	"./ListProduct.js": "./resources/js/Pages/ListProduct.js",
-	"./ListRequest": "./resources/js/Pages/ListRequest.js",
-	"./ListRequest.js": "./resources/js/Pages/ListRequest.js"
+	"./SuccessRequest": "./resources/js/Pages/SuccessRequest.js",
+	"./SuccessRequest.js": "./resources/js/Pages/SuccessRequest.js"
 };
 
 

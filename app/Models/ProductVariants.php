@@ -21,4 +21,8 @@ class ProductVariants extends Model
         'is_master',
     ];
 
+    public function variant() {
+        return $this->hasOne(Variants::class, 'id', 'variant_id');
+    }
+
 }

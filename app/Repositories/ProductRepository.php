@@ -6,10 +6,13 @@ use App\Models\Product;
 use App\Models\ProductImage;
 use App\Models\ProductOwner;
 use App\Models\ProductModel;
+use App\Models\ProductVariants;
 use App\Models\BodyType;
 use App\Models\City;
 use App\Models\District;
 use Illuminate\Support\Str;
+
+use DB;
 
 class ProductRepository
 {
@@ -93,7 +96,8 @@ class ProductRepository
       ->with('models')
       ->with('district')
       ->with('images')
-      ->with('owner');
+      ->with('owner')
+      ->with('variants');
 
     return $stmt;
   }
@@ -252,5 +256,38 @@ class ProductRepository
   }
 
   public function deleteProductByID(String $id) {}
+
+  public function storeSellRequest($params) {
+
+    DB::beginTransaction();
+
+    $owner = ProductOwner::where('phone_number', '=', $params['phone_number'])->first();
+    if (!$owner) {
+      $owner = ProductOwner::create([
+        'phone_number' => $params['phone_number']
+      ]);
+    }
+
+    $params['product_owner_id'] = $owner->id;
+    $product = Product::create($params);
+    if (!$product) {
+      DB::rollback();
+    }
+
+    if (isset($params['variant_id'])) {
+      if (!ProductVariants::create([
+        'product_id' => $product->id,
+        'variant_id' => $params['variant_id'],
+        'is_master' => true,
+      ])) {
+        DB::rollback();
+      };
+    }
+
+    DB::commit();
+
+    return $product;
+
+  }
 
 }

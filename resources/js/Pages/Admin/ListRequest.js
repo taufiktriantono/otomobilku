@@ -9,6 +9,7 @@ export default function ListRequests(props) {
 
   const { auth, products } = props
   const { current_page, per_page } = products
+  console.log(products)
   const params = new URLSearchParams()
   const [query, setQuery] = useState({
     page: current_page,
@@ -152,13 +153,14 @@ export default function ListRequests(props) {
           </thead>
           <tbody>
             {products.data.map((product, i) => {
+              console.log(product.variants.filter((v => v.variant.is_master = true)))
                   return (
                       <tr key={product.id} className="bg-white border-b">
                           <td className="px-6 py-4">{product.id}</td>
                           <td className="px-6 -y-4">{formatDate(product.created_at)}</td>
                           <td className="px-6 -y-4">{product.models.brand.name}</td>
                           <td className="px-6 -y-4">{product.models.name}</td>
-                          <td className="px-6 -y-4">{product.body_type.type_name}</td>
+                          <td className="px-6 -y-4">{product.variants.filter((v => v.variant.is_master = true))[0] != undefined ? product.variants.filter((v => v.variant.is_master = true))[0].variant.name : '-'}</td>
                           <td className="px-6 -y-4">{product.build_year}</td>
                           <td className="px-6 -y-4">{product.transmission.transmission_name}</td>
                           <td className="px-6 -y-4">
