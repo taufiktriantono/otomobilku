@@ -7,13 +7,14 @@ use Illuminate\Http\Request;
 
 use App\Repositories\BrandRepository;
 use App\Repositories\ModelRepository;
+use App\Repositories\VariantRepository;
 
 class BrandController extends Controller
 {
     public function findAll() {
         $brandRepo = new BrandRepository();
 
-        $brands = $brandRepo->findAll();
+        $brands = $brandRepo->findAll()->get();
 
         return response()->json($brands, 200);
     }
@@ -27,7 +28,7 @@ class BrandController extends Controller
 
         $modelRepo = new ModelRepository();
 
-        $models = $modelRepo->findAll($validator);
+        $models = $modelRepo->findAll($validator)->get();
 
         return response()->json($models, 200);
     } 
@@ -37,10 +38,18 @@ class BrandController extends Controller
 
         $models = $modelRepo->findAll([
             'brand_id' => $brandId
-        ]);
+        ])->with('variants')->get();
 
         return response()->json($models, 200);
     }
 
-    public function showModel($id) {}
+    public function findAllVariant($modelId) {
+        $variantRepo = new VariantRepository();
+
+        $variants = $variantRepo->findAll([
+            'model_id' => $modelId
+        ]);
+
+        return response()->json($variants, 200);
+    }
 }

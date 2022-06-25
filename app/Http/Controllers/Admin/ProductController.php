@@ -23,9 +23,9 @@ class ProductController extends Controller
         return Inertia::render('Admin/ListProduct', ['products' => $products]);
     }
 
-    public function show($slug) {
+    public function show($id) {
         $productRepo = new ProductRepository();
-        $product = $productRepo->getProductBySlug($slug);
+        $product = $productRepo->getProductById($id);
         return Inertia::render('Admin/DetailProduct', ['product' => $product]);
     }
 
@@ -33,9 +33,9 @@ class ProductController extends Controller
         return Inertia::render('Admin/AddProduct');
     }
 
-    public function edit($slug) {
+    public function edit($id) {
         $productRepo = new ProductRepository();
-        $product = $productRepo->getProductBySlug($slug);
+        $product = $productRepo->getProductById($id);
         return Inertia::render('Admin/EditProduct', ['product' => $product]);
     }
 
@@ -57,13 +57,34 @@ class ProductController extends Controller
             'geo_point' => 'string|nullable',
             'is_active' => 'required',
             'seller_id' => 'required',
-            'image_path' => 'array'
+            'image_path' => 'array',
+            'owner' => [
+                'full_name' => 'required',
+                'phone_number' => 'required'
+            ],
+            'archive' => 'nullable',
+            'verified' => 'nullable'
         ]);
 
         $productRepo = new ProductRepository();
 
         $product = $productRepo->updateProductByID($id, $validator);
 
-        return redirect()->route('get:product', ['slug' => $product->slug]);
+        return redirect()->route('get:product', ['id' => $product->id]);
+    }
+
+    public function editPermintaan($id, Request $request) {
+
+        $validator = $request->validate([
+            'archive' => 'nullable',
+            'verified' => 'nullable'
+        ]);
+
+        $productRepo = new ProductRepository();
+
+        $product = $productRepo->editRequest($id, $validator);
+
+        return redirect()->back()->withErrors($validator)->withInput();
+        // return redirect()->route('get:product', ['slug' => $product->slug]);
     }
 }

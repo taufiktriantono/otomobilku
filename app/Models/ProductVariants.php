@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 use App\Traits\Uuid;
 
-class ProductBrand extends Model
+class ProductVariants extends Model
 {
     use HasFactory, Uuid;
 
@@ -16,13 +16,13 @@ class ProductBrand extends Model
     public $incrementing = false;
 
     protected $fillable = [
-        'name',
-        'slug',
-        'is_active'
+        'product_id',
+        'variant_id',
+        'is_master',
     ];
 
-    public function models() {
-        return $this->hasMany(ProductModel::class, 'brand_id', 'id')->with('variants');
+    public function variant() {
+        return $this->hasOne(Variants::class, 'id', 'variant_id');
     }
 
 }
