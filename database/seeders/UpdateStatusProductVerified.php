@@ -14,6 +14,6 @@ class UpdateStatusProductVerified extends Seeder
      */
     public function run()
     {
-        \App\Models\Product::select('*')->update(['verified' => true]);
+        \App\Models\Product::select('*')->update(['verified' => true, 'archive' => false]);
     }
 }

@@ -15,7 +15,7 @@ class RequestController extends Controller
 
         $params['limit'] = $request->query('limit', 10);
         $params['page'] = $request->query('page', 1);
-        $params['archive'] = true;
+        $params['archive'] = $request->query('archive', true);
 
         $productRepo = new ProductRepository();
 
