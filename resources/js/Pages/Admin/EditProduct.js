@@ -10,18 +10,18 @@ export default function EditProduct(props) {
 
     const [enabled, setEnabled] = useState(product.is_active)
     const [isLoading, setIsLoading] = useState(true);
-
+    console.log(product.district)
     const [isBrandSelected, setIsBrandSelected] = useState(product.models.brand.name);
     const [isModelSelected, setIsModelSelected] = useState(product.models.name);
-    const [isDistrictSelected, setIsDistrictSelected] = useState(product.district.district_id);
+    const [isDistrictSelected, setIsDistrictSelected] = useState(product.district != null ? product.district.district_id : '');
 
-    const [title, setTitle] = useState(product.name);
-    const [description, setDescription] = useState(product.description);
+    const [title, setTitle] = useState(product.name != null ? product.name : '');
+    const [description, setDescription] = useState(product.description != null ? product.description : '');
     const [buildYear, setBuildYear] = useState(product.build_year);
-    const [bodyType, setBodyType] = useState(product.body_type.id);
-    const [distance, setDistance] = useState(product.distance);
-    const [fuel, setFuel] = useState(product.fuel.id);
-    const [price, setPrice] = useState(product.price);
+    const [bodyType, setBodyType] = useState(product.body_type != null ? product.body_type.id : '');
+    const [distance, setDistance] = useState(product.distance != null ? product.distance : '');
+    const [fuel, setFuel] = useState(product.fuel ? product.fuel.id : '');
+    const [price, setPrice] = useState(product.price != null ? product.price : '');
     const [transmission, setTransmission] = useState(product.transmission.id);
     const [coordinate, setCoordinate] = useState(product.geo_point);
 
@@ -68,22 +68,29 @@ export default function EditProduct(props) {
         await fetchListModel(product.models.brand.id)
     }, [])
 
-    const [selectedCity, setSelectedCity] = useState(product.district.city.city_name)
+    const [selectedCity, setSelectedCity] = useState(product.district != null ? product.district.city.city_name : '')
     const [cities, setCities] = useState(null);
     const fetchListCity = useCallback(async () => {
         let response = await fetch('/api/cities')
         response = await response.json()
         setCities(response);
-        // setSelectedCity(product.district.city_id)
-        await fetchListDistrict(product.district.city_id)
+        console.log(product.district)
+        if (product.district != null) {
+          await fetchListDistrict(product.district.city_id)
+        } else {
+          await fetchListDistrict(response[0].city_id)
+        }
     }, [])
 
-    const [selectedDistrict, setSelectedDistrict] = useState(product.district.district_name)
+    const [selectedDistrict, setSelectedDistrict] = useState(product.district != null ? product.district_name : '')
     const [district, setDistrict] = useState(null);
     const fetchListDistrict = useCallback(async (cityId) => {
         let response = await fetch(`/api/districts?city_id=${cityId}`)
         response = await response.json()
         setDistrict(response);
+        if (product.district == null) {
+          setIsDistrictSelected(response[0].district_id)
+        }
     }, [])
 
     useEffect(() => {
@@ -109,22 +116,26 @@ export default function EditProduct(props) {
         setSelectedModel(product.models.id)
     }, [])
 
-    const [selectedBodyType, setSelectedBodyType] = useState(product.body_type.type_name)
+    const [selectedBodyType, setSelectedBodyType] = useState(product.body_type ? product.body_type.type_name : '')
     const [bodyTypes, setBodyTypes] = useState(null);
     const fetchListBodyType = useCallback(async () => {
         let response = await fetch('/api/bodyTypes')
         response = await response.json()
         setBodyTypes(response)
-        setSelectedBodyType(product.body_type.name)
-        setBodyType(product.body_type.id)
+        setSelectedBodyType(product.body_type ? product.body_type.name : response[0].type_name)
+        setBodyType(product.body_type ? product.body_type.id : response[0].id)
     }, [])
 
-    const [selectedFuel, setSelectedFuel] = useState(product.fuel.fuel_name)
+    const [selectedFuel, setSelectedFuel] = useState(product.fuel ? product.fuel.fuel_name : '')
     const [fuels, setFuels] = useState(null);
     const fetchListFuel = useCallback(async () => {
         let response = await fetch('/api/fuels')
         response = await response.json()
         setFuels(response)
+        if (product.fuel == null) {
+          setSelectedFuel(response[0].fuel_name)
+          setFuel(response[0].id)
+        }
     }, [])
 
     const [selectedTransmission, setSelectedTransmission] = useState(product.transmission.transmission_name)
@@ -276,8 +287,12 @@ export default function EditProduct(props) {
           geo_point: coordinate,
           is_active: enabled,
           image_path: fileUploaded,
-          full_name: fullName,
-          phone_number: phoneNumber
+          owner: {
+            full_name: fullName,
+            phone_number: phoneNumber,
+          },
+          archive: product.archive,
+          verified: product.verified
         }, {
           headers: {
             'Accept': 'application/x-www-form-urlencoded',
@@ -452,9 +467,9 @@ export default function EditProduct(props) {
                         <div className='font-bold'>Data Pemilik</div>
                         <div>
                           <label>Nama Lengkap</label>
-                          <input className='w-full mb-4 rounded disabled:bg-gray-100' type={'text'} name='full_name' placeholder='Udin' value={fullName} onChange={handleChangeFullName} disabled/>
+                          <input className='w-full mb-4 rounded disabled:bg-gray-100' type={'text'} name='full_name' placeholder='Udin' value={fullName} onChange={handleChangeFullName}/>
                           <label>Nomor Telepon</label>
-                          <input className='w-full mb-4 rounded disabled:bg-gray-100' type={'text'} name='phone_number' placeholder='081299465052' value={phoneNumber} onChange={handleChangePhoneNumber} disabled/>
+                          <input className='w-full mb-4 rounded:bg-gray-100' type={'text'} name='phone_number' placeholder='081299465052' value={phoneNumber} onChange={handleChangePhoneNumber}/>
                         </div>
                       </div>
                       <div className='w-full mb-4'>

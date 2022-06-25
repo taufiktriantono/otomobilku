@@ -79,9 +79,9 @@ class ProductRepository
       $stmt->whereIn('product_owner_id', $ownerIds);
     }
 
-    if (isset($params['archive'])) {
-      $stmt->where('archive', $params['archive']);
-    }
+    // if (isset($params['archive'])) {
+    //   $stmt->where('archive', $params['archive']);
+    // }
 
     if (isset($params['verified'])) {
       $stmt->where('verified', $params['verified']);
@@ -288,6 +288,14 @@ class ProductRepository
 
     return $product;
 
+  }
+
+  public function editRequest($id, $params) {
+    $product = Product::where('id', '=', $id)->first();
+
+    $product->update($params);
+
+    return $product;
   }
 
 }

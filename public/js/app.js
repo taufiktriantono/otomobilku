@@ -7287,6 +7287,7 @@ function DetailProduct(props) {
   var auth = props.auth,
       product = props.product,
       errors = props.errors;
+  console.log(props);
 
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(product.is_active),
       _useState2 = _slicedToArray(_useState, 2),
@@ -7912,44 +7913,43 @@ function DetailProduct(props) {
 
   var onClickEdit = function onClickEdit() {
     window.location = route('update:product', {
-      slug: product.slug
+      id: product.id
     });
   };
 
   var _useState65 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
       _useState66 = _slicedToArray(_useState65, 2),
       loadingSubmitted = _useState66[0],
-      setLoadingSubmitted = _useState66[1];
+      setLoadingSubmitted = _useState66[1]; // const onSubmit = (e) => {
+  //   e.preventDefault()
+  //   setLoadingSubmitted(true);
+  //     Inertia.put('/products', {
+  //       product_sub_category_id: '547dc152-2722-46a9-8292-df3b559f94ba',
+  //       name: title,
+  //       description: description,
+  //       product_model_id: selectedModel,
+  //       product_district_id: isDistrictSelected,
+  //       price: price,
+  //       build_year: buildYear,
+  //       distance: distance,
+  //       product_body_type_id: bodyType,
+  //       product_fuel_id: fuel,
+  //       product_transmission_id: transmission,
+  //       seller_id: auth.user.id,
+  //       geo_point: coordinate,
+  //       is_active: enabled,
+  //       image_path: fileUploaded,
+  //       full_name: fullName,
+  //       phone_number: phoneNumber
+  //     }, {
+  //       headers: {
+  //         'Accept': 'application/x-www-form-urlencoded',
+  //         'Content-Type': 'application/json'
+  //       },
+  //     })
+  //     setLoadingSubmitted(false)
+  // }
 
-  var onSubmit = function onSubmit(e) {
-    e.preventDefault();
-    setLoadingSubmitted(true);
-    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_3__.Inertia.put('/products', {
-      product_sub_category_id: '547dc152-2722-46a9-8292-df3b559f94ba',
-      name: title,
-      description: description,
-      product_model_id: selectedModel,
-      product_district_id: isDistrictSelected,
-      price: price,
-      build_year: buildYear,
-      distance: distance,
-      product_body_type_id: bodyType,
-      product_fuel_id: fuel,
-      product_transmission_id: transmission,
-      seller_id: auth.user.id,
-      geo_point: coordinate,
-      is_active: enabled,
-      image_path: fileUploaded,
-      full_name: fullName,
-      phone_number: phoneNumber
-    }, {
-      headers: {
-        'Accept': 'application/x-www-form-urlencoded',
-        'Content-Type': 'application/json'
-      }
-    });
-    setLoadingSubmitted(false);
-  };
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_Dashboard__WEBPACK_IMPORTED_MODULE_2__["default"], {
     auth: props.auth,
@@ -8369,6 +8369,8 @@ function EditProduct(props) {
       isLoading = _useState4[0],
       setIsLoading = _useState4[1];
 
+  console.log(product.district);
+
   var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(product.models.brand.name),
       _useState6 = _slicedToArray(_useState5, 2),
       isBrandSelected = _useState6[0],
@@ -8379,17 +8381,17 @@ function EditProduct(props) {
       isModelSelected = _useState8[0],
       setIsModelSelected = _useState8[1];
 
-  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(product.district.district_id),
+  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(product.district != null ? product.district.district_id : ''),
       _useState10 = _slicedToArray(_useState9, 2),
       isDistrictSelected = _useState10[0],
       setIsDistrictSelected = _useState10[1];
 
-  var _useState11 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(product.name),
+  var _useState11 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(product.name != null ? product.name : ''),
       _useState12 = _slicedToArray(_useState11, 2),
       title = _useState12[0],
       setTitle = _useState12[1];
 
-  var _useState13 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(product.description),
+  var _useState13 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(product.description != null ? product.description : ''),
       _useState14 = _slicedToArray(_useState13, 2),
       description = _useState14[0],
       setDescription = _useState14[1];
@@ -8399,22 +8401,22 @@ function EditProduct(props) {
       buildYear = _useState16[0],
       setBuildYear = _useState16[1];
 
-  var _useState17 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(product.body_type.id),
+  var _useState17 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(product.body_type != null ? product.body_type.id : ''),
       _useState18 = _slicedToArray(_useState17, 2),
       bodyType = _useState18[0],
       setBodyType = _useState18[1];
 
-  var _useState19 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(product.distance),
+  var _useState19 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(product.distance != null ? product.distance : ''),
       _useState20 = _slicedToArray(_useState19, 2),
       distance = _useState20[0],
       setDistance = _useState20[1];
 
-  var _useState21 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(product.fuel.id),
+  var _useState21 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(product.fuel ? product.fuel.id : ''),
       _useState22 = _slicedToArray(_useState21, 2),
       fuel = _useState22[0],
       setFuel = _useState22[1];
 
-  var _useState23 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(product.price),
+  var _useState23 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(product.price != null ? product.price : ''),
       _useState24 = _slicedToArray(_useState23, 2),
       price = _useState24[0],
       setPrice = _useState24[1];
@@ -8503,7 +8505,7 @@ function EditProduct(props) {
     }, _callee);
   })), []);
 
-  var _useState35 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(product.district.city.city_name),
+  var _useState35 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(product.district != null ? product.district.city.city_name : ''),
       _useState36 = _slicedToArray(_useState35, 2),
       selectedCity = _useState36[0],
       setSelectedCity = _useState36[1];
@@ -8529,12 +8531,26 @@ function EditProduct(props) {
 
           case 5:
             response = _context2.sent;
-            setCities(response); // setSelectedCity(product.district.city_id)
+            setCities(response);
+            console.log(product.district);
 
-            _context2.next = 9;
+            if (!(product.district != null)) {
+              _context2.next = 13;
+              break;
+            }
+
+            _context2.next = 11;
             return fetchListDistrict(product.district.city_id);
 
-          case 9:
+          case 11:
+            _context2.next = 15;
+            break;
+
+          case 13:
+            _context2.next = 15;
+            return fetchListDistrict(response[0].city_id);
+
+          case 15:
           case "end":
             return _context2.stop();
         }
@@ -8542,7 +8558,7 @@ function EditProduct(props) {
     }, _callee2);
   })), []);
 
-  var _useState39 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(product.district.district_name),
+  var _useState39 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(product.district != null ? product.district_name : ''),
       _useState40 = _slicedToArray(_useState39, 2),
       selectedDistrict = _useState40[0],
       setSelectedDistrict = _useState40[1];
@@ -8571,7 +8587,11 @@ function EditProduct(props) {
               response = _context3.sent;
               setDistrict(response);
 
-            case 7:
+              if (product.district == null) {
+                setIsDistrictSelected(response[0].district_id);
+              }
+
+            case 8:
             case "end":
               return _context3.stop();
           }
@@ -8634,7 +8654,7 @@ function EditProduct(props) {
     };
   }(), []);
 
-  var _useState47 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(product.body_type.type_name),
+  var _useState47 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(product.body_type ? product.body_type.type_name : ''),
       _useState48 = _slicedToArray(_useState47, 2),
       selectedBodyType = _useState48[0],
       setSelectedBodyType = _useState48[1];
@@ -8661,8 +8681,8 @@ function EditProduct(props) {
           case 5:
             response = _context5.sent;
             setBodyTypes(response);
-            setSelectedBodyType(product.body_type.name);
-            setBodyType(product.body_type.id);
+            setSelectedBodyType(product.body_type ? product.body_type.name : response[0].type_name);
+            setBodyType(product.body_type ? product.body_type.id : response[0].id);
 
           case 9:
           case "end":
@@ -8672,7 +8692,7 @@ function EditProduct(props) {
     }, _callee5);
   })), []);
 
-  var _useState51 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(product.fuel.fuel_name),
+  var _useState51 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(product.fuel ? product.fuel.fuel_name : ''),
       _useState52 = _slicedToArray(_useState51, 2),
       selectedFuel = _useState52[0],
       setSelectedFuel = _useState52[1];
@@ -8700,7 +8720,12 @@ function EditProduct(props) {
             response = _context6.sent;
             setFuels(response);
 
-          case 7:
+            if (product.fuel == null) {
+              setSelectedFuel(response[0].fuel_name);
+              setFuel(response[0].id);
+            }
+
+          case 8:
           case "end":
             return _context6.stop();
         }
@@ -9009,8 +9034,12 @@ function EditProduct(props) {
       geo_point: coordinate,
       is_active: enabled,
       image_path: fileUploaded,
-      full_name: fullName,
-      phone_number: phoneNumber
+      owner: {
+        full_name: fullName,
+        phone_number: phoneNumber
+      },
+      archive: product.archive,
+      verified: product.verified
     }, {
       headers: {
         'Accept': 'application/x-www-form-urlencoded',
@@ -9307,18 +9336,16 @@ function EditProduct(props) {
                 name: "full_name",
                 placeholder: "Udin",
                 value: fullName,
-                onChange: handleChangeFullName,
-                disabled: true
+                onChange: handleChangeFullName
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("label", {
                 children: "Nomor Telepon"
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("input", {
-                className: "w-full mb-4 rounded disabled:bg-gray-100",
+                className: "w-full mb-4 rounded:bg-gray-100",
                 type: 'text',
                 name: "phone_number",
                 placeholder: "081299465052",
                 value: phoneNumber,
-                onChange: handleChangePhoneNumber,
-                disabled: true
+                onChange: handleChangePhoneNumber
               })]
             })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
@@ -9702,7 +9729,7 @@ function ListProduct(props) {
                     })
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
                     className: "font-bold",
-                    children: product.district.district_name
+                    children: product.district ? product.district_name : '-'
                   })]
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
                   className: "text-xs italic",
@@ -9712,7 +9739,7 @@ function ListProduct(props) {
                 className: "px-6 py-4",
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("a", {
                   href: route('get:product', {
-                    slug: product.slug
+                    id: product.id
                   }),
                   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
                     className: "font-bold",
@@ -9729,7 +9756,7 @@ function ListProduct(props) {
                 className: "px-6 py-4 text-right",
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("a", {
                   href: route('update:product', {
-                    slug: product.slug
+                    id: product.id
                   }),
                   className: "font-medium text-blue-600 dark:text-blue-500 hover:underline",
                   children: "Edit"
@@ -9861,7 +9888,6 @@ function ListRequests(props) {
       products = props.products;
   var current_page = products.current_page,
       per_page = products.per_page;
-  console.log(products);
   var params = new URLSearchParams();
 
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)({
@@ -9875,10 +9901,12 @@ function ListRequests(props) {
       query = _useState2[0],
       setQuery = _useState2[1];
 
-  var _useForm = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.useForm)(),
+  var _useForm = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.useForm)({
+    verified: false,
+    archive: true
+  }),
       data = _useForm.data,
       setData = _useForm.setData,
-      get = _useForm.get,
       put = _useForm.put,
       processing = _useForm.processing;
 
@@ -9945,16 +9973,11 @@ function ListRequests(props) {
     });
   };
 
-  var search = function search() {
-    get(route('list-permintaan'));
+  var search = function search() {// get(route('list-permintaan'));
   };
 
-  var submit = function submit(i) {
-    var product = products.data[i];
-    product.verified = !product.verified;
-    setData(function (prev) {
-      return _objectSpread(_objectSpread({}, prev), product);
-    });
+  var submit = function submit(product) {
+    data.verified = !product.verified;
     put(route('update-permintaan', product.id));
   };
 
@@ -10068,9 +10091,6 @@ function ListRequests(props) {
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("tbody", {
         children: products.data.map(function (product, i) {
-          console.log(product.variants.filter(function (v) {
-            return v.variant.is_master = true;
-          }));
           return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("tr", {
             className: "bg-white border-b",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("td", {
@@ -10105,22 +10125,29 @@ function ListRequests(props) {
                 target: '_blank',
                 children: product.owner.phone_number.replace('0', '62')
               })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("td", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("td", {
               className: "px-6 -y-4",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("form", {
-                onSubmit: function onSubmit() {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("input", {
+                type: "hidden",
+                name: "id",
+                value: product.id
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("input", {
+                type: "hidden",
+                name: "verified",
+                value: !product.verified
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("input", {
+                type: "hidden",
+                name: "archived",
+                value: !product.archived
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", {
+                type: 'button',
+                className: 'py-2 px-4 self-end bg-indigo-700 rounded-md text-white disabled:bg-gray-400',
+                disabled: products.data[i].verified,
+                onClick: function onClick() {
                   return submit(product);
                 },
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", {
-                  type: 'button',
-                  className: 'py-2 px-4 self-end bg-indigo-700 rounded-md text-white disabled:bg-gray-400',
-                  disabled: products.data[i].verified,
-                  onClick: function onClick() {
-                    return submit(i);
-                  },
-                  children: products.data[i].verified ? 'Inactive' : 'Hubungi'
-                })
-              })
+                children: products.data[i].verified ? 'Inactive' : 'Hubungi'
+              })]
             })]
           }, product.id);
         })

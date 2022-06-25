@@ -40,12 +40,12 @@ Route::domain('admin.'.env('APP_DOMAIN'))->group(function() {
         Route::get('/products', [ProductController::class, 'index'])->name('list:product');
         Route::get('/products/add', [ProductController::class, 'store'])->name('store:product');
         Route::post('/products', [ApiProductController::class, 'addProduct']);
-        Route::get('/products/{slug}', [ProductController::class, 'show'])->name('get:product');
-        Route::get('/products/{slug}/edit', [ProductController::class, 'edit'])->name('update:product');
+        Route::get('/products/{id}', [ProductController::class, 'show'])->name('get:product');
+        Route::get('/products/{id}/edit', [ProductController::class, 'edit'])->name('update:product');
         Route::put('/products/{id}', [ProductController::class, 'doEdit']);
         Route::post('/images', [ImageController::class, 'upload']);
         Route::get('/permintaan', [RequestController::class, 'index'])->name('list-permintaan');
-        Route::put('/permintaan/{id}', [ProductController::class, 'doEdit'])->name('update-permintaan');
+        Route::put('/permintaan/{id}', [ProductController::class, 'editPermintaan'])->name('update-permintaan');
 
         Route::prefix('settings')->group(function () {
                 Route::get('/brands', [SettingController::class, 'listBrand'])->name('setting-brand');

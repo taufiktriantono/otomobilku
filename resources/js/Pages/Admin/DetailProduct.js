@@ -7,7 +7,7 @@ import ValidationErrors from '@/Components/ValidationErrors';
 
 export default function DetailProduct(props) {
     const { auth, product, errors } = props
-
+    console.log(props)
     const [enabled, setEnabled] = useState(product.is_active)
     const [isLoading, setIsLoading] = useState(true);
 
@@ -253,39 +253,39 @@ export default function DetailProduct(props) {
     )
 
     const onClickEdit = () => {
-      window.location = route('update:product', {slug: product.slug})
+      window.location = route('update:product', {id: product.id})
     }
 
     const [loadingSubmitted, setLoadingSubmitted] = useState(false);
-    const onSubmit = (e) => {
-      e.preventDefault()
-      setLoadingSubmitted(true);
-        Inertia.put('/products', {
-          product_sub_category_id: '547dc152-2722-46a9-8292-df3b559f94ba',
-          name: title,
-          description: description,
-          product_model_id: selectedModel,
-          product_district_id: isDistrictSelected,
-          price: price,
-          build_year: buildYear,
-          distance: distance,
-          product_body_type_id: bodyType,
-          product_fuel_id: fuel,
-          product_transmission_id: transmission,
-          seller_id: auth.user.id,
-          geo_point: coordinate,
-          is_active: enabled,
-          image_path: fileUploaded,
-          full_name: fullName,
-          phone_number: phoneNumber
-        }, {
-          headers: {
-            'Accept': 'application/x-www-form-urlencoded',
-            'Content-Type': 'application/json'
-          },
-        })
-        setLoadingSubmitted(false)
-    }
+    // const onSubmit = (e) => {
+    //   e.preventDefault()
+    //   setLoadingSubmitted(true);
+    //     Inertia.put('/products', {
+    //       product_sub_category_id: '547dc152-2722-46a9-8292-df3b559f94ba',
+    //       name: title,
+    //       description: description,
+    //       product_model_id: selectedModel,
+    //       product_district_id: isDistrictSelected,
+    //       price: price,
+    //       build_year: buildYear,
+    //       distance: distance,
+    //       product_body_type_id: bodyType,
+    //       product_fuel_id: fuel,
+    //       product_transmission_id: transmission,
+    //       seller_id: auth.user.id,
+    //       geo_point: coordinate,
+    //       is_active: enabled,
+    //       image_path: fileUploaded,
+    //       full_name: fullName,
+    //       phone_number: phoneNumber
+    //     }, {
+    //       headers: {
+    //         'Accept': 'application/x-www-form-urlencoded',
+    //         'Content-Type': 'application/json'
+    //       },
+    //     })
+    //     setLoadingSubmitted(false)
+    // }
 
     return (
         <Dashboard auth={props.auth} header={props.header} errors={props.errors}>

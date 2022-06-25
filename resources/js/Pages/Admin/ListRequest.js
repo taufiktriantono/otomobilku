@@ -9,7 +9,7 @@ export default function ListRequests(props) {
 
   const { auth, products } = props
   const { current_page, per_page } = products
-  console.log(products)
+
   const params = new URLSearchParams()
   const [query, setQuery] = useState({
     page: current_page,
@@ -19,7 +19,10 @@ export default function ListRequests(props) {
     q: '',
   })
 
-  const { data, setData, get, put, processing } = useForm()
+  const { data, setData, put, processing } = useForm({
+    verified: false,
+    archive: true,
+  })
 
   params.set('page', query.page)
   params.set('limit', query.limit)
@@ -75,18 +78,12 @@ export default function ListRequests(props) {
   )
 
   const search = () => {
-    get(route('list-permintaan'));
+    // get(route('list-permintaan'));
   }
 
-  const submit = (i) => {
-    const product = products.data[i]
-    product.verified = !product.verified
-    setData((prev) => {
-      return {
-        ...prev,
-        ...product
-      }
-    })
+  const submit = (product) => {
+
+    data.verified = !product.verified
 
     put(route('update-permintaan', product.id));
   }
@@ -153,7 +150,6 @@ export default function ListRequests(props) {
           </thead>
           <tbody>
             {products.data.map((product, i) => {
-              console.log(product.variants.filter((v => v.variant.is_master = true)))
                   return (
                       <tr key={product.id} className="bg-white border-b">
                           <td className="px-6 py-4">{product.id}</td>
@@ -172,13 +168,16 @@ export default function ListRequests(props) {
                             </a>
                           </td>
                           <td className="px-6 -y-4">
-                            <form onSubmit={() => submit(product)}>
-                              <button type={'button'} className={'py-2 px-4 self-end bg-indigo-700 rounded-md text-white disabled:bg-gray-400'} disabled={products.data[i].verified} onClick={() => submit(i)}>
+                            {/* <form onSubmit={() => submit(product)}> */}
+                              <input type={"hidden"} name="id" value={product.id}></input>
+                              <input type={"hidden"} name="verified" value={!product.verified}></input>
+                              <input type={"hidden"} name="archived" value={!product.archived}></input>
+                              <button type={'button'} className={'py-2 px-4 self-end bg-indigo-700 rounded-md text-white disabled:bg-gray-400'} disabled={products.data[i].verified} onClick={() => submit(product)}>
                                 {
                                   products.data[i].verified ? 'Inactive' : 'Hubungi'
                                 }
                               </button>
-                            </form>
+                            {/* </form> */}
                           </td>
                       </tr>
                   )

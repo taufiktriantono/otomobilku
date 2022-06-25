@@ -198,12 +198,12 @@ export default function ListProduct(props) {
                                         <td className="px-6 py-4">
                                             <div className='flex'>
                                                 <span><LocationMarkerIcon width={16} height={16} /></span>
-                                                <span className='font-bold'>{product.district.district_name}</span>
+                                                <span className='font-bold'>{product.district ? product.district_name : '-'}</span>
                                             </div>
                                             <div className='text-xs italic'>Post Date: {formatDate(product.created_at)}</div>
                                         </td>
                                         <td className="px-6 py-4">
-                                            <a href={route('get:product', {slug: product.slug})}>
+                                            <a href={route('get:product', {id: product.id})}>
                                                 <span className='font-bold'>{product.name}</span>
                                             </a>
                                         </td>
@@ -212,7 +212,7 @@ export default function ListProduct(props) {
                                         </td>
                                         <td className="px-6 py-4 text-right">
                                             <a href={route('update:product', {
-                                                slug: product.slug
+                                                id: product.id
                                             })} className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
                                         </td>
                                     </tr>
