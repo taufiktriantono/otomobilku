@@ -123,7 +123,7 @@ export default function Layout(props) {
                   </div>
                   <div className='flex'>
                       <a href={route('home')}>Beli Mobil Bekas</a>
-                      <a href={'#'}  className='ml-6'>Jual Mobil</a>
+                      <a href={route('sell:product')}  className='ml-6'>Jual Mobil</a>
                       <a href={'#'} className='ml-6'>News & Update</a>
                   </div>
                 </div>

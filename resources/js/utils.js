@@ -22,6 +22,13 @@ const formatDate = (value) => {
   return `${day} ${months[month]} ${year}`
 }
 
+const nomorHandphoneFormatIndonesia = (value) => {
+  if (!value.startsWith('62')) {
+    
+  }
+  return value
+}
+
 export {
   months,
   formatDate

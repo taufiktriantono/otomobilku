@@ -6,10 +6,13 @@ use App\Models\Product;
 use App\Models\ProductImage;
 use App\Models\ProductOwner;
 use App\Models\ProductModel;
+use App\Models\ProductVariants;
 use App\Models\BodyType;
 use App\Models\City;
 use App\Models\District;
 use Illuminate\Support\Str;
+
+use DB;
 
 class ProductRepository
 {
@@ -71,6 +74,19 @@ class ProductRepository
       $stmt->whereIn('product_model_id', $mnodelIds);
     }
 
+    if (isset($params['phone_number'])) {
+      $ownerIds = ProductOwner::where('phone_number', $params['phone_number'])->select('id')->get();
+      $stmt->whereIn('product_owner_id', $ownerIds);
+    }
+
+    // if (isset($params['archive'])) {
+    //   $stmt->where('archive', $params['archive']);
+    // }
+
+    if (isset($params['verified'])) {
+      $stmt->where('verified', $params['verified']);
+    }
+
     $stmt->orderBy('updated_at', 'desc');
 
     $stmt->with('bodyType')
@@ -80,7 +96,8 @@ class ProductRepository
       ->with('models')
       ->with('district')
       ->with('images')
-      ->with('owner');
+      ->with('owner')
+      ->with('variants');
 
     return $stmt;
   }
@@ -188,24 +205,97 @@ class ProductRepository
       'price' => $params['price'],
       'geo_point' => $params['geo_point'],
       'seller_id' => $params['seller_id'],
-      'is_active' => $params['is_active']
+      'is_active' => $params['is_active'],
+      'archive' => $params['archive'],
+      'verified' => $params['verified']
     ]);
 
-    $images = ProductImage::where('product_id', '=', $product->id)->get();
-    foreach ($images as $image) {
-      $image->delete();
+    if (isset($params['image_path'])) {
+      $images = ProductImage::where('product_id', '=', $product->id)->get();
+      foreach ($images as $image) {
+        $image->delete();
+      }
+
+      foreach ($params['image_path'] as $image) {
+        $productImage = ProductImage::create([
+          'product_id' => $product->id,
+          'path' => $image['path']
+        ]);
+      }
     }
 
-    foreach ($params['image_path'] as $image) {
-      $productImage = ProductImage::create([
-        'product_id' => $product->id,
-        'path' => $image['path']
-      ]);
+    if (isset($params['owner'])) {
+      $owner = ProductOwner::where('phone_number', '=', $params['owner']['phone_number'])->first();
+      if (!$owner) {
+        $owner = ProductOwner::create([
+          'full_name' => $params['owner']['full_name'],
+          'phone_number' => $params['owner']['phone_number']
+        ]);
+      } else {
+        $owner->update([
+          'full_name' => $params['owner']['full_name'],
+          'phone_number' => $params['owner']['phone_number']
+        ]);
+      }
+    } else {
+      $owner = ProductOwner::where('phone_number', '=', $params['phone_number'])->first();
+      if (!$owner) {
+        $owner = ProductOwner::create([
+          'full_name' => $params['full_name'],
+          'phone_number' => $params['phone_number']
+        ]);
+      } else {
+        $owner->update([
+          'full_name' => $params['full_name'],
+          'phone_number' => $params['phone_number']
+        ]);
+      }
     }
 
     return $product;
   }
 
   public function deleteProductByID(String $id) {}
+
+  public function storeSellRequest($params) {
+
+    DB::beginTransaction();
+
+    $owner = ProductOwner::where('phone_number', '=', $params['phone_number'])->first();
+    if (!$owner) {
+      $owner = ProductOwner::create([
+        'phone_number' => $params['phone_number']
+      ]);
+    }
+
+    $params['product_owner_id'] = $owner->id;
+    $product = Product::create($params);
+    if (!$product) {
+      DB::rollback();
+    }
+
+    if (isset($params['variant_id'])) {
+      if (!ProductVariants::create([
+        'product_id' => $product->id,
+        'variant_id' => $params['variant_id'],
+        'is_master' => true,
+      ])) {
+        DB::rollback();
+      };
+    }
+
+    DB::commit();
+
+    return $product;
+
+  }
+
+  public function editRequest($id, $params) {
+    $product = Product::where('id', '=', $id)->first();
+
+    $product->update($params);
+
+    return $product;
+  }
 
 }

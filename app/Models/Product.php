@@ -31,7 +31,9 @@ class Product extends Model
         'distance',
         'geo_point',
         'seller_id',
-        'is_active'
+        'is_active',
+        'archive',
+        'verified'
     ];
 
     public function bodyType() {
@@ -64,6 +66,10 @@ class Product extends Model
 
     public function owner() {
         return $this->hasOne(ProductOwner::class, 'id', 'product_owner_id');
+    }
+
+    public function variants() {
+        return $this->hasMany(ProductVariants::class, 'product_id', 'id')->with('variant');
     }
 
 }
