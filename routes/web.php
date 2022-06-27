@@ -12,6 +12,7 @@ use App\Http\Controllers\Admin\ProductController as ProductController;
 use App\Http\Controllers\Admin\ImageController as ImageController;
 use App\Http\Controllers\Admin\RequestController as RequestController;
 use App\Http\Controllers\Admin\SettingController as SettingController;
+use App\Http\Controllers\Admin\UserController as UserController;
 use App\Http\Controllers\Api\ProductController as ApiProductController;
 
 /*
@@ -60,6 +61,12 @@ Route::domain('admin.'.env('APP_DOMAIN'))->group(function() {
                 Route::get('/models/{id}/show', [SettingController::class, 'showModel'])->name('setting-show-model');
                 Route::get('/models/{id}/edit', [SettingController::class, 'updateModel'])->name('setting-update-model');
                 Route::put('/models/{id}', [SettingController::class, 'update'])->name('update-model');
+
+                Route::get('/users', [UserController::class, 'index'])->name('list-user');
+                Route::get('/users/add', [UserController::class, 'store'])->name('store-user');
+                Route::post('/user', [UserController::class, 'store']);
+                Route::get('/user/{id}', [UserController::class, 'show'])->name('show-user');
+                Route::put('/user/{id}', [UserController::class, 'update'])->name('update-user');
         });
 
     });

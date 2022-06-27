@@ -21,4 +21,14 @@ class UserRepository
     })->first();
   }
 
+  public function findAll() {
+    return User::whereHas('roles', function($query) {
+      $query->where('roles.name', '=', 'ROLE_ADMIN');
+    });
+  }
+
+  public function findOneById($id) {}
+
+  public function updateById($id, $params) {}
+
 }
