@@ -79,7 +79,7 @@ Route::domain('admin.'.env('APP_DOMAIN'))->group(function() {
 
 });
 
-Route::domain(env('INSPECTOR_DOMAIN'))->middleware(['auth'])->group(function() {
+Route::domain('inspector.'.env('APP_DOMAIN'))->middleware(['auth'])->group(function() {
     Route::get('/', [InspectorProductController::class, 'store'])->name('home-inspector');
     Route::post('/', [ApiProductController::class, 'addProduct']);
     Route::post('/logout', [InspectorProductController::class, 'destroy'])->name('logout-inspector');
