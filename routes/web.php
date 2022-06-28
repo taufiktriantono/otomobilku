@@ -36,7 +36,7 @@ Route::domain(env('APP_DOMAIN'))->group(function() {
     Route::get('/jual-mobil/success', [HomeController::class, 'success'])->name('sell:product:success');
 });
 
-Route::domain(env('ACCOUNT_DOMAIN'))->group(function() {
+Route::domain('accounts'.env('APP_DOMAIN'))->group(function() {
     require __DIR__.'/auth.php';
 });
 
