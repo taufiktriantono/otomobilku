@@ -26,7 +26,7 @@ export default function AuthenticatedInspector({ auth, header, children }) {
                         <div className="flex">
                             <div className="shrink-0 flex items-center">
                                 <Link href="/">
-                                    <ApplicationLogo className="block w-auto h-16 py-4 text-gray-500" src='http://otomobilku.id/storage/images/otomobilku_fix_bak.png' />
+                                    <ApplicationLogo className="block w-auto h-16 py-4 text-gray-500" src='http://otomobilku.id/storage/images/otomobilku_fix.png' />
                                 </Link>
                             </div>
 
