@@ -19,11 +19,14 @@ class AuthenticatedSessionController extends Controller
      *
      * @return \Inertia\Response
      */
-    public function create()
+    public function create(Request $request)
     {
+        $returnUrl = $request->query('returnUrl', '/');
+
         return Inertia::render('Auth/Login', [
             'canResetPassword' => Route::has('password.request'),
             'status' => session('status'),
+            'returnUrl' => $returnUrl
         ]);
     }
 
@@ -42,6 +45,7 @@ class AuthenticatedSessionController extends Controller
             'email' => 'required',
             'password' => 'required',
             'remember' => 'boolean',
+            'returnUrl' => 'required'
         ]);
 
         $user = $userRepo->getAdminByEmail($validator, 'ROLE_ADMIN');
@@ -59,7 +63,12 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        return redirect()->intended(RouteServiceProvider::HOME);
+        return response()->json([
+            'status' => 200,
+            'data' => [
+                'returnUrl' => $validator['returnUrl']
+            ]
+        ], 200);;
     }
 
     /**
