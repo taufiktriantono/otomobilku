@@ -164,7 +164,9 @@ class ProductRepository
       'price' => $params['price'],
       'seller_id' => $params['seller_id'],
       'product_owner_id' => $owner->id,
-      'is_active' => $params['is_active']
+      'is_active' => $params['is_active'],
+      'archive' => $params['archive'],
+      'verified' => $params['verified']
     ];
 
     if (isset($params['geo_point'])) {

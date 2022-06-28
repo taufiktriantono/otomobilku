@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Controller;
@@ -20,5 +21,17 @@ class HomeController extends Controller
         //     'laravelVersion' => Application::VERSION,
         //     'phpVersion' => PHP_VERSION,
         // ]);
+    }
+
+    public function destroy(Request $request)
+    {
+        Auth::guard('web')->logout();
+
+        $request->session()->invalidate();
+
+        return response()->json([
+            'success' => 200
+        ], 200);
+
     }
 }

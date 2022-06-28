@@ -6,6 +6,14 @@ use App\Models\User;
 use App\Models\UserRole;
 use App\Models\Role;
 
+use Illuminate\Auth\Events\Registered;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
+
+use Ramsey\Uuid\Uuid;
+
+use DB;
+
 class UserRepository
 {
 
@@ -30,5 +38,32 @@ class UserRepository
   public function findOneById($id) {}
 
   public function updateById($id, $params) {}
+
+  public function store($params) {
+    DB::beginTransaction();
+
+    $user = User::create([
+      'uuid' => Uuid::uuid4()->toString(),
+      'first_name' => $params['first_name'],
+      'last_name' => $params['last_name'],
+      'email' => $params['email'],
+      'password' => Hash::make($params['password']),
+      'email_verified_at' => now(),
+    ]);
+    if (!$user) {
+      DB::rollback();
+    }
+
+    if (!UserRole::create([
+      'user_id' => $user->id,
+      'role_id' => $params['role_id']
+    ])) {
+      DB::rollback();
+    };
+
+    DB::commit();
+
+    return $user;
+  }
 
 }

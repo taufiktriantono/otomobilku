@@ -2,7 +2,6 @@
 
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
-use Inertia\Inertia;
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\BlogController;
@@ -14,6 +13,8 @@ use App\Http\Controllers\Admin\RequestController as RequestController;
 use App\Http\Controllers\Admin\SettingController as SettingController;
 use App\Http\Controllers\Admin\UserController as UserController;
 use App\Http\Controllers\Api\ProductController as ApiProductController;
+
+use App\Http\Controllers\Inspector\ProductController as InspectorProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,7 +36,11 @@ Route::domain(env('APP_DOMAIN'))->group(function() {
     Route::get('/jual-mobil/success', [HomeController::class, 'success'])->name('sell:product:success');
 });
 
-Route::domain('admin.'.env('APP_DOMAIN'))->group(function() {
+Route::domain(env('ACCOUNT_DOMAIN'))->group(function() {
+    require __DIR__.'/auth.php';
+});
+
+Route::domain(env('ADMIN_DOMAIN'))->group(function() {
     Route::middleware(['auth'])->group(function () {
         Route::get('/', [AdminController::class, 'index'])->name('dashboard');
         Route::get('/products', [ProductController::class, 'index'])->name('list:product');
@@ -47,6 +52,7 @@ Route::domain('admin.'.env('APP_DOMAIN'))->group(function() {
         Route::post('/images', [ImageController::class, 'upload']);
         Route::get('/permintaan', [RequestController::class, 'index'])->name('list-permintaan');
         Route::put('/permintaan/{id}', [ProductController::class, 'editPermintaan'])->name('update-permintaan');
+        Route::post('/logout', [AdminController::class, 'destroy'])->name('admin-logout');
 
         Route::prefix('settings')->group(function () {
                 Route::get('/brands', [SettingController::class, 'listBrand'])->name('setting-brand');
@@ -64,12 +70,17 @@ Route::domain('admin.'.env('APP_DOMAIN'))->group(function() {
 
                 Route::get('/users', [UserController::class, 'index'])->name('list-user');
                 Route::get('/users/add', [UserController::class, 'store'])->name('store-user');
-                Route::post('/user', [UserController::class, 'store']);
+                Route::post('/users/add', [UserController::class, 'store']);
                 Route::get('/user/{id}', [UserController::class, 'show'])->name('show-user');
                 Route::put('/user/{id}', [UserController::class, 'update'])->name('update-user');
         });
 
     });
 
-    require __DIR__.'/auth.php';
+});
+
+Route::domain(env('INSPECTOR_DOMAIN'))->middleware(['auth'])->group(function() {
+    Route::get('/', [InspectorProductController::class, 'store'])->name('home-inspector');
+    Route::post('/', [ApiProductController::class, 'addProduct']);
+    Route::post('/logout', [InspectorProductController::class, 'destroy'])->name('logout-inspector');
 });
