@@ -486,7 +486,7 @@ export default function AddProduct(props) {
                         </Switch>
                       </div> */}
                       <div className='flex justify-end'>
-                        <a href={route('dashboard')} className='w-20 p-2 bg-gray-700 font-bold rounded text-center text-white mr-4'>Back</a>
+                        {/* <a href={route('dashboard')} className='w-20 p-2 bg-gray-700 font-bold rounded text-center text-white mr-4'>Back</a> */}
                         <button type='submit' className='w-20 p-2 bg-indigo-700 font-bold rounded text-white' disabled={loadingSubmitted}>
                           {
                             loadingSubmitted ?
