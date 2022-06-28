@@ -286,7 +286,7 @@ export default function ListProduct(props) {
           image_path: fileUploaded,
           full_name: fullName,
           phone_number: phoneNumber,
-          archive: true,
+          archive: false,
           verified: true
         }, {
           headers: {
