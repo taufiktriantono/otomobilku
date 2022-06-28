@@ -40,7 +40,7 @@ Route::domain('accounts.'.env('APP_DOMAIN'))->group(function() {
     require __DIR__.'/auth.php';
 });
 
-Route::domain(env('ADMIN_DOMAIN'))->group(function() {
+Route::domain('admin.'.env('APP_DOMAIN'))->group(function() {
     Route::middleware(['auth'])->group(function () {
         Route::get('/', [AdminController::class, 'index'])->name('dashboard');
         Route::get('/products', [ProductController::class, 'index'])->name('list:product');
