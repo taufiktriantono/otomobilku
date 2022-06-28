@@ -4,9 +4,10 @@ import Dropdown from '@/Components/Dropdown';
 import NavLink from '@/Components/NavLink';
 import ResponsiveNavLink from '@/Components/ResponsiveNavLink';
 import { Link } from '@inertiajs/inertia-react';
+import { Inertia } from '@inertiajs/inertia';
 import axios from 'axios';
 
-export default function Authenticated({ auth, header, children }) {
+export default function AuthenticatedInspector({ auth, header, children }) {
     const [showingNavigationDropdown, setShowingNavigationDropdown] = useState(false);
 
     const logout = (e) => {
@@ -64,7 +65,7 @@ export default function Authenticated({ auth, header, children }) {
                                     </Dropdown.Trigger>
 
                                     <Dropdown.Content>
-                                        {/* <Dropdown.Link href={route('admin.logout')} method="post" as="button">
+                                        {/* <Dropdown.Link href={route('logout-inspector')} method="post" as="button">
                                             Log Out
                                         </Dropdown.Link> */}
                                         <button onClick={logout} className="block w-full px-4 py-2 text-left text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out">
@@ -115,7 +116,7 @@ export default function Authenticated({ auth, header, children }) {
                         </div>
 
                         <div className="mt-3 space-y-1">
-                            {/* <ResponsiveNavLink method="post" href={route('admin.logout')} as="button">
+                            {/* <ResponsiveNavLink method="post" href={route('logout-inspector')} as="button">
                                 Log Out
                             </ResponsiveNavLink> */}
                             <button onClick={logout} className="w-full flex items-start pl-3 pr-4 py-2 border-l-4 border-transparent text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 text-base font-medium focus:outline-none transition duration-150 ease-in-out">Log Out</button>

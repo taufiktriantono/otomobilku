@@ -6,12 +6,15 @@ import Input from '@/Components/Input';
 import Label from '@/Components/Label';
 import ValidationErrors from '@/Components/ValidationErrors';
 import { Head, Link, useForm } from '@inertiajs/inertia-react';
+import { Inertia } from '@inertiajs/inertia';
+import axios from 'axios';
 
-export default function Login({ status, canResetPassword }) {
+export default function Login({ status, canResetPassword, returnUrl }) {
     const { data, setData, post, processing, errors, reset } = useForm({
         email: '',
         password: '',
         remember: false,
+        returnUrl: returnUrl
     });
 
     useEffect(() => {
@@ -27,7 +30,25 @@ export default function Login({ status, canResetPassword }) {
     const submit = (e) => {
         e.preventDefault();
 
-        post(route('admin.login'));
+        // post(route('admin.login'), {
+        //     onError: (error) => {
+        //         console.log(error)
+        //     },
+        //     onSuccess: () => {
+        //         window.location.href = returnUrl
+        //     }
+        // });
+        axios.post('/login', data)
+            .then((response) => {
+                const { status, data } = response
+                window.location.href = data.data.returnUrl
+            })
+        // Inertia.post(route('admin.login'), data, {
+        //     headers: {
+        //         'Accept': 'application/x-www-form-urlencoded',
+        //         'Content-Type': 'application/json'
+        //     },
+        // })
     };
 
     return (
@@ -39,6 +60,9 @@ export default function Login({ status, canResetPassword }) {
             <ValidationErrors errors={errors} />
 
             <form onSubmit={submit}>
+
+                <input type={'hidden'} name={'returnUrl'} value={data.returnUrl} />
+
                 <div>
                     <Label forInput="email" value="Email" />
 

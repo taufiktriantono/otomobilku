@@ -1,16 +1,13 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import Dashboard from './Dashboard';
-import { Switch } from '@headlessui/react'
-import { Inertia } from '@inertiajs/inertia';
 import { Head } from '@inertiajs/inertia-react';
 import ValidationErrors from '@/Components/ValidationErrors';
-import Label from '@/Components/Label';
+import AuthenticatedInspector from '@/Layouts/AuthenticatedInspector';
 import axios from 'axios';
 
-export default function ListProduct(props) {
+export default function AddProduct(props) {
     const { auth, errors } = props
 
-    const [enabled, setEnabled] = useState(true)
+    const [enabled, setEnabled] = useState(false)
     const [isLoading, setIsLoading] = useState(true);
 
     const [isBrandSelected, setIsBrandSelected] = useState('');
@@ -268,7 +265,7 @@ export default function ListProduct(props) {
     const onSubmit = (e) => {
       e.preventDefault()
       setLoadingSubmitted(true);
-        axios.post('/products', {
+        axios.post('/', {
           product_sub_category_id: '547dc152-2722-46a9-8292-df3b559f94ba',
           name: title,
           description: description,
@@ -290,12 +287,12 @@ export default function ListProduct(props) {
           verified: true
         }, {
           headers: {
-            'Accept': 'application/x-www-form-urlencoded',
+            'Accept': 'application/json',
             'Content-Type': 'application/json'
           },
         }).then(() => {
           setLoadingSubmitted(false)
-          window.location.href = route('dashboard')
+          window.location.reload()
         })
         .catch(() => {
           setLoadingSubmitted(false)
@@ -303,17 +300,17 @@ export default function ListProduct(props) {
     }
 
     return (
-        <Dashboard auth={props.auth} header={props.header} errors={props.errors}>
+        <AuthenticatedInspector auth={props.auth} header={props.header} errors={props.errors}>
             <Head title="Add Product" />
             <form onSubmit={onSubmit}>
-              <div className="w-3/5 relative overflow-x-auto p-6 bg-white">
+              <div className="lg:w-3/5 w-full mx-auto relative overflow-x-auto p-6 bg-white">
                 {
                   isLoading ? loading() :
                   (
                     <>
                       <div className='w-full mb-2'>
                           <div className='mb-2 text-2xl text-gray-700 font-bold'>Add Product</div>
-                          <span className='text-gray-500'>Silahkan masukan informasi mobil untuk ditampilkan pada list catalog</span>
+                          <span className='text-gray-500'>Silahkan masukan informasi mobil</span>
                       </div>
                       <ValidationErrors errors={errors} />
                       <div className='w-full mb-4'>
@@ -472,7 +469,7 @@ export default function ListProduct(props) {
                           <input className='w-full mb-4 rounded' type={'text'} name='phone_number' placeholder='081299465052' value={phoneNumber} onChange={handleChangePhoneNumber}/>
                         </div>
                       </div>
-                      <div className='w-full mb-4'>
+                      {/* <div className='w-full mb-4'>
                         <Label>Publish</Label>
                         <Switch
                           checked={enabled}
@@ -487,7 +484,7 @@ export default function ListProduct(props) {
                               pointer-events-none inline-block h-[34px] w-[34px] rounded-full bg-white shadow-lg transform ring-0 transition ease-in-out duration-200`}
                           />
                         </Switch>
-                      </div>
+                      </div> */}
                       <div className='flex justify-end'>
                         <a href={route('dashboard')} className='w-20 p-2 bg-gray-700 font-bold rounded text-center text-white mr-4'>Back</a>
                         <button type='submit' className='w-20 p-2 bg-indigo-700 font-bold rounded text-white' disabled={loadingSubmitted}>
@@ -509,6 +506,6 @@ export default function ListProduct(props) {
                 }
               </div>
             </form>
-        </Dashboard>
+        </AuthenticatedInspector>
     );
 }

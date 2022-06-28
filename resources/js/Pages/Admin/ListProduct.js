@@ -180,6 +180,9 @@ export default function ListProduct(props) {
                             Status
                         </th>
                         <th scope="col" className="px-6 py-3">
+                            User
+                        </th>
+                        <th scope="col" className="px-6 py-3">
                         <span className="sr-only">Edit</span>
                         </th>
                         </tr>
@@ -209,6 +212,9 @@ export default function ListProduct(props) {
                                         </td>
                                         <td className="px-6 py-4">
                                             <span className={`font-bold px-2 py-1 text-xs text-white bg-${product.is_active ? 'indigo' : 'gray'}-700 rounded-full`}>{product.is_active ? 'active' : 'inactive'}</span>
+                                        </td>
+                                        <td className="px-6 py-4">
+                                            <span className={`font-bold px-2 py-1 rounded-full`}>{product.seller != undefined ? `${product.seller.first_name} ${product.seller.last_name}`: '-'}</span>
                                         </td>
                                         <td className="px-6 py-4 text-right">
                                             <a href={route('update:product', {

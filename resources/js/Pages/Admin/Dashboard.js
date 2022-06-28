@@ -68,6 +68,12 @@ export default function Dashboard(props) {
                                                                 <span className="flex-1 ml-3 text-gray-500 hover:text-white">Models</span>
                                                             </a>
                                                         </li>
+                                                        <li>
+                                                            <a href={route('list-user')} className="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-indigo-700">
+                                                                <ArrowRightIcon className='flex-shrink-0 w-4 h-4 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white' />
+                                                                <span className="flex-1 ml-3 text-gray-500 hover:text-white">Users</span>
+                                                            </a>
+                                                        </li>
                                                     </ul>
                                                 </Transition>
                                             ) : null

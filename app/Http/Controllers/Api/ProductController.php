@@ -59,7 +59,9 @@ class ProductController extends Controller
             'seller_id' => 'required',
             'full_name' => 'required',
             'phone_number' => 'required',
-            'image_path' => 'array'
+            'image_path' => 'array',
+            'verified' => 'boolean',
+            'archive' => 'boolean'
         ]);
 
         $productRepo = new ProductRepository();
@@ -69,10 +71,6 @@ class ProductController extends Controller
 
         }
 
-        if ($request->expectsJson()) {
-            return response()->json($product, 200);
-        }
-
-        return redirect()->route('dashboard');
+        return response()->json($product, 200);
     }
 }
