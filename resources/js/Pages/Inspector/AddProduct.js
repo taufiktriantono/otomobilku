@@ -7,6 +7,12 @@ import axios from 'axios';
 export default function AddProduct(props) {
     const { auth, errors } = props
 
+    // if (auth.user == null) {
+    //   var query = new URLSearchParams()
+    //   query.set('returnUrl', route('home-inspector'))
+    //   window.open(route('admin.login') + `?${query.toString()}`, '_blank')
+    // }
+
     const [enabled, setEnabled] = useState(false)
     const [isLoading, setIsLoading] = useState(true);
 

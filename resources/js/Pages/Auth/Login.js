@@ -10,6 +10,7 @@ import { Inertia } from '@inertiajs/inertia';
 import axios from 'axios';
 
 export default function Login({ status, canResetPassword, returnUrl }) {
+    console.log('returnUrl ', returnUrl)
     const { data, setData, post, processing, errors, reset } = useForm({
         email: '',
         password: '',
@@ -30,25 +31,12 @@ export default function Login({ status, canResetPassword, returnUrl }) {
     const submit = (e) => {
         e.preventDefault();
 
-        // post(route('admin.login'), {
-        //     onError: (error) => {
-        //         console.log(error)
-        //     },
-        //     onSuccess: () => {
-        //         window.location.href = returnUrl
-        //     }
-        // });
         axios.post('/login', data)
             .then((response) => {
-                const { status, data } = response
-                window.location.href = data.data.returnUrl
+                const { status } = response
+                window.location.href = data.returnUrl
             })
-        // Inertia.post(route('admin.login'), data, {
-        //     headers: {
-        //         'Accept': 'application/x-www-form-urlencoded',
-        //         'Content-Type': 'application/json'
-        //     },
-        // })
+
     };
 
     return (

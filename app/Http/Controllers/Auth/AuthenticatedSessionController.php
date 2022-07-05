@@ -50,15 +50,23 @@ class AuthenticatedSessionController extends Controller
 
         $user = $userRepo->getAdminByEmail($validator, 'ROLE_ADMIN');
         if (!$user) {
-            return redirect()
-                ->back()
-                ->withErrors($validator);
+            return response()->json([
+                'status' => 200,
+                'data' => [
+                    'error' => 'UserNotFound',
+                    'message' => 'this user with email '.$validator['email'].' not found'
+                ],
+            ], 400);
         }
 
         if (!Auth::attempt(['email' => $validator['email'], 'password' => $validator['password']], $validator['remember'])) {
-            return redirect()
-                ->back()
-                ->withErrors($validator);
+            return response()->json([
+                'status' => 200,
+                'data' => [
+                    'error' => 'UserNotFound',
+                    'message' => 'this user with email '.$validator['email'].' not found'
+                ],
+            ], 400);
         };
 
         $request->session()->regenerate();

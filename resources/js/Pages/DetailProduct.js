@@ -11,7 +11,7 @@ export default function DetailProduct(props) {
   const { slug, breadcrumb, cs_phone } = props
   const [isLoading, setIsLoading] = useState(true);
   const [product, setProduct] = useState(null)
-
+  console.log(cs_phone);
   const [selectedImage, setSelectedImage] = useState(null)
   const onClickImage = (pos) => {
     setSelectedImage(product.images[pos])
